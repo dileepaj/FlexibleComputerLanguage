@@ -10,6 +10,7 @@
 #include "Int.h"
 #include "EntityList.h"
 #include "Strings.h"
+#include "DateTime.h"
 
 bool ScriptReader::ProcessScript(MSTRING sFile, MetaData* pMD, ScriptReaderOutput& op)
 {
@@ -85,6 +86,16 @@ bool ScriptReader::ProcessScript(MetaData* pMD, ScriptReaderOutput& op, MSTRING 
 	p_MetaData = pMD;
 	LST_STR lstLines;
 	LST_INT lstLineNumbers;
+
+    MSTRING sLoadFromCodeLibrary = pMD->s_LoadFromCodeLibrary;
+    Utils::MakeUpper(sLoadFromCodeLibrary);
+    if ((sLoadFromCodeLibrary == "TRUE") || (sLoadFromCodeLibrary == "YES"))
+    {
+        LST_INT lstLineNumbersDummy;    // line numbers in code library are disregarded
+        ReadFileToLines(pMD->s_CodeLibraryFile, pMD->s_LineContinuation, pMD->s_CommentStart, lstLines, lstLineNumbersDummy);
+        std::cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+    }
+
 	ReadStringToLines(code, pMD->s_LineContinuation, pMD->s_CommentStart, lstLines, lstLineNumbers);
 	if(lstLines.empty())
 	{

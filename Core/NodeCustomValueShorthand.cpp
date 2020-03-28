@@ -36,4 +36,5 @@ PENTITY NodeCustomValueShorthand::ExecuteSpecialCommand(PENTITY entity, Executio
     newcmd->SetArg(et);
     
     return newcmd->Execute(entity, context);
+
 }
