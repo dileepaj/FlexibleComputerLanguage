@@ -21,9 +21,10 @@ void ExecutionTemplateList::Execute(ExecutionContext* pContext)
 	MAP_ITER_ITER mapLoopEndStart;
 	ExecutionTemplateList::const_iterator ite1 = begin();
 	ExecutionTemplateList::const_iterator iteEnd1 = end();
-	for( ; ite1 != iteEnd1; ++ite1)
+    for( ; ite1 != iteEnd1; ++ite1)
 	{
-		switch((*ite1)->GetSpecialCommand())
+
+        switch((*ite1)->GetSpecialCommand())
 		{
             case COMMAND_TYPE_IF:
             case COMMAND_TYPE_IFNOT:

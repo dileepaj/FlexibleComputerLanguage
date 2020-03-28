@@ -1,5 +1,5 @@
 // Read the Application Verifer log file
-$X.ReadFromFile(/Users/dileepa/Dileepa/WorkDir/LogAnalyzer/tests/test3/AppVerifierLogUnix)
+$X.ReadFromFile(D:/MurtazaCode/FlexibleComputerLanguage/Core/TestCases/files/test3/AppVerifierLogUnix)
 
 // First get the xml def line out
 $X.Expand({<?,?>})
@@ -142,4 +142,4 @@ FillDetails($FUNCARG)
 {$WARNINGS,$WARNINGNODE}:=FUNCARG
 FillDetails($FUNCARG)
 
-$Z.GetAggregatedValue.WriteToFile(/Users/dileepa/Dileepa/WorkDir/LogAnalyzer/tests/test3/Output/report_Unix_New.txt)
+$Z.GetAggregatedValue.WriteToFile(D:/MurtazaCode/FlexibleComputerLanguage/Core/TestCases/files/test3/Output/report_Unix_New.txt)

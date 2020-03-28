@@ -97,10 +97,9 @@ MSTRING ExecutionTemplate::GetCodeLine()
 
 PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 {
-    //std::cout<<s_CodeLine<<std::endl;
     if(!s_StartVarName.empty())
 	{
-		// Extract the start variable from the context
+        // Extract the start variable from the context
 		PENTITY pVar = 0;
 		MAP_STR_ENTITYPTR::const_iterator iteFind = pContext->map_Var.find(s_StartVarName);
 		if(pContext->map_Var.end() == iteFind)
@@ -137,7 +136,7 @@ PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 	}
 	else if(0 != p_Entity)
 	{
-		if(ENTITY_TYPE_LIST == p_Entity->ul_Type)
+        if(ENTITY_TYPE_LIST == p_Entity->ul_Type)
 		{
 			EntityList* pEL = (EntityList*)p_Entity;
 			if(0 != pEL)
