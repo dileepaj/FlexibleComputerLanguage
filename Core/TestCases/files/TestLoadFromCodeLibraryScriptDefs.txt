@@ -1,4 +1,4 @@
-DEF	RULE_FILE_NAME					TestInnerCountScript.txt
+DEF	RULE_FILE_NAME					D:/MurtazaCode/FlexibleComputerLanguage/Core/TestCases/files/TestLoadFromCodeLibraryScript.txt
 DEF	LOAD_FROM_CODE_LIBRARY				TRUE
 DEF	CODE_LIBRARY_FILE				CodeLibrary1.txt
 DEF	LINE_CONTINUATION_STRING			__
@@ -80,7 +80,7 @@ DEF	ADD						Add
 DEF	SUBTRACT					Subtract
 DEF	TOSTRING					ToString
 DEF	GET_ITEM_COUNT					GetItemCount
-DEF GET_INNER_ITEM_COUNT            GetInnerItemCount
+DEF 	GET_INNER_ITEM_COUNT            		GetInnerItemCount
 DEF	SEEK						Seek
 DEF	SEEK_TO_BEGIN					SeekToBegin
 DEF	SEEK_TO_END					SeekToEnd
