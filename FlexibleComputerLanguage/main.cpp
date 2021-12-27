@@ -51,7 +51,7 @@ int main(int argc, const char * argv[])
    // tt.RunTest6();
     std::string line;
     std::string jsonline;
-    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
+    std::ifstream jsonfile ("../Core/TestCases/files/test7/tree.txt");
     if (jsonfile.is_open())
     {
         getline (jsonfile,line);
