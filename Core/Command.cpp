@@ -900,6 +900,20 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
         
         switch(ulCommand)
         {
+            case COMMAND_TYPE_ADD_INNER_OBJ: {
+                if(ENTITY_TYPE_STRING == pArg->ul_Type){
+                    String* pStrArg = (String*)pArg;
+//                    if(pStrArg != NULL){
+                    if(0 != pStrArg){
+                        MemoryManager::Inst.CreateObject(&pNullRes);
+                        pNodeRes = pNode->AddNode();
+                        pNodeRes->SetCustomString("object");
+                        pNodeRes->SetLValue((PMCHAR)pStrArg->GetValue().c_str());
+                    }
+                }
+
+                break;
+            }
             case COMMAND_TYPE_LEFT_SIBLING:
             {
                 pNodeRes = pNode->GetLeftSibling();

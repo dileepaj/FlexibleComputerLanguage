@@ -16,7 +16,7 @@ using namespace std;
 
 void QueryTreeScript::QueryNodeTree(Node* root){
 
-    ifstream queryFile ("../FlexibleComputerLanguage/QueryResult/Query.txt");
+    ifstream queryFile ("../Core/TestCases/files/test7/query.txt");
     string query="";
     string qline="";
     while(getline(queryFile,qline))
