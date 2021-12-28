@@ -1376,12 +1376,7 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
             //Set boolean value to a object
             case COMMAND_TYPE_SET_INNER_BOOLEAN:
             {
-                /**
-                 * $DATANODE.SetCustomString(normal)
-$DATANODE.SetRValue(0)
-$DATANODE.SetLValue(testBooleanValue)
-$DATANODE.SetValue(true)*/
-                std::cout<<"INNER BOOLEA";
+
 
                 MemoryManager::Inst.CreateObject(&pNullRes);
                 if(ENTITY_TYPE_LIST == pArg->ul_Type)
