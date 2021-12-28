@@ -1,0 +1,13 @@
+$RESULT.SetCustomString(object)
+$RESULT.SetRValue(4)
+//Long Version
+$RESULT.AddNode:=DATANODE
+$DATANODE.SetCustomString(normal)
+$DATANODE.SetRValue(0)
+$DATANODE.SetLValue(testBooleanValue)
+$DATANODE.SetValue(true)
+
+//Short Hand version
+$RESULT.SetInnerBoolean({newBoolean,false}):=NEWBOOL
+
+

@@ -1372,6 +1372,40 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                 pNodeRes = (PNODE)pNode->GetCustomObj();
                 break;
             }
+
+            //Set boolean value to a object
+            case COMMAND_TYPE_SET_INNER_BOOLEAN:
+            {
+                /**
+                 * $DATANODE.SetCustomString(normal)
+$DATANODE.SetRValue(0)
+$DATANODE.SetLValue(testBooleanValue)
+$DATANODE.SetValue(true)*/
+                std::cout<<"INNER BOOLEA";
+
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                if(ENTITY_TYPE_LIST == pArg->ul_Type)
+                {
+                    PENTITYLIST pStrListArg = (PENTITYLIST)pArg;
+                    if(0 != pStrListArg)
+                    {
+                        pStrListArg->SeekToBegin();
+                        PString firstValue = (PString)(pStrListArg->GetCurrElem());
+                        pStrListArg->Seek(1, false);
+                        PString secondValue = (PString)(pStrListArg->GetCurrElem());
+
+                        if(0 != firstValue && 0 != secondValue){
+                            pNodeRes   = pNode->AddNode();
+                            pNodeRes->SetCustomString("normal");
+                            pNodeRes->SetRValue(0);
+                            pNodeRes->SetLValue((PMCHAR)firstValue->GetValue().c_str());
+                            pNodeRes->SetValue((PMCHAR)secondValue->GetValue().c_str());
+                        }
+
+                    }
+                }
+                break;
+            }
         }
     }
     

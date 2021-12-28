@@ -690,6 +690,7 @@
 #define     COMMAND_TYPE_GET_BOOLEAN                                    64
 #define     COMMAND_TYPE_GET_CUSTOM_OBJ                                 65
 #define     COMMAND_TYPE_SET_ATTRIBUTES                                 66
+#define     COMMAND_TYPE_SET_INNER_BOOLEAN                              67
 
 
 // String commands
