@@ -1,13 +1,13 @@
 $RESULT.SetCustomString(object)
 $RESULT.SetRValue(4)
-//Long Version
 $RESULT.AddNode:=DATANODE
-$DATANODE.SetCustomString(normal)
-$DATANODE.SetRValue(0)
-$DATANODE.SetLValue(testBooleanValue)
-$DATANODE.SetValue(true)
+$DATANODE.SetCustomString(object)
+$DATANODE.SetLValue(data)
+//SetInnerBoolean:user defined key,val
+$DATANODE.SetInnerBoolean({firstBool,ture}):=firstBool
+//SetInnerBoolean: with default value false
+$DATANODE.SetInnerBoolean({secondBool}):=secondBool
 
-//Short Hand version
-$RESULT.SetInnerBoolean({newBoolean,false}):=NEWBOOL
+
 
 

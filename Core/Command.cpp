@@ -1376,8 +1376,6 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
             //Set boolean value to a object
             case COMMAND_TYPE_SET_INNER_BOOLEAN:
             {
-
-
                 MemoryManager::Inst.CreateObject(&pNullRes);
                 if(ENTITY_TYPE_LIST == pArg->ul_Type)
                 {
@@ -1389,13 +1387,21 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                         pStrListArg->Seek(1, false);
                         PString secondValue = (PString)(pStrListArg->GetCurrElem());
 
-                        if(0 != firstValue && 0 != secondValue){
-                            pNodeRes   = pNode->AddNode();
-                            pNodeRes->SetCustomString("normal");
-                            pNodeRes->SetRValue(0);
-                            pNodeRes->SetLValue((PMCHAR)firstValue->GetValue().c_str());
+
+                        pNodeRes   = pNode->AddNode();
+                        pNodeRes->SetCustomString("normal");
+                        pNodeRes->SetRValue("0");
+                        pNodeRes->SetLValue((PMCHAR)firstValue->GetValue().c_str());
+                        if(0 != secondValue){
                             pNodeRes->SetValue((PMCHAR)secondValue->GetValue().c_str());
+                        }else{
+                            //Default boolean value
+                            pNodeRes->SetValue("false");
                         }
+
+
+
+
 
                     }
                 }
