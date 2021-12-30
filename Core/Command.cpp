@@ -1387,7 +1387,6 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                         pStrListArg->Seek(1, false);
                         PString secondValue = (PString)(pStrListArg->GetCurrElem());
 
-
                         pNodeRes   = pNode->AddNode();
                         pNodeRes->SetCustomString("normal");
                         pNodeRes->SetRValue("0");
@@ -1398,11 +1397,6 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                             //Default boolean value
                             pNodeRes->SetValue("false");
                         }
-
-
-
-
-
                     }
                 }
                 break;
