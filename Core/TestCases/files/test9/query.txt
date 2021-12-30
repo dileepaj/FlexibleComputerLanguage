@@ -1,0 +1,16 @@
+$RESULT.SetCustomString(object)
+$RESULT.SetRValue(4)
+
+//$RESULT.AddNode:=DATANODE
+//$DATANODE.SetCustomString(array)
+//$DATANODE.SetLValue(Name)
+
+//Above code segment can be replaced into below single line
+$RESULT.SetInnerArray(Name):=DATANODE
+
+//It returns an entity, its also can be changed
+$DATANODE.SetLValue(City)
+
+
+
+
