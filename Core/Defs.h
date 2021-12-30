@@ -691,6 +691,7 @@
 #define     COMMAND_TYPE_GET_CUSTOM_OBJ                                 65
 #define     COMMAND_TYPE_SET_ATTRIBUTES                                 66
 #define     COMMAND_TYPE_ADD_INNER_OBJ                                  68
+#define     COMMAND_TYPE_SET_NORMAL_STRING                              69
 
 
 // String commands
