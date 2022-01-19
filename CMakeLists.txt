@@ -94,5 +94,5 @@ add_executable(FlexibleComputerLanguage1
         FlexibleComputerLanguage/NamedPipeOperations.cpp
         FlexibleComputerLanguage/easylogging++.h
         FlexibleComputerLanguage/easylogging++.cc
-        FlexibleComputerLanguage/Logger.h FlexibleComputerLanguage/LogJsonParser.cpp FlexibleComputerLanguage/LogJsonParser.h FlexibleComputerLanguage/QueryExecuter.cpp FlexibleComputerLanguage/QueryExecuter.h FlexibleComputerLanguage/QueryTreeScript.cpp FlexibleComputerLanguage/QueryTreeScript.h)
+        FlexibleComputerLanguage/Logger.h FlexibleComputerLanguage/LogJsonParser.cpp FlexibleComputerLanguage/LogJsonParser.h FlexibleComputerLanguage/QueryExecuter.cpp FlexibleComputerLanguage/QueryExecuter.h FlexibleComputerLanguage/QueryTreeScript.cpp FlexibleComputerLanguage/QueryTreeScript.h Core/Generator.cpp Core/Generator.h Core/TestCases/TestNewObjectGenerator.cpp Core/TestCases/TestNewObjectGenerator.h)
 

@@ -766,6 +766,11 @@
 #define     COMMAND_TYPE_GET_LATEST_DATE                                5014
 #define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF                5015
 
+// GENERATOR COMMAND
+#define     COMMAND_TYPE_NEW_INT                                         6000
+#define     COMMAND_TYPE_NEW_STRING                                      6001
+#define     COMMAND_TYPE_NEW_NODE                                        6002
+#define     COMMAND_TYPE_NEW_BOOL                                        6003
 // Special Commands
 #define		COMMAND_TYPE_ADDITIONAL_FUNCTION							10000
 #define		COMMAND_TYPE_STORE_AS_VARIABLE								10001
@@ -791,6 +796,7 @@
 #define		ENTITY_TYPE_EXECUTION_TEMPLATE								6
 #define     ENTITY_TYPE                                                 7
 #define     ENTITY_TYPE_DATETIME                                        8
+#define     ENTITY_TYPE_GENERATOR                                       9
 #define		ENTITY_TYPE_INVALID											100
 
 // Parser priority levels for LDEL variable types

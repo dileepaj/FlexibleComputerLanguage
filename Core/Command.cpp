@@ -19,11 +19,12 @@
 #include <functional>
 #include <LogJsonParser.h>
 #include <QueryExecuter.h>
+#include "Generator.h"
 
 Command::Command()
 :ul_CommandType(COMMAND_TYPE_INVALID), p_Arg(0), p_EntityArg(0), s_AdditionalFuncName(EMPTY_STRING)
 {
-    
+
 }
 
 Command::~Command()
@@ -58,10 +59,13 @@ Command* Command::GetCopy()
 		{
 			pCopy->SetEntityArg(p_EntityArg->GetCopy());
 		}
+
 		else
 		{
 			pCopy->SetEntityArg(p_EntityArg);
 		}
+
+
 	}
 	pCopy->SetAdditionalFuncName(s_AdditionalFuncName);
 	return pCopy;
@@ -159,6 +163,9 @@ PENTITY Command::Execute(PENTITY pEntity, ExecutionContext* pContext)
 	else
 	{
 
+        if(ENTITY_TYPE_GENERATOR == pEntity->ul_Type){
+            return ExecuteGeneratorCommand(ul_CommandType,pEntity,pContext);
+        }
         if (ENTITY_TYPE_LIST == pEntity->ul_Type) {
 			if(0 != p_Arg)
 			{
@@ -306,6 +313,7 @@ PENTITY Command::ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pA
 		}
         case COMMAND_TYPE_ADD:
 		{
+
 			if(ENTITY_TYPE_INT == pArg->ul_Type)
 			{
 				MemoryManager::Inst.CreateObject(&pNullRes);
@@ -869,12 +877,14 @@ PENTITY Command::ExecuteDateTimeCommand(MULONG ulCommand, PENTITY pEntity, PENTI
 
 PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, ExecutionContext* pContext)
 {
+
     PNODE pNode = (PNODE)pEntity;
 	if(0 == pNode)
 	{
 		return 0;
 	}
-    
+
+
 	PNODE pNodeRes = 0;
 	PInt pIntRes = 0;
 	PString pStrRes = 0;
@@ -882,6 +892,8 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
 	PNull pNullRes = 0;
 	PBool pBoolRes = 0;
     PENTITY pEntityRes = 0;
+
+
     
     // first handle the commands that would need to access the execution context
     if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
@@ -1054,6 +1066,7 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
 
             case COMMAND_TYPE_SET_LVALUE:
             {
+
                 MemoryManager::Inst.CreateObject(&pNullRes);
                 if(ENTITY_TYPE_STRING == pArg->ul_Type)
                 {
@@ -1873,6 +1886,145 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
 	return 0;
 }
 
+PENTITY Command::ExecuteGeneratorCommand(MULONG ulCommand, PENTITY pEntity, ExecutionContext *pContext) {
+    PGEN pGenerator = (PGEN)pEntity;
+    if(0 == pGenerator)
+    {
+        return 0;
+    }
+
+    // now handle commands that would not explicitly need the execution context
+    // for these command, for the sake of simplicity, we first evaluate the command argument and use it subsequently
+    PENTITY pArg = 0;
+    if(0 != p_Arg)
+    {
+        p_EntityArg = p_Arg->Execute(pContext);
+        pArg = p_EntityArg;
+    }
+
+
+    PNODE pNodeRes = 0;
+    PInt pIntRes = 0;
+    PString pStrRes = 0;
+    PENTITYLIST pNodeListRes = 0;
+    PNull pNullRes = 0;
+    PBool pBoolRes = 0;
+    PENTITY pEntityRes = 0;
+    PENTITYLIST pEntityListRes = 0;
+    Value<MULONG, ENTITY_TYPE_INT>* pVal;
+
+
+
+    switch (ul_CommandType) {
+        case COMMAND_TYPE_NEW_INT:
+        {
+
+            if(pArg->ul_Type == ENTITY_TYPE_LIST){
+
+                PENTITYLIST pStrListArg = (PENTITYLIST)pArg;
+                if(pStrListArg != 0){
+                    //Capture variable name
+                    PString variableName;
+                    PInt variableValue;
+
+                    pStrListArg->SeekToBegin();
+                    PENTITY firstEn = pStrListArg->GetCurrElem();
+
+                    pStrListArg->Seek(1, false);
+                    PENTITY  secondEn = pStrListArg->GetCurrElem();
+                    if(firstEn != 0 && firstEn->ul_Type == ENTITY_TYPE_STRING){
+                        variableName = (PString)firstEn;
+                    }
+
+                    if(secondEn !=0 && secondEn->ul_Type == ENTITY_TYPE_INT){
+                        variableValue = (PInt)secondEn;
+                    }else{
+                        MemoryManager::Inst.CreateObject(&variableValue);
+                        variableValue->SetValue(0);
+                    }
+
+                    pIntRes =pGenerator->GenerateInteger(variableName->GetValue(),variableValue->GetValue(),pContext);
+                }
+
+            }
+            break;
+        }
+
+        case COMMAND_TYPE_NEW_STRING:
+        {
+
+            if(pArg->ul_Type == ENTITY_TYPE_LIST){
+
+                PENTITYLIST pListArg = (PENTITYLIST)pArg;
+                if(pListArg != 0){
+                    //Capture variable name
+                    PString  variableName;
+                    PString  variableValue;
+
+                    pListArg->SeekToBegin();
+                    PENTITY  firstEn = pListArg->GetCurrElem();
+
+                    pListArg->Seek(1, false);
+                    PENTITY secondEn = pListArg->GetCurrElem();
+
+                    if(firstEn != 0 && firstEn->ul_Type == ENTITY_TYPE_STRING){
+                        variableName = (PString)firstEn;
+                    }
+
+                    if(secondEn !=0 && secondEn->ul_Type == ENTITY_TYPE_STRING){
+                        variableValue = (PString)secondEn;
+                    }else{
+                        MemoryManager::Inst.CreateObject(&variableValue);
+                        variableValue->SetValue("");
+                    }
+                    pStrRes = pGenerator->GenerateString(variableName->GetValue(),variableValue->GetValue(),pContext);
+                }
+
+            }
+            break;
+
+        }
+        case COMMAND_TYPE_NEW_NODE:{
+            if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                PString pNameArg = (PString)pArg;
+                if(pNameArg->GetValue().length() != 0){
+                    pNodeRes= pGenerator->GenerateNode(pNameArg->GetValue(),pContext);
+                }
+            }
+            break;
+        }
+
+        case COMMAND_TYPE_NEW_BOOL :
+        {
+            if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                PString pNameArg = (PString)pArg;
+                if(pNameArg->GetValue().length() != 0){
+                    pBoolRes= pGenerator->GenerateBool(pNameArg->GetValue(), false,pContext);
+                }
+            }
+            break;
+        }
+
+    }
+
+    if(0 != pIntRes){
+        return pIntRes ;
+    }
+
+    if(0 != pStrRes){
+        return pStrRes;
+    }
+
+    if(0 != pNodeRes){
+        return pNodeRes;
+    }
+
+    if(0 != pBoolRes){
+        return pBoolRes;
+    }
+    return 0;
+
+}
 void Command::AddSubtreeToNodeList(PENTITYLIST pList, PNODE pRoot)
 {
 	pList->push_back(pRoot);

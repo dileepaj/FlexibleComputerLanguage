@@ -1,0 +1,2 @@
+$NEW.Integer({number}).Add(#5)
+$RESULT.SetValue($number.ToString)

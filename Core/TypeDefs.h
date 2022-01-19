@@ -30,7 +30,7 @@ class ELLineAnnotation;
 class ELCachedEvaluationResult;
 class ELBlockDetectiveResultElement;
 class String;
-
+class Generator;
 #ifndef WIDECHAR
 typedef char				MCHAR;
 typedef std::string			MSTRING;
@@ -76,6 +76,7 @@ typedef unsigned short		MUSHORT;
 typedef MBYTE*				PMBYTE;
 typedef void*               PVOID;
 
+typedef Generator*           PGEN;
 typedef Node*				PNODE;
 typedef Entity*				PENTITY;
 typedef Command*			PCOMMAND;

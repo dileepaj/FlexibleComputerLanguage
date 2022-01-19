@@ -1,0 +1,4 @@
+$new.Bool(var).ToTrue
+If($var)
+$RESULT.SetValue(Variable is false)
+EndIf

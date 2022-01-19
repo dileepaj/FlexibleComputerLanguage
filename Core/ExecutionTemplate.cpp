@@ -5,6 +5,7 @@
 #include "Utils.h"
 #include "EntityList.h"
 #include "SpecialCommandExecuter.h"
+#include "Bool.h"
 
 ExecutionTemplate::ExecutionTemplate()
 :s_StartVarName(EMPTY_STRING), p_Entity(0), ul_SpecialCommand(0), s_CodeLine(EMPTY_STRING)
@@ -128,7 +129,16 @@ PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 		while(pCurr && (ite1 != iteEnd1))
 		{
 			PENTITY pNew = ExecuteCommand(pCurr, pContext, *ite1);
-			pCurr->Destroy();
+            bool varStatus = false;
+            for(auto &it :pContext->map_Var){
+                if(it.second == pCurr){
+                    varStatus = true;
+                }
+            }
+            if(!varStatus){
+                pCurr->Destroy();
+            }
+
 			pCurr = pNew;
 			++ite1;
 		}
@@ -147,6 +157,7 @@ PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 		if(lst_Commands.size() == 0)
 		{
 			PENTITY pRes = p_Entity;
+
 			if(p_Entity->ul_Type != ENTITY_TYPE_NODE)
 			{
 				pRes = p_Entity->GetCopy();

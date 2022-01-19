@@ -36,6 +36,8 @@ public:
     
 	MAP_MULONG_STR	map_FuncNames;
 	MAP_STR_MULONG	map_FuncNamesReverse;
+    //NEW KeyWord
+    MSTRING s_NewKeyword;
     
     // Added for LDEL
     MSTRING s_ScriptFile;

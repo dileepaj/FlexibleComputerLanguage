@@ -48,7 +48,7 @@ int main(int argc, const char * argv[])
 {
     std::cout << "Started\n";
     //Tests tt;
-   // tt.RunTest6();
+    // tt.RunTest6();
     std::string line;
     std::string jsonline;
     std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
