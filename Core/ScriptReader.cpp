@@ -11,6 +11,7 @@
 #include "EntityList.h"
 #include "Strings.h"
 #include "DateTime.h"
+#include "Bool.h"
 
 bool ScriptReader::ProcessScript(MSTRING sFile, MetaData* pMD, ScriptReaderOutput& op)
 {
@@ -500,12 +501,14 @@ ExecutionTemplate* ScriptReader::GetEntity(VEC_CE& vecCE, VEC_CE::size_type stSt
 	// 4. Variable.<Any number of functions>
 	// 5. Variable
 	// 6. FuncName(Entity)
+    // 7.Boolean True
+    // 8.Boolean False
 	if(stEnd < stStart)
 	{
 		return 0;
 	}
 	ExecutionTemplate* pET = 0;
-	// case 1, 2 & 5
+	// case 1, 2 , 5 , 7 & 8
 	if(stEnd == stStart)
 	{
 		if(vecCE.at(stStart).e_Type == CET_Int)
@@ -534,6 +537,23 @@ ExecutionTemplate* ScriptReader::GetEntity(VEC_CE& vecCE, VEC_CE::size_type stSt
 			pET->SetStartVarName(vecCE.at(stStart).s_Str);
 			return pET;
 		}
+        if(vecCE.at(stStart).e_Type == CET_BoolTrue)
+        {
+              PBool pBool = 0;
+              MemoryManager::Inst.CreateObject(&pBool);
+              pBool->SetValue(true);
+              MemoryManager::Inst.CreateObject(&pET);
+              pET->SetEntity(pBool);
+              return pET;
+        }
+        if(vecCE.at(stStart).e_Type == CET_BoolFalse){
+            PBool pBool = 0;
+            MemoryManager::Inst.CreateObject(&pBool);
+            pBool->SetValue(false);
+            MemoryManager::Inst.CreateObject(&pET);
+            pET->SetEntity(pBool);
+            return pET;
+        }
 	}
 	// case 3
 	else if((vecCE.at(stStart).e_Type == CET_ListStart) && (vecCE.at(stEnd).e_Type == CET_ListEnd))

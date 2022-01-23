@@ -17,11 +17,10 @@ public:
 
     Generator* GetCopy();
     virtual MSTRING ToString();
-    PInt GenerateInteger(MSTRING name,MINT value,ExecutionContext* pContext);
-    PString GenerateString(MSTRING name,MSTRING value,ExecutionContext* pContext);
-    PNODE  GenerateNode(MSTRING name,ExecutionContext* pContext);
-    PENTITYLIST GenerateList(MSTRING name,PENTITYLIST values,ExecutionContext* pContext);
-    PBool GenerateBool(MSTRING name,MBOOL value,ExecutionContext *pContext);
+    PInt GenerateInteger(MULONG initialValue);
+    PNODE  GenerateNode(MSTRING initVal,MSTRING initLVal, MSTRING initRVal,MSTRING initCusVal);
+    PString GenerateString(MSTRING initialValue);
+    PBool GenerateBool(MBOOL initialValue);
     int nodeId =0;
 };
 

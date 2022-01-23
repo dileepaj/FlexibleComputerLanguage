@@ -1,8 +1,4 @@
-//Empty string var
-$NEW.String({Final})
-//String var with an initial value and subsequent method call
-$NEW.String({Address,Address : }).AddPostFix(Gampaha Sri Lanka)
-
-$Final.AddPostFix(Details @NEWLINE)
-$Final.AddPostFix($Address)
-$RESULT.SetValue($Final)
+$NEW.String:=emptyVar
+$NEW.String("initial value"):=nonEmptyVar
+$emptyVar.AddPostFix(val)
+$RESULT.SetValue($nonEmptyVar)

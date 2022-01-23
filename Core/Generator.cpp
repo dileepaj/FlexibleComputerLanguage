@@ -9,6 +9,8 @@
 #include "ExecutionContext.h"
 #include "Strings.h"
 #include "Bool.h"
+#include "Node.h"
+
 
 Generator::Generator() {
     ul_Type=ENTITY_TYPE_GENERATOR;
@@ -39,37 +41,43 @@ Generator* Generator::GetCopy()
     return newGen;
 }
 
-//Generate integer variable
-PInt Generator::GenerateInteger(MSTRING name,MINT value,ExecutionContext* pContext) {
+
+
+//Generate integer
+PInt Generator::GenerateInteger(MULONG initialValue) {
     PInt pIntRes;
     MemoryManager::Inst.CreateObject(&pIntRes);
-    pIntRes->SetValue(value);
-    pContext->map_Var[name]=(PENTITY)pIntRes;
+    pIntRes->SetValue(initialValue);
     return pIntRes;
+
 }
 //Generate string variable
-PString Generator::GenerateString(MSTRING name, MSTRING value, ExecutionContext *pContext) {
+PString Generator::GenerateString(MSTRING initialValue) {
     PString pStringRes;
     MemoryManager::Inst.CreateObject(&pStringRes);
-    pStringRes->SetValue(value);
-    pContext->map_Var[name]=(PENTITY)pStringRes;
-    return pStringRes;
+    pStringRes->SetValue(initialValue);
+    return  pStringRes;
 }
+
 
 //Generate Node variable
 //Shared data
 
-PNODE Generator::GenerateNode(MSTRING name, ExecutionContext *pContext) {
+PNODE Generator::GenerateNode(MSTRING initVal,MSTRING initLVal, MSTRING initRVal,MSTRING initCusVal) {
     PNODE  pNodeRes = MemoryManager::Inst.CreateNode(nodeId++);
-    pContext->map_Var[name]=(PENTITY)pNodeRes;
+
+    pNodeRes->SetValue((PMCHAR)initVal.c_str());
+    pNodeRes->SetLValue((PMCHAR)initLVal.c_str());
+    pNodeRes->SetRValue((PMCHAR)initRVal.c_str());
+    pNodeRes->SetCustomString((PMCHAR)initCusVal.c_str());
+
     return pNodeRes;
 }
 
-PBool  Generator::GenerateBool(MSTRING name, MBOOL value, ExecutionContext *pContext) {
+PBool  Generator::GenerateBool(MBOOL initialValue) {
     PBool pBoolRes;
     MemoryManager::Inst.CreateObject(&pBoolRes);
-    pBoolRes->SetValue(value);
-    pContext->map_Var[name]=(PENTITY)pBoolRes;
+    pBoolRes->SetValue(initialValue);
     return pBoolRes;
 }
 

@@ -1916,99 +1916,124 @@ PENTITY Command::ExecuteGeneratorCommand(MULONG ulCommand, PENTITY pEntity, Exec
 
 
     switch (ul_CommandType) {
-        case COMMAND_TYPE_NEW_INT:
+
+        case COMMAND_TYPE_NEW_INT :
         {
+            if(pArg != 0){
 
-            if(pArg->ul_Type == ENTITY_TYPE_LIST){
-
-                PENTITYLIST pStrListArg = (PENTITYLIST)pArg;
-                if(pStrListArg != 0){
-                    //Capture variable name
-                    PString variableName;
-                    PInt variableValue;
-
-                    pStrListArg->SeekToBegin();
-                    PENTITY firstEn = pStrListArg->GetCurrElem();
-
-                    pStrListArg->Seek(1, false);
-                    PENTITY  secondEn = pStrListArg->GetCurrElem();
-                    if(firstEn != 0 && firstEn->ul_Type == ENTITY_TYPE_STRING){
-                        variableName = (PString)firstEn;
+                if(pArg->ul_Type == ENTITY_TYPE_INT){
+                    PInt pIntArg = (PInt)pArg;
+                    pIntRes = pGenerator->GenerateInteger(pIntArg->GetValue());
+                }else if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                    PString pStringArg = (PString)pArg;
+                    MSTRING argVal = pStringArg->GetValue();
+                    int argValInt;
+                    try {
+                        argValInt = std::stoi(argVal);
+                    }catch (ERROR_INVALID_ARG &err){
+                        argValInt = 0;
                     }
+                    pIntRes = pGenerator->GenerateInteger(argValInt);
 
-                    if(secondEn !=0 && secondEn->ul_Type == ENTITY_TYPE_INT){
-                        variableValue = (PInt)secondEn;
-                    }else{
-                        MemoryManager::Inst.CreateObject(&variableValue);
-                        variableValue->SetValue(0);
-                    }
-
-                    pIntRes =pGenerator->GenerateInteger(variableName->GetValue(),variableValue->GetValue(),pContext);
+                }else{
+                    //Invalid argument types
+                    pIntRes = pGenerator->GenerateInteger(0);
                 }
-
+            }else{
+                //No argument
+                pIntRes = pGenerator->GenerateInteger(0);
             }
             break;
         }
-
         case COMMAND_TYPE_NEW_STRING:
         {
 
-            if(pArg->ul_Type == ENTITY_TYPE_LIST){
-
-                PENTITYLIST pListArg = (PENTITYLIST)pArg;
-                if(pListArg != 0){
-                    //Capture variable name
-                    PString  variableName;
-                    PString  variableValue;
-
-                    pListArg->SeekToBegin();
-                    PENTITY  firstEn = pListArg->GetCurrElem();
-
-                    pListArg->Seek(1, false);
-                    PENTITY secondEn = pListArg->GetCurrElem();
-
-                    if(firstEn != 0 && firstEn->ul_Type == ENTITY_TYPE_STRING){
-                        variableName = (PString)firstEn;
-                    }
-
-                    if(secondEn !=0 && secondEn->ul_Type == ENTITY_TYPE_STRING){
-                        variableValue = (PString)secondEn;
-                    }else{
-                        MemoryManager::Inst.CreateObject(&variableValue);
-                        variableValue->SetValue("");
-                    }
-                    pStrRes = pGenerator->GenerateString(variableName->GetValue(),variableValue->GetValue(),pContext);
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                    PString pArgVal = (PString)pArg;
+                    MSTRING strVal = pArgVal->GetValue();
+                    pStrRes = pGenerator->GenerateString(strVal);
+                }else{
+                    //Invalid argument
+                    pStrRes = pGenerator->GenerateString("");
                 }
 
+            }else{
+                //No argument
+                pStrRes = pGenerator->GenerateString("");
             }
             break;
 
         }
         case COMMAND_TYPE_NEW_NODE:{
-            if(pArg->ul_Type == ENTITY_TYPE_STRING){
-                PString pNameArg = (PString)pArg;
-                if(pNameArg->GetValue().length() != 0){
-                    pNodeRes= pGenerator->GenerateNode(pNameArg->GetValue(),pContext);
+
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_LIST){
+                    PENTITYLIST pArgList = (PENTITYLIST)pArg;
+                    MSTRING nodeValue="";
+                    MSTRING nodeRValue = "";
+                    MSTRING nodeLValue = "";
+                    MSTRING nodeCusValue = "";
+
+                    EntityList::const_iterator ite1 = pArgList->begin();
+                    EntityList::const_iterator iteEnd = pArgList->end();
+                    int index = 0;
+                    for(;ite1 != iteEnd;ite1++){
+                        switch (index) {
+                            case 0:{
+                                nodeValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 1:{
+                                nodeLValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 2:{
+                                nodeRValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 3:{
+                                nodeCusValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                        }
+                        index++;
+                    }
+                    pNodeRes = pGenerator->GenerateNode(nodeValue,nodeLValue,nodeRValue,nodeCusValue);
+
+                } else{
+                    //Invalid Argument
+                    pNodeRes =  pGenerator->GenerateNode("","","","");
                 }
+            }else{
+                //No arguments
+                pNodeRes =  pGenerator->GenerateNode("","","","");
             }
             break;
         }
 
         case COMMAND_TYPE_NEW_BOOL :
         {
-            if(pArg->ul_Type == ENTITY_TYPE_STRING){
-                PString pNameArg = (PString)pArg;
-                if(pNameArg->GetValue().length() != 0){
-                    pBoolRes= pGenerator->GenerateBool(pNameArg->GetValue(), false,pContext);
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_BOOL){
+                    PBool pArgVal = (PBool)pArg;
+                    pBoolRes = pGenerator->GenerateBool(pArgVal->GetValue());
+                }else{
+                    //Invalid argument
+                    pBoolRes = pGenerator->GenerateBool(false);
                 }
+            }else{
+                //No argument
+                pBoolRes = pGenerator->GenerateBool(false);
             }
             break;
         }
 
     }
 
+
     if(0 != pIntRes){
-        return pIntRes ;
+        return pIntRes;
     }
 
     if(0 != pStrRes){

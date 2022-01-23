@@ -121,6 +121,7 @@ typedef std::vector<ELLineAnnotation*> VEC_ELLINEANNOTATION;
 typedef std::map<WIDECHAR, unsigned long> MAP_CHAR_ULONG;
 typedef std::map<unsigned long, ELCachedEvaluationResult*> MAP_ULONG_CACHED_EVALUATION_RESULT;
 typedef std::vector<ELBlockDetectiveResultElement*> VEC_ELBLOCKDETECTIVE_RESULT_ELEMENT;
+typedef std::invalid_argument ERROR_INVALID_ARG;
 
 #endif
 

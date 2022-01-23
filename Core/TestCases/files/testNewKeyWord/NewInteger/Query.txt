@@ -1,2 +1,8 @@
-$NEW.Integer({number}).Add(#5)
-$RESULT.SetValue($number.ToString)
+//Without argument
+$NEW.Integer:=v1
+$NEW.Integer(#5):=v2
+$v1.Add($v2)
+//Without int prefix
+$NEW.Integer(12):=v3
+$v1.Add($v3)
+$RESULT.SetValue($v1.ToString)

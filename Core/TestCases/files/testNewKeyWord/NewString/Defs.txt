@@ -172,3 +172,4 @@ DEF NEW_KEYWORD                 NEW
 DEF NEW_INT                     Integer
 DEF NEW_STRING                  String
 DEF NEW_NODE                    Node
+DEF	STRING_ENCLOSURE_SYMBOL		"
