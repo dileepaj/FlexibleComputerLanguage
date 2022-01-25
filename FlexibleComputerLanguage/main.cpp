@@ -7,6 +7,7 @@
 //
 // VERSION 2
 
+#include "TestListGetLastElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -82,7 +83,7 @@ int main(int argc, const char * argv[])
 
         TestListGetFirstEelem::TestListGetFirstElement();
 
-
+    TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }

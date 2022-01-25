@@ -120,4 +120,11 @@ EntityList* EntityList::GetInnerCount() {
 
 PENTITY EntityList::GetFirstElement() {
     return  EntityList::front();
+
 }
+
+PENTITY EntityList::GetlastElement(){
+
+    return EntityList::back();
+}
+

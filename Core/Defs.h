@@ -736,6 +736,7 @@
 #define		COMMAND_TYPE_TOSTRING										2200
 #define     COMMAND_TYPE_SET_INTEGER                                    2201
 
+
 // Bool Commands
 #define		COMMAND_TYPE_BOOL_AND										4000
 #define		COMMAND_TYPE_BOOL_OR										4001
@@ -766,6 +767,8 @@
 #define     COMMAND_TYPE_GET_LATEST_DATE                                5014
 #define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF                5015
 #define     COMMAND_TYPE_GET_FIRST_ELEM                                 5016
+#define     COMMAND_TYPE_GET_LAST_ELEM                                  5017
+
 
 // Special Commands
 #define		COMMAND_TYPE_ADDITIONAL_FUNCTION							10000
