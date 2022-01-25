@@ -7,6 +7,7 @@
 //
 // VERSION 2
 
+#include "TestListGetLastElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -46,41 +47,41 @@ INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, const char * argv[])
 {
-    std::cout << "Started\n";
-    //Tests tt;
-   // tt.RunTest6();
-    std::string line;
-    std::string jsonline;
-    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
-    if (jsonfile.is_open())
-    {
-        getline (jsonfile,line);
-        jsonline = line;
-        jsonfile.close();
-    }
-    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
-
-//    std::string scriptline;
-//    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
-//    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
-//    std::string script="";
-//
-//    while(getline(scriptfile,scriptline))
+//    std::cout << "Started\n";
+//    //Tests tt;
+//   // tt.RunTest6();
+//    std::string line;
+//    std::string jsonline;
+//    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
+//    if (jsonfile.is_open())
 //    {
-//        script+=scriptline;
-//        script+="\n";
+//        getline (jsonfile,line);
+//        jsonline = line;
+//        jsonfile.close();
 //    }
+//    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
 //
-//    std::string res = QueryExecuter::run(jsonroot,script);
-//    std::cout << "\n";
-//    std::cout <<res;
+////    std::string scriptline;
+////    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
+////    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
+////    std::string script="";
+////
+////    while(getline(scriptfile,scriptline))
+////    {
+////        script+=scriptline;
+////        script+="\n";
+////    }
+////
+////    std::string res = QueryExecuter::run(jsonroot,script);
+////    std::cout << "\n";
+////    std::cout <<res;
+////
+////    LogJsonParser::LogNodeTreetoJson(jsonroot);
 //
-//    LogJsonParser::LogNodeTreetoJson(jsonroot);
-
-    QueryTreeScript::QueryNodeTree(jsonroot);
+//    QueryTreeScript::QueryNodeTree(jsonroot);
 
 
-
+    TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }

@@ -21,6 +21,7 @@ public:
 	void SeekToEnd();
 	void Seek(MULONG ulOffset, bool bIsNegative);
     EntityList* GetInnerCount();
+    PENTITY GetlastElement();
 };
 
 #endif

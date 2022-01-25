@@ -117,3 +117,8 @@ EntityList* EntityList::GetInnerCount() {
     }
     return pListRes;
 }
+
+PENTITY EntityList::GetlastElement(){
+
+    return EntityList::back();
+}
