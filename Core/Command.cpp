@@ -1800,6 +1800,10 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
             currNode = (PNODE)pEntityList->GetCurrElem();
         }
 	}
+
+    else if (COMMAND_TYPE_GET_FIRST_ELEM == ulCommand){
+        pEntityRes = pEntityList->GetFirstElement();
+    }
 	else
 	{
         if(0 != p_Arg)

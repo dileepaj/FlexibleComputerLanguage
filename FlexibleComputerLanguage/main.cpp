@@ -36,6 +36,7 @@
 #include "EntityList.h"
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
+#include "TestListGetFirstEelem.h"
 
 
 
@@ -80,6 +81,7 @@ int main(int argc, const char * argv[])
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
+        TestListGetFirstEelem::TestListGetFirstElement();
 
     TestListGetLastElem::TestListGetLastElemet();
 
