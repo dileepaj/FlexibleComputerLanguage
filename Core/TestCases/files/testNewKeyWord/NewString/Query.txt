@@ -1,4 +1,3 @@
-$NEW.String:=emptyVar
-$NEW.String("initial value"):=nonEmptyVar
-$emptyVar.AddPostFix(val)
-$RESULT.SetValue($nonEmptyVar)
+$NEW.String("Initial"):=VAR
+$VAR.AddPostFix("@NEWLINESECOND LINE")
+$RESULT.SetValue($VAR)

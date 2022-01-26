@@ -1,4 +1,4 @@
-$NEW.Bool(FALSE):=var1
+$NEW.Bool(TRUE):=var1
 If($var1)
 $RESULT.SetValue(var is true)
 EndIf

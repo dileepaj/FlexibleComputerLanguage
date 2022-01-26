@@ -1,3 +1,2 @@
-$NEW.Node({val,valL,valR,valCus}):=NodeA
-$NEW.Node:=NodeB
-$RESULT.SetValue($NodeB.GetCustomString)
+$NEW.Node({val,valL,valR}):=NodeA
+$RESULT.SetValue($NodeA.GetRValue)
