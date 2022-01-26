@@ -82,9 +82,9 @@ int main(int argc, const char * argv[])
 //
 
       //TestNewObjectGenerator::TestNewInt();
-    //TestNewObjectGenerator::TestNewString();
-     //TestNewObjectGenerator::TestNewNode();
-    // TestNewObjectGenerator::TestNewBool();
+      //TestNewObjectGenerator::TestNewString();
+     TestNewObjectGenerator::TestNewNode();
+    //TestNewObjectGenerator::TestNewBool();
 
 
 

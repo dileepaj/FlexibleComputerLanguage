@@ -1,5 +1,4 @@
 //Without argument
-$NEW.Integer(5):=V1
-$NEW.Integer(2):=V2
-$V1.Add($V2)
-$RESULT.SetValue($V1.ToString)
+
+$RESULT.SetValue($NEW.Integer(5).Add($NEW.Integer(2)).ToString)
+$NEW.Integer(5).Add($NEW.Integer(2)).ToString->RESULT.SetValue
