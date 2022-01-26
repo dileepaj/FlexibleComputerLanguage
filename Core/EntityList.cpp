@@ -128,8 +128,49 @@ PENTITY EntityList::GetNthElement(MINT index) {
 
 }
 
-PENTITY EntityList::GetlastElement() {
 
+PENTITYLIST  EntityList::Concat(PENTITYLIST list) {
+    list::const_iterator iterator1 = list->begin();
+    list::const_iterator iteratorEnd = list->end();
+
+    PENTITYLIST pRes = (PENTITYLIST)this->GetCopy();
+
+    for(;iterator1 != iteratorEnd;iterator1++){
+        pRes->push_back((*iterator1)->GetCopy());
+    }
+    return pRes;
+}
+
+void EntityList::AddElem(PENTITY pentity) {
+    this->push_back(pentity);
+}
+
+//Will return, elements from the  begging
+PENTITYLIST EntityList::GetPrefix(int index){
+
+    PENTITYLIST pRes;
+    MemoryManager::Inst.CreateObject(&pRes);
+    EntityList::const_iterator iterator1 = this->begin();
+    EntityList::const_iterator iteratorEnd = this->end();
+    if(index >=  this->size() || index <0){
+        pRes = (PENTITYLIST)this->GetCopy();
+        return pRes;
+    }
+
+    MINT it = 0;
+    for(;iterator1 != iteratorEnd;iterator1++){
+        pRes->push_back(*iterator1);
+        if(it == index){
+            break;
+        }
+        it++;
+    }
+    return pRes;
+}
+
+
+
+PENTITY EntityList::GetlastElement(){
     return EntityList::back();
 }
 

@@ -1441,27 +1441,52 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         std::string latestDate = (DateTimeOperations::GetLatestDate(dateList));
         pStrRes->SetValue(DateTimeOperations::GetLatestDate(dateList));
     }
-        // first handle the commands that would need to access the execution context
+
+	else if (COMMAND_TYPE_GET_OLDEST_DATE == ulCommand)
+	{
+		MemoryManager::Inst.CreateObject(&pStrRes);
+		pEntityList->SeekToBegin();
+		PNODE currNode = (PNODE)pEntityList->GetCurrElem();
+		String* pStrArg = (String*)pArg;
+		std::vector<std::string> dateList;
+		while(currNode != 0) {
+			if (currNode->GetLVal() != 0)
+			{
+				dateList.push_back(std::string(currNode->GetLVal()));
+			}
+			pEntityList->Seek(1, false);
+			currNode = (PNODE)pEntityList->GetCurrElem();
+		}
+		std::string oldestDate = (DateTimeOperations::GetOldestDate(dateList));
+		pStrRes->SetValue(DateTimeOperations::GetOldestDate(dateList));
+	}
+	else if (COMMAND_TYPE_GET_LATEST_DATE == ulCommand)
+	{
+		MemoryManager::Inst.CreateObject(&pStrRes);
+		pEntityList->SeekToBegin();
+		PNODE currNode = (PNODE)pEntityList->GetCurrElem();
+		String* pStrArg = (String*)pArg;
+		std::vector<std::string> dateList;
+		while(currNode != 0) {
+			if (currNode->GetLVal() != 0)
+			{
+				dateList.push_back(currNode->GetLVal());
+			}
+			pEntityList->Seek(1, false);
+			currNode = (PNODE)pEntityList->GetCurrElem();
+		}
+		std::string latestDate = (DateTimeOperations::GetLatestDate(dateList));
+		pStrRes->SetValue(DateTimeOperations::GetLatestDate(dateList));
+	}
+	// first handle the commands that would need to access the execution context
 
     else if (COMMAND_TYPE_GET_LAST_ELEM == ulCommand) {
 
-        pEntityRes = pEntityList->GetlastElement();
+        pEntityRes = pEntityList-> GetlastElement();
 
-    } else if (COMMAND_TYPE_GET_NTH_ELEM == ulCommand) {
+    }
+	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
 
-
-        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
-            PInt pIntArg = (PInt) pArg;
-
-            pEntityRes = pEntityList->GetNthElement(pIntArg->GetValue());
-
-        } else {
-
-            pEntityRes = pEntityList->GetNthElement(0);
-        }
-
-
-    } else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
         MemoryManager::Inst.CreateObject(&pListRes);
         pEntityList->SeekToBegin();
         PNODE currNode = (PNODE) pEntityList->GetCurrElem();
@@ -1481,7 +1506,50 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         }
     } else if (COMMAND_TYPE_GET_FIRST_ELEM == ulCommand) {
         pEntityRes = pEntityList->GetFirstElement();
-    } else {
+    } else if (COMMAND_TYPE_CONCAT == ulCommand) {
+
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST) {
+            PENTITYLIST pArgList = (PENTITYLIST) pArg;
+            pListRes = pEntityList->Concat(pArgList);
+        } else {
+            //If argument is not passed copy of the same list will be return
+            pListRes = (PENTITYLIST) pEntityList->GetCopy();
+        }
+
+    } else if (COMMAND_TYPE_GET_PREFIX == ulCommand) {
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
+            PInt pIntArg = (PInt) (pArg);
+            pListRes = pEntityList->GetPrefix(pIntArg->GetValue());
+        } else {
+            //If argument type is not int , copy  of same list will be return
+            pListRes = (PENTITYLIST) pEntityList->GetCopy();
+        }
+
+    } else if (COMMAND_TYPE_ADD_ELEM == ulCommand) {
+
+        MemoryManager::Inst.CreateObject(&pNullRes);
+        if (0 != pArg) {
+            pEntityList->AddElem(pArg);
+        }
+    } 
+  else if (COMMAND_TYPE_GET_NTH_ELEM == ulCommand) {
+
+
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
+            PInt pIntArg = (PInt) pArg;
+
+            pEntityRes = pEntityList->GetNthElement(pIntArg->GetValue());
+
+        } else {
+
+            pEntityRes = pEntityList->GetNthElement(0);
+        }
+
+
+    }
+  
+  
+  else {
         if (0 != p_Arg) {
             p_EntityArg = p_Arg->Execute(pContext);
         }

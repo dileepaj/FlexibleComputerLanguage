@@ -769,6 +769,10 @@
 #define     COMMAND_TYPE_GET_FIRST_ELEM                                 5016
 #define     COMMAND_TYPE_GET_LAST_ELEM                                  5017
 #define     COMMAND_TYPE_GET_NTH_ELEM                                   5018
+#define     COMMAND_TYPE_CONCAT                                         5019
+#define     COMMAND_TYPE_ADD_ELEM                                       5020
+#define     COMMAND_TYPE_GET_PREFIX                                     5021
+
 
 
 

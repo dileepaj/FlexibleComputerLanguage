@@ -170,3 +170,6 @@ DEF	GET_UNIQUE_NODE_LIST_WITH_NODE_REF			GetUniqueNodeListWithNodeRef
 DEF SET_INTEGER                 SetInteger
 DEF GET_FIRST_ELEM          GetFirstElem
 DEF GET_NTH_ELEM            GetNthElem
+DEF	STRING_ENCLOSURE_SYMBOL				"
+DEF CONCAT                  ConcatList
+

@@ -38,7 +38,9 @@
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
 #include "TestListGetFirstEelem.h"
-
+#include "TestListConcat.h"
+#include "TestListAddElem.h"
+#include "TestListGetPrefix.h"
 
 
 using namespace rapidjson;
@@ -82,11 +84,23 @@ int main(int argc, const char * argv[])
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
+
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //        TestListGetLastElem::TestListGetLastElemet();
 
-    TestListGetNthElem::TestListGetNthElement();
+    //TestListGetNthElem::TestListGetNthElement();
+
+
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//        TestListConcat::runTest();
+//        TestListAddElem::runTest();
+//        TestListGetPrefix::runTest();
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//        TestListGetLastElem::TestListGetLastElemet();
+
 
     return 0;
 }
