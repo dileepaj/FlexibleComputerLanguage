@@ -120,6 +120,7 @@ EntityList* EntityList::GetInnerCount() {
 
 PENTITY EntityList::GetFirstElement() {
     return  EntityList::front();
+
 }
 
 PENTITYLIST  EntityList::Concat(PENTITYLIST list) {
@@ -137,6 +138,7 @@ PENTITYLIST  EntityList::Concat(PENTITYLIST list) {
 void EntityList::AddElem(PENTITY pentity) {
     this->push_back(pentity);
 }
+
 //Will return, elements from the  begging
 PENTITYLIST EntityList::GetPrefix(int index){
 
@@ -159,3 +161,11 @@ PENTITYLIST EntityList::GetPrefix(int index){
     }
     return pRes;
 }
+
+
+
+PENTITY EntityList::GetlastElement(){
+
+    return EntityList::back();
+}
+

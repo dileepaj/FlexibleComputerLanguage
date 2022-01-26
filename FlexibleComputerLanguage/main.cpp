@@ -7,6 +7,7 @@
 //
 // VERSION 2
 
+#include "TestListGetLastElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -82,11 +83,15 @@ int main(int argc, const char * argv[])
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
+
         //TestListGetFirstEelem::TestListGetFirstElement();
         //TestListConcat::runTest();
         //TestListAddElem::runTest();
         TestListGetPrefix::runTest();
 
+        TestListGetFirstEelem::TestListGetFirstElement();
+
+    TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }

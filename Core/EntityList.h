@@ -28,12 +28,15 @@ public:
     void Seek(MULONG ulOffset, bool bIsNegative);
 
     PENTITY GetFirstElement();
-
     EntityList *GetInnerCount();
 
     PENTITYLIST Concat(PENTITYLIST list);
     void AddElem(PENTITY pentity);
     PENTITYLIST GetPrefix(int index);
+
+    EntityList* GetInnerCount();
+    PENTITY GetlastElement();
+
 };
 
 #endif
