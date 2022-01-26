@@ -1,0 +1,2 @@
+$LIST1.GetFirstElem:=ELEM
+$RESULT.SetValue($ELEM.ToString)
