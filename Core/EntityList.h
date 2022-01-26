@@ -33,8 +33,6 @@ public:
     PENTITYLIST Concat(PENTITYLIST list);
     void AddElem(PENTITY pentity);
     PENTITYLIST GetPrefix(int index);
-
-    EntityList* GetInnerCount();
     PENTITY GetlastElement();
 
 };

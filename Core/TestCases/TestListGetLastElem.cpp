@@ -15,7 +15,7 @@ void TestListGetLastElem::TestListGetLastElemet(){
     int id=0;
     DefFileReader dfr;
     // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("D:\\Tracified\\FCL\\FlexibleComputerLanguage\\Core\\TestCases\\files\\testLastelem\\Defs.txt");
+    MetaData *pMD = dfr.Read("..\\Core\\TestCases\\files\\testLastelem\\Defs.txt");
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
