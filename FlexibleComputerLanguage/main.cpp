@@ -84,14 +84,14 @@ int main(int argc, const char * argv[])
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
 
-        //TestListGetFirstEelem::TestListGetFirstElement();
-        //TestListConcat::runTest();
-        //TestListAddElem::runTest();
-        //TestListGetPrefix::runTest();
-
-        //TestListGetFirstEelem::TestListGetFirstElement();
-
-        //TestListGetLastElem::TestListGetLastElemet();
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//        TestListConcat::runTest();
+//        TestListAddElem::runTest();
+//        TestListGetPrefix::runTest();
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//        TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }
