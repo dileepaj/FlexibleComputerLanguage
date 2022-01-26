@@ -37,6 +37,8 @@
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
 #include "TestListGetFirstEelem.h"
+#include "TestListReverse.h"
+
 
 
 
@@ -80,10 +82,12 @@ int main(int argc, const char * argv[])
 ////    LogJsonParser::LogNodeTreetoJson(jsonroot);
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//      TestListGetLastElem::TestListGetLastElemet();
+   TestListReverse::TestRunListReverse();
 
-        TestListGetFirstEelem::TestListGetFirstElement();
-
-    TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }

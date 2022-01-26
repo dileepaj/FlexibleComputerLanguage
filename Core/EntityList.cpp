@@ -128,3 +128,8 @@ PENTITY EntityList::GetlastElement(){
     return EntityList::back();
 }
 
+void EntityList::Reverse() {
+
+    return EntityList::reverse();
+}
+

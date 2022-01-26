@@ -1779,6 +1779,14 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         pEntityRes = pEntityList-> GetlastElement();
 
     }
+
+    else if (COMMAND_TYPE_REVERSE == ulCommand) {
+
+        std::cout<< "reverse works";
+        pEntityList->Reverse();
+        MemoryManager::Inst.CreateObject(&pNullRes);
+
+    }
 	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
         MemoryManager::Inst.CreateObject(&pListRes);
         pEntityList->SeekToBegin();
