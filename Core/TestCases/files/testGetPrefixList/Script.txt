@@ -1,0 +1,12 @@
+//Inital list 1,2,4,5,6
+$LIST1.GetPrefix:=LIST2
+$LIST2.SeekToBegin
+$LIST2.GetCurrentElement:=ELEM
+$RESULT.GetStringVar:=VAL
+While($ELEM.IsNotNull)
+
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST2.GetNextElement:=ELEM
+Do
+$RESULT.SetValue($VAL)

@@ -766,7 +766,9 @@
 #define     COMMAND_TYPE_GET_LATEST_DATE                                5014
 #define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF                5015
 #define     COMMAND_TYPE_GET_FIRST_ELEM                                 5016
-
+#define     COMMAND_TYPE_CONCAT                                         5019
+#define     COMMAND_TYPE_ADD_ELEM                                       5020
+#define     COMMAND_TYPE_GET_PREFIX                                     5021
 // Special Commands
 #define		COMMAND_TYPE_ADDITIONAL_FUNCTION							10000
 #define		COMMAND_TYPE_STORE_AS_VARIABLE								10001
