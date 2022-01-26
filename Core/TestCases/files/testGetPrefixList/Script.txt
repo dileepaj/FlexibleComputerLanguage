@@ -1,5 +1,5 @@
 //Inital list 1,2,4,5,6
-$LIST1.GetPrefix:=LIST2
+$LIST1.GetPrefix(#1):=LIST2
 $LIST2.SeekToBegin
 $LIST2.GetCurrentElement:=ELEM
 $RESULT.GetStringVar:=VAL
