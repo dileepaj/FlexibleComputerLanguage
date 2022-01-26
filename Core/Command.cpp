@@ -1531,7 +1531,25 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         if (0 != pArg) {
             pEntityList->AddElem(pArg);
         }
-    } else {
+    } 
+  else if (COMMAND_TYPE_GET_NTH_ELEM == ulCommand) {
+
+
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
+            PInt pIntArg = (PInt) pArg;
+
+            pEntityRes = pEntityList->GetNthElement(pIntArg->GetValue());
+
+        } else {
+
+            pEntityRes = pEntityList->GetNthElement(0);
+        }
+
+
+    }
+  
+  
+  else {
         if (0 != p_Arg) {
             p_EntityArg = p_Arg->Execute(pContext);
         }

@@ -8,6 +8,7 @@
 // VERSION 2
 
 #include "TestListGetLastElem.h"
+#include "TestListGetNthElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -85,6 +86,13 @@ int main(int argc, const char * argv[])
 
 
 //        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//        TestListGetLastElem::TestListGetLastElemet();
+
+    //TestListGetNthElem::TestListGetNthElement();
+
+
+//        TestListGetFirstEelem::TestListGetFirstElement();
 //        TestListConcat::runTest();
 //        TestListAddElem::runTest();
 //        TestListGetPrefix::runTest();
@@ -92,6 +100,7 @@ int main(int argc, const char * argv[])
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //        TestListGetLastElem::TestListGetLastElemet();
+
 
     return 0;
 }
