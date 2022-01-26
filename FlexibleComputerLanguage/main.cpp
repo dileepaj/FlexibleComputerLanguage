@@ -85,15 +85,11 @@ int main(int argc, const char * argv[])
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
 
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//
-//        TestListGetLastElem::TestListGetLastElemet();
-
-    //TestListGetNthElem::TestListGetNthElement();
 
 
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//        TestListConcat::runTest();
+
+    //TestListGetFirstEelem::TestListGetFirstElement();
+    //TestListConcat::runTest();
 //        TestListAddElem::runTest();
 //        TestListGetPrefix::runTest();
 //

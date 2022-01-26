@@ -1,2 +1,2 @@
-$LIST1.GetLastElem:=ELEM
+$LIST1.GetFirstElem:=ELEM
 $RESULT.SetValue($ELEM.ToString)
