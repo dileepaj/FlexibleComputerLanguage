@@ -98,6 +98,6 @@ add_executable(FlexibleComputerLanguage1
         Core/TestCases/TestListGetFirstEelem.cpp 
         Core/TestCases/TestListGetFirstEelem.h 
         Core/TestCases/TestListGetLastElem.cpp 
-        Core/TestCases/TestListGetLastElem.h)
+        Core/TestCases/TestListGetLastElem.h Core/TestCases/TestListGetNthElem.cpp Core/TestCases/TestListGetNthElem.h)
 
 
