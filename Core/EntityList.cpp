@@ -119,7 +119,6 @@ PENTITY EntityList::GetNthElement(MINT index) {
                 }
             }
 
-
         ++count;
         ++ite1;
     }
@@ -146,16 +145,21 @@ void EntityList::AddElem(PENTITY pentity) {
 }
 
 //Will return, elements from the  begging
-PENTITYLIST EntityList::GetPrefix(int index){
+PENTITYLIST EntityList::GetPrefix(int numberOfElem){
 
     PENTITYLIST pRes;
     MemoryManager::Inst.CreateObject(&pRes);
     EntityList::const_iterator iterator1 = this->begin();
     EntityList::const_iterator iteratorEnd = this->end();
-    if(index >=  this->size() || index <0){
-        pRes = (PENTITYLIST)this->GetCopy();
+
+    if(numberOfElem<=0){
+        //Empty list will be return
         return pRes;
     }
+//    if(numberOfElem >=  this->size() || numberOfElem <0){
+//        pRes = (PENTITYLIST)this->GetCopy();
+//        return pRes;
+//    }
 
     MINT it = 0;
     for(;iterator1 != iteratorEnd;iterator1++){
@@ -168,6 +172,21 @@ PENTITYLIST EntityList::GetPrefix(int index){
     return pRes;
 }
 
+PENTITYLIST EntityList::GetSuffix(int index) {
+    PENTITYLIST pRes;
+    MemoryManager::Inst.CreateObject(&pRes);
+    EntityList::const_iterator iterator1 = this->begin();
+    EntityList::const_iterator iteratorEnd = this->end();
+    if(index >=  this->size() || index < 0){
+        pRes = (PENTITYLIST)this->GetCopy();
+        return pRes;
+    }
+
+    MINT count = 0;
+
+
+
+}
 
 
 PENTITY EntityList::GetlastElement(){
