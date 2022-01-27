@@ -128,3 +128,20 @@ PENTITY EntityList::GetlastElement(){
     return EntityList::back();
 }
 
+int EntityList::RemoveFromStart(int index){
+
+    iterator ite1 = this->begin();
+    const_iterator iteEnd1 = this->end();
+    int count = 1;
+    for( ; ite1 != iteEnd1; ++ite1)
+    {
+        EntityList::remove(*ite1);
+        if(count == index){
+            break;
+        }
+        count++;
+    }
+
+    return index;
+}
+

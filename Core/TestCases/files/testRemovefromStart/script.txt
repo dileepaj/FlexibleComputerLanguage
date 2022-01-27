@@ -1,0 +1,9 @@
+
+$LIST.SeekToBegin
+$LIST.GetCurrentElement:=ELEM
+$RESULT.GetStringVar:=VAL
+While($ELEM.IsNotNull)
+$LIST.GetNextElement:=ELEM
+Do
+$RESULT.SetValue($VAL)
+

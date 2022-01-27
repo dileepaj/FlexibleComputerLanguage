@@ -6,7 +6,7 @@
 //  Copyright (c) 2018 Dileepa Jayathilaka. All rights reserved.
 //
 // VERSION 2
-
+#include "TestListRemoveFromStart.h"
 #include "TestListGetLastElem.h"
 #include <iostream>
 #include <unistd.h>
@@ -81,9 +81,11 @@ int main(int argc, const char * argv[])
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 
-        TestListGetFirstEelem::TestListGetFirstElement();
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//    TestListGetLastElem::TestListGetLastElemet();
+    TestListRemoveFromStart::TestListRunRemovefromStart();
 
-    TestListGetLastElem::TestListGetLastElemet();
 
     return 0;
 }

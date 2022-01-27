@@ -1,0 +1,17 @@
+//
+// Created by Isini on 1/27/2022.
+//
+
+#ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMSTART_H
+#define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMSTART_H
+
+
+class TestListRemoveFromStart {
+
+public:
+    static void TestListRunRemovefromStart();
+
+};
+
+
+#endif //FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMSTART_H

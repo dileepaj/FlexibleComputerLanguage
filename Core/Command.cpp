@@ -1779,6 +1779,13 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         pEntityRes = pEntityList-> GetlastElement();
 
     }
+
+        else if (COMMAND_TYPE_REMOVE_FROM_START == ulCommand) {
+
+        pEntityList->RemoveFromStart(0);
+        MemoryManager::Inst.CreateObject(&pNullRes);
+
+    }
 	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
         MemoryManager::Inst.CreateObject(&pListRes);
         pEntityList->SeekToBegin();
