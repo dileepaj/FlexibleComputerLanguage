@@ -88,8 +88,8 @@ int main(int argc, const char * argv[])
 
 
 
-    //TestListGetFirstEelem::TestListGetFirstElement();
-    //TestListConcat::runTest();
+//    TestListGetFirstEelem::TestListGetFirstElement();
+//    TestListConcat::runTest();
 //        TestListAddElem::runTest();
 //        TestListGetPrefix::runTest();
 //
