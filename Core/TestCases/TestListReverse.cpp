@@ -52,9 +52,6 @@ void TestListReverse::TestRunListReverse(){
     list1->push_back(val2) ;
     list1->push_back(val3);
 
-//    list1->Reverse();
-
-
     ec.map_Var["RESULT"] = pRESULT;
     ec.map_Var["LIST"] = list1;
 

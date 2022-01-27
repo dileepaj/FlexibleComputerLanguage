@@ -23,7 +23,7 @@ public:
     PENTITY GetFirstElement();
     EntityList* GetInnerCount();
     PENTITY GetlastElement();
-    void Reverse();
+    void  ReverseList();
 };
 
 #endif

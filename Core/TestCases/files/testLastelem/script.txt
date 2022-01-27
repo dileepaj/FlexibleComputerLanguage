@@ -1,3 +1,2 @@
 $LIST.GetLastElem:=ELEM
 $RESULT.SetValue($ELEM.ToString)
-

@@ -765,10 +765,10 @@
 #define     COMMAND_TYPE_EXTRACT_NODE_LIST_TOP                          5012
 #define     COMMAND_TYPE_GET_OLDEST_DATE                                5013
 #define     COMMAND_TYPE_GET_LATEST_DATE                                5014
-#define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF                5015
+#define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF             5015
 #define     COMMAND_TYPE_GET_FIRST_ELEM                                 5016
 #define     COMMAND_TYPE_GET_LAST_ELEM                                  5017
-#define     COMMAND_TYPE_REVERSE                                        5031
+#define     COMMAND_TYPE_REVERSE_LIST                                   5031
 
 
 // Special Commands

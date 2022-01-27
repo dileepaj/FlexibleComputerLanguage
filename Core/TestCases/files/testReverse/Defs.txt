@@ -169,4 +169,4 @@ DEF	ADD_PERIOD					AddPeriod
 DEF	GET_UNIQUE_NODE_LIST_WITH_NODE_REF			GetUniqueNodeListWithNodeRef
 DEF SET_INTEGER                 SetInteger
 DEF GET_LAST_ELEM               GetLastElem
-REVERSE                         Reverse
+DEF REVERSE_LIST                Reverse

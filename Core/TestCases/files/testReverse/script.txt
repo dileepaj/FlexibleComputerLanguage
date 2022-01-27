@@ -1,4 +1,4 @@
-
+$LIST.Reverse
 $LIST.SeekToBegin
 $LIST.GetCurrentElement:=ELEM
 $RESULT.GetStringVar:=VAL
@@ -6,7 +6,6 @@ While($ELEM.IsNotNull)
 $VAL.AddPostFix($ELEM.ToString)
 $LIST.GetNextElement:=ELEM
 Do
-$VAL.Reverse
 $RESULT.SetValue($VAL)
 
 
