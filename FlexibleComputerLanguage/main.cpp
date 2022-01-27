@@ -81,9 +81,9 @@ int main(int argc, const char * argv[])
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 //
 
-      //TestNewObjectGenerator::TestNewInt();
+      TestNewObjectGenerator::TestNewInt();
       //TestNewObjectGenerator::TestNewString();
-     TestNewObjectGenerator::TestNewNode();
+     //TestNewObjectGenerator::TestNewNode();
     //TestNewObjectGenerator::TestNewBool();
 
 

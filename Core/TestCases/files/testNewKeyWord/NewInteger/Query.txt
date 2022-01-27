@@ -1,4 +1,3 @@
-//Without argument
-
-$RESULT.SetValue($NEW.Integer(5).Add($NEW.Integer(2)).ToString)
-$NEW.Integer(5).Add($NEW.Integer(2)).ToString->RESULT.SetValue
+$RESULT.GetIntegerVar:=VAL
+$VAL.Add(5.7)
+$RESULT.SetValue($VAL.ToString)
