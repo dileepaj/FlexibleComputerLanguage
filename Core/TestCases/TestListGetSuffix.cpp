@@ -1,8 +1,8 @@
 //
-// Created by Tharindu Balasooriya on 1/26/2022.
+// Created by Tharindu Balasooriya on 1/28/2022.
 //
 
-#include "TestListGetPrefix.h"
+#include "TestListGetSuffix.h"
 #include "DefFileReader.h"
 #include "ScriptReader.h"
 #include "MetaData.h"
@@ -12,11 +12,12 @@
 #include "Int.h"
 #include "Node.h"
 
-void TestListGetPrefix::runTest() {
+void TestListGetSuffix::run() {
+
     int id = 0;
     DefFileReader dfr;
     // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testGetPrefixList/Defs.txt");
+    MetaData *pMD = dfr.Read("../Core/TestCases/files/testGetSuffixList/Defs.txt");
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string

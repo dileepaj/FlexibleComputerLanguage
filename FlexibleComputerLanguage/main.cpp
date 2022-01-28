@@ -41,6 +41,7 @@
 #include "TestListConcat.h"
 #include "TestListAddElem.h"
 #include "TestListGetPrefix.h"
+#include "TestListGetSuffix.h"
 
 
 using namespace rapidjson;
@@ -91,11 +92,13 @@ int main(int argc, const char * argv[])
 //    TestListGetFirstEelem::TestListGetFirstElement();
 //    TestListConcat::runTest();
 //        TestListAddElem::runTest();
-//        TestListGetPrefix::runTest();
+         //  TestListGetPrefix::runTest();
 //
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //        TestListGetLastElem::TestListGetLastElemet();
+
+        TestListGetSuffix::run();
 
 
     return 0;

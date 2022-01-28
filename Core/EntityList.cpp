@@ -156,34 +156,50 @@ PENTITYLIST EntityList::GetPrefix(int numberOfElem){
         //Empty list will be return
         return pRes;
     }
-//    if(numberOfElem >=  this->size() || numberOfElem <0){
-//        pRes = (PENTITYLIST)this->GetCopy();
-//        return pRes;
-//    }
+    if(numberOfElem >=  this->size() || numberOfElem <0){
+        pRes = (PENTITYLIST)this->GetCopy();
+        return pRes;
+    }
 
     MINT it = 0;
     for(;iterator1 != iteratorEnd;iterator1++){
-        pRes->push_back(*iterator1);
-        if(it == index){
+
+        if(it == numberOfElem){
             break;
         }
+        pRes->push_back((*iterator1)->GetCopy());
         it++;
     }
     return pRes;
 }
 
-PENTITYLIST EntityList::GetSuffix(int index) {
+PENTITYLIST EntityList::GetSuffix(int numberOfElem) {
     PENTITYLIST pRes;
     MemoryManager::Inst.CreateObject(&pRes);
-    EntityList::const_iterator iterator1 = this->begin();
-    EntityList::const_iterator iteratorEnd = this->end();
-    if(index >=  this->size() || index < 0){
+
+    EntityList::const_reverse_iterator iterator1 = this->rbegin();
+    EntityList::const_reverse_iterator  iteratorEnd = this->rend();
+
+    if(numberOfElem<=0){
+        //Empty list will be return
+        return pRes;
+    }
+    if(numberOfElem >=  this->size() || numberOfElem <0){
         pRes = (PENTITYLIST)this->GetCopy();
         return pRes;
     }
 
-    MINT count = 0;
+    MINT it = 0;
+    for(;iterator1 != iteratorEnd;iterator1++){
 
+        if(it == numberOfElem){
+            break;
+        }
+        pRes->push_back((*iterator1)->GetCopy());
+        it++;
+    }
+    pRes->reverse();
+    return pRes;
 
 
 }
