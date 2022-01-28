@@ -23,7 +23,7 @@ public:
     PENTITY GetFirstElement();
     EntityList* GetInnerCount();
     PENTITY GetlastElement();
-    int RemoveFromStart(int index);
+    void RemoveFromStart(int numOfElements);
 };
 
 #endif

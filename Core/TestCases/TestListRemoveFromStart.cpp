@@ -55,7 +55,7 @@ void TestListRemoveFromStart::TestListRunRemovefromStart(){
     list1->push_back(val3);
     list1->push_back(val4);
 
-//    list1->RemoveFromStart(2);
+
 
     ec.map_Var["RESULT"] = pRESULT;
     ec.map_Var["LIST"] = list1;

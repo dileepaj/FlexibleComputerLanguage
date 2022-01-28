@@ -169,4 +169,4 @@ DEF	ADD_PERIOD					AddPeriod
 DEF	GET_UNIQUE_NODE_LIST_WITH_NODE_REF			GetUniqueNodeListWithNodeRef
 DEF SET_INTEGER                 SetInteger
 DEF GET_LAST_ELEM               GetLastElem
-REMOVE_FROM_START               RemoveFromStart
+DEF REMOVE_FROM_START               RemoveFromStart
