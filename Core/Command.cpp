@@ -1480,11 +1480,19 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
 	}
 	// first handle the commands that would need to access the execution context
 
-    else if (COMMAND_TYPE_GET_LAST_ELEM == ulCommand) {
+    else if (COMMAND_TYPE_REVERSE_LIST == ulCommand) {
 
+        pEntityList->ReverseList();
+        MemoryManager::Inst.CreateObject(&pNullRes);
+
+    }
+
+
+    else if (COMMAND_TYPE_GET_LAST_ELEM == ulCommand) {
         pEntityRes = pEntityList-> GetlastElement();
 
     }
+
 	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
 
         MemoryManager::Inst.CreateObject(&pListRes);

@@ -38,10 +38,12 @@
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
 #include "TestListGetFirstEelem.h"
+#include "TestListReverse.h"
 #include "TestListConcat.h"
 #include "TestListAddElem.h"
 #include "TestListGetPrefix.h"
 #include "TestListGetSuffix.h"
+
 
 
 using namespace rapidjson;
@@ -84,6 +86,11 @@ int main(int argc, const char * argv[])
 ////    LogJsonParser::LogNodeTreetoJson(jsonroot);
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+ // TestListGetLastElem::TestListGetLastElemet();
+  TestListReverse::TestRunListReverse();
 
 
 
@@ -99,6 +106,7 @@ int main(int argc, const char * argv[])
 //        TestListGetLastElem::TestListGetLastElemet();
 
         TestListGetSuffix::run();
+
 
 
     return 0;
