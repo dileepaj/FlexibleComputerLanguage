@@ -1,0 +1,27 @@
+$LIST1.SeekToBegin
+$LIST1.GetCurrentElement:=ELEM
+$RESULT.GetStringVar:=VAL
+$VAL.AddPostFix("FIRST LIST@NEWLINE")
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST1.GetNextElement:=ELEM
+Do
+$LIST2.SeekToBegin
+$LIST2.GetCurrentElement:=ELEM
+$VAL.AddPostFix("@NEWLINESECOND LIST@NEWLINE")
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST2.GetNextElement:=ELEM
+Do
+$LIST1.ConcatList($LIST2):=LIST3
+$LIST3.SeekToBegin
+$LIST3.GetCurrentElement:=ELEM
+$VAL.AddPostFix("@NEWLINECONCAT LIST@NEWLINE")
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST3.GetNextElement:=ELEM
+Do
+$RESULT.SetValue($VAL)

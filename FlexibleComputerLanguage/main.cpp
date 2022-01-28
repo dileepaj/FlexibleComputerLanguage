@@ -8,6 +8,7 @@
 // VERSION 2
 
 #include "TestListGetLastElem.h"
+#include "TestListGetNthElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -38,7 +39,10 @@
 #include "QueryTreeScript.h"
 #include "TestListGetFirstEelem.h"
 #include "TestListReverse.h"
-
+#include "TestListConcat.h"
+#include "TestListAddElem.h"
+#include "TestListGetPrefix.h"
+#include "TestListGetSuffix.h"
 
 
 
@@ -87,6 +91,22 @@ int main(int argc, const char * argv[])
 //
  // TestListGetLastElem::TestListGetLastElemet();
   TestListReverse::TestRunListReverse();
+
+
+
+
+
+//    TestListGetFirstEelem::TestListGetFirstElement();
+//    TestListConcat::runTest();
+//        TestListAddElem::runTest();
+         //  TestListGetPrefix::runTest();
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//        TestListGetLastElem::TestListGetLastElemet();
+
+        TestListGetSuffix::run();
+
 
 
     return 0;
