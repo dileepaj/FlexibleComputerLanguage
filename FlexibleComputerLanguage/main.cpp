@@ -8,6 +8,7 @@
 // VERSION 2
 #include "TestListRemoveFromStart.h"
 #include "TestListGetLastElem.h"
+#include "TestListGetNthElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -37,6 +38,11 @@
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
 #include "TestListGetFirstEelem.h"
+#include "TestListReverse.h"
+#include "TestListConcat.h"
+#include "TestListAddElem.h"
+#include "TestListGetPrefix.h"
+#include "TestListGetSuffix.h"
 
 
 
@@ -80,11 +86,33 @@ int main(int argc, const char * argv[])
 ////    LogJsonParser::LogNodeTreetoJson(jsonroot);
 //
 //    QueryTreeScript::QueryNodeTree(jsonroot);
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+ // TestListGetLastElem::TestListGetLastElemet();
+  TestListReverse::TestRunListReverse();
+
+
+
+
+
+//    TestListGetFirstEelem::TestListGetFirstElement();
+//    TestListConcat::runTest();
+//        TestListAddElem::runTest();
+         //  TestListGetPrefix::runTest();
+//
+//        TestListGetFirstEelem::TestListGetFirstElement();
+//
+//        TestListGetLastElem::TestListGetLastElemet();
+
+        TestListGetSuffix::run();
+
 
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //    TestListGetLastElem::TestListGetLastElemet();
     TestListRemoveFromStart::TestListRunRemovefromStart();
+
 
 
     return 0;

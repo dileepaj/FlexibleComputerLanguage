@@ -1,0 +1,10 @@
+//Inital list 1,2,4,5,6
+$RESULT.GetStringVar:=VAL
+$LIST1.GetPrefix(#3).GetItemCount.ToString:=COUNT
+//$LIST2.SeekToBegin
+//$LIST2.GetCurrentElement:=ELEM
+//While($ELEM.IsNotNull)
+//$VAL.AddPostFix($ELEM.ToString)
+//$LIST2.GetNextElement:=ELEM
+//Do
+$RESULT.SetValue($COUNT)

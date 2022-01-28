@@ -1,6 +1,5 @@
-
-DEF	RULE_FILE_NAME					../Core/TestCases/files/testLastelem/script.txt
-DEF	LOAD_FROM_CODE_LIBRARY			TRUE
+DEF	RULE_FILE_NAME					../Core/TestCases/files/testGetSuffixList/Script.txt
+DEF	LOAD_FROM_CODE_LIBRARY			FALSE
 DEF	CODE_LIBRARY_FILE				D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskfunction.txt
 DEF	LINE_CONTINUATION_STRING			__
 DEF	FUNCTION_SEPERATOR				.
@@ -17,6 +16,7 @@ DEF	FUNCTION_ARGUMENT				ARG
 DEF	FUNCTION_RETURN_VALUE				RET
 DEF	VARIABLE_NAME_PREFIX				$
 DEF	INTEGER_PREFIX					#
+DEF	STRING_ENCLOSURE_SYMBOL				"
 DEF	BOOL_TRUE					TRUE
 DEF	BOOL_FALSE					FALSE
 DEF	IF						If
@@ -169,4 +169,8 @@ DEF	GET_LATEST_DATE					GetLatestDate
 DEF	ADD_PERIOD					AddPeriod
 DEF	GET_UNIQUE_NODE_LIST_WITH_NODE_REF			GetUniqueNodeListWithNodeRef
 DEF SET_INTEGER                 SetInteger
-DEF GET_LAST_ELEM               GetLastElem
+DEF GET_FIRST_ELEM          GetFirstElem
+DEF CONCAT                  ConcatList
+DEF ADD_ELEM                AddElem
+DEF GET_PREFIX              GetPrefix
+DEF GET_SUFFIX              GetSuffix

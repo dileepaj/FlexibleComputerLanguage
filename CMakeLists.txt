@@ -94,10 +94,17 @@ add_executable(FlexibleComputerLanguage1
         FlexibleComputerLanguage/NamedPipeOperations.cpp
         FlexibleComputerLanguage/easylogging++.h
         FlexibleComputerLanguage/easylogging++.cc
-        FlexibleComputerLanguage/Logger.h FlexibleComputerLanguage/LogJsonParser.cpp FlexibleComputerLanguage/LogJsonParser.h FlexibleComputerLanguage/QueryExecuter.cpp FlexibleComputerLanguage/QueryExecuter.h FlexibleComputerLanguage/QueryTreeScript.cpp FlexibleComputerLanguage/QueryTreeScript.h 
+        FlexibleComputerLanguage/Logger.h FlexibleComputerLanguage/LogJsonParser.cpp FlexibleComputerLanguage/LogJsonParser.h FlexibleComputerLanguage/QueryExecuter.cpp FlexibleComputerLanguage/QueryExecuter.h FlexibleComputerLanguage/QueryTreeScript.cpp FlexibleComputerLanguage/QueryTreeScript.h  
+        Core/TestCases/TestListConcat.cpp 
+        Core/TestCases/TestListConcat.h
+        Core/TestCases/TestListAddElem.cpp
+        Core/TestCases/TestListAddElem.h 
+        Core/TestCases/TestListGetPrefix.cpp 
+        Core/TestCases/TestListGetPrefix.h
         Core/TestCases/TestListGetFirstEelem.cpp 
         Core/TestCases/TestListGetFirstEelem.h 
         Core/TestCases/TestListGetLastElem.cpp 
-        Core/TestCases/TestListGetLastElem.h Core/TestCases/TestListRemoveFromStart.cpp Core/TestCases/TestListRemoveFromStart.h)
+        Core/TestCases/TestListGetLastElem.h Core/TestCases/TestListGetNthElem.cpp Core/TestCases/TestListGetNthElem.h Core/TestCases/TestListGetSuffix.cpp Core/TestCases/TestListGetSuffix.h Core/TestCases/TestListReverse.cpp Core/TestCases/TestListReverse.h Core/TestCases/TestListRemoveFromStart.cpp Core/TestCases/TestListRemoveFromStart.h)
+
 
 

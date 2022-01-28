@@ -1,0 +1,20 @@
+$LIST1.SeekToBegin
+$LIST1.GetCurrentElement:=ELEM
+$RESULT.GetStringVar:=VAL
+$VAL.AddPostFix(BEFORE APPEND @NEWLINE)
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST1.GetNextElement:=ELEM
+Do
+$VAL.AddPostFix(@NEWLINEAFTER ADD @NEWLINE)
+$LIST1.AddElem(#7)
+$LIST1.SeekToBegin
+$LIST1.GetCurrentElement:=ELEM
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$VAL.AddPostFix(" ")
+$LIST1.GetNextElement:=ELEM
+Do
+$RESULT.SetValue($VAL)
+
