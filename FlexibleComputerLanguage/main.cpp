@@ -89,13 +89,13 @@ int main(int argc, const char * argv[])
 //
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
- // TestListGetLastElem::TestListGetLastElemet();
-  TestListReverse::TestRunListReverse();
-
-
-
-
-
+//  TestListGetLastElem::TestListGetLastElemet();
+//  TestListReverse::TestRunListReverse();
+//
+//
+//
+//
+//
 //    TestListGetFirstEelem::TestListGetFirstElement();
 //    TestListConcat::runTest();
 //        TestListAddElem::runTest();
@@ -104,8 +104,8 @@ int main(int argc, const char * argv[])
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //        TestListGetLastElem::TestListGetLastElemet();
-
-        TestListGetSuffix::run();
+//
+//        TestListGetSuffix::run();
 
 
 
