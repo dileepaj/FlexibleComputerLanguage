@@ -35,7 +35,8 @@ public:
     PENTITYLIST GetPrefix(int index);
     PENTITY GetlastElement();
 
-    PENTITY GetNthElement(MINT index);
+    PENTITY GetNthElement(MINT numberOfElem);
+    PENTITYLIST GetSuffix(int numberOfElem);
 
 };
 

@@ -1522,7 +1522,7 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
             pListRes = pEntityList->GetPrefix(pIntArg->GetValue());
         } else {
             //If argument type is not int , copy  of same list will be return
-            pListRes = (PENTITYLIST) pEntityList->GetCopy();
+            pListRes = (PENTITYLIST) pEntityList->GetPrefix(0);
         }
 
     } else if (COMMAND_TYPE_ADD_ELEM == ulCommand) {
@@ -1545,6 +1545,16 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
             pEntityRes = pEntityList->GetNthElement(0);
         }
 
+
+    }
+    else if (COMMAND_TYPE_GET_SUFFIX == ulCommand){
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
+            PInt pIntArg = (PInt) (pArg);
+            pListRes = pEntityList->GetSuffix(pIntArg->GetValue());
+        } else {
+            //If argument type is not int , empty list will be return
+            pListRes = (PENTITYLIST) pEntityList->GetSuffix(0);
+        }
 
     }
   

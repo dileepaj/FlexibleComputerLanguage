@@ -772,6 +772,7 @@
 #define     COMMAND_TYPE_CONCAT                                         5019
 #define     COMMAND_TYPE_ADD_ELEM                                       5020
 #define     COMMAND_TYPE_GET_PREFIX                                     5021
+#define     COMMAND_TYPE_GET_SUFFIX                                     5022
 
 
 
