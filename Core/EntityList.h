@@ -34,9 +34,11 @@ public:
     void AddElem(PENTITY pentity);
     PENTITYLIST GetPrefix(int index);
     PENTITY GetlastElement();
+    void RemoveFromStart(int numOfElements);
     void  ReverseList();
     PENTITY GetNthElement(MINT numberOfElem);
     PENTITYLIST GetSuffix(int numberOfElem);
+
 };
 
 #endif
