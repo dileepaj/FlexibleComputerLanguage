@@ -96,6 +96,10 @@ EntityList *EntityList::GetInnerCount() {
     }
     return pListRes;
 }
+void EntityList::ReverseList()  {
+    return  EntityList::reverse();
+
+}
 
 PENTITY EntityList::GetFirstElement() {
     return EntityList::front();
@@ -208,4 +212,6 @@ PENTITYLIST EntityList::GetSuffix(int numberOfElem) {
 PENTITY EntityList::GetlastElement(){
     return EntityList::back();
 }
+
+
 
