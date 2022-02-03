@@ -44,7 +44,7 @@
 #include "TestListGetPrefix.h"
 #include "TestListGetSuffix.h"
 #include "TestGetSublist.h"
-
+#include "TestListSplit.h"
 
 
 using namespace rapidjson;
@@ -114,7 +114,9 @@ int main(int argc, const char * argv[])
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
 
-    TestGetSublist::run();
+    //TestGetSublist::run();
+
+    TestListSplit::run();
 
 
     return 0;
