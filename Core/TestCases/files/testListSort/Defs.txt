@@ -172,5 +172,5 @@ DEF SET_INTEGER                 SetInteger
 DEF GET_FIRST_ELEM          GetFirstElem
 DEF CONCAT                  ConcatList
 DEF LIST_SPLIT              Split
-DEF LIST_SORT_ASC           SortAsc
-DEF LIST_SORT_DSC           SortDsc
+DEF LIST_SORT_ASC          SortASC
+DEF LIST_SORT_DSC         SortDSC

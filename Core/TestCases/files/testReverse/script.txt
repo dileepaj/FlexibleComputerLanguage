@@ -1,4 +1,6 @@
+
 $LIST.Reverse
+
 $LIST.SeekToBegin
 $LIST.GetCurrentElement:=ELEM
 $RESULT.GetStringVar:=VAL

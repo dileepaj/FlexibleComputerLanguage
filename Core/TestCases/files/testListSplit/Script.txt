@@ -1,3 +1,6 @@
 //Initial list 1,2,3,4,5,6
-//$LIST1.Split(3):=SPLI
-$LIST1.Split({#1,#4,#5}):=SPLI
+
+$LIST1.Split(#3):=SPLIT
+
+$LIST1.Split({#1,#4,#5}):=SPLIT
+

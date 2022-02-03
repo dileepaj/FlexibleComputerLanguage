@@ -1,6 +1,8 @@
 //Inital list 1,2,3,4,5,6
 $RESULT.GetStringVar:=VAL
+
 $LIST1.GetSubList({#7,#3}):=SUBLIST
+
 $SUBLIST.SeekToBegin
 $SUBLIST.GetCurrentElement:=ELEM
 While($ELEM.IsNotNull)
