@@ -1507,6 +1507,19 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
 
     }
 
+    else if (COMMAND_TYPE_REMOVE_ELEMENT == ulCommand) {
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
+            PInt pIntArg = (PInt) pArg;
+            pEntityList->RemoveElement(pIntArg->GetValue());
+            pListRes = pEntityList;
+
+        } else {
+            pEntityList->RemoveElement(0);
+            pListRes = pEntityList;
+        }
+
+    }
+
 	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
 
         MemoryManager::Inst.CreateObject(&pListRes);
