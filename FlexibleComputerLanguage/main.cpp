@@ -103,33 +103,20 @@ int main(int argc, const char * argv[])
 //
 //    TestListGetFirstEelem::TestListGetFirstElement();
 //    TestListConcat::runTest();
-//        TestListAddElem::runTest();
-//           TestListGetPrefix::runTest();
-//
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//
-//        TestListGetLastElem::TestListGetLastElemet();
-//
-//        TestListGetSuffix::run();
-//
-//
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//
+//    TestListAddElem::runTest();
+//    TestListGetPrefix::runTest();
+//    TestListGetFirstEelem::TestListGetFirstElement();
+//    TestListGetLastElem::TestListGetLastElemet();
+//    TestListGetSuffix::run();
+//    TestListGetFirstEelem::TestListGetFirstElement();
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
-
-      //TestListRemoveFromEnd::TestListRunRemovefromEnd();
-
-
-    //TestRemoveElement::TestListRunRemoveElement();
-
-
-    //TestGetSublist::run();
-
-    //TestListSplit::run();
-
-   // TestListSort::run();
-    TestListRemoveSublist::TestListRunRemoveSublist();
+//    TestListRemoveFromEnd::TestListRunRemovefromEnd();
+//    TestRemoveElement::TestListRunRemoveElement();
+//    TestGetSublist::run();
+//    TestListSplit::run();
+//    TestListSort::run();
+      TestListRemoveSublist::TestListRunRemoveSublist();
 
     return 0;
 }

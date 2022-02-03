@@ -281,28 +281,6 @@ void EntityList::RemoveSublist(int index, int numOfElem) {
         count++;
     }
 
-
-//    int i = 0;
-//    int count = 0;
-//
-//    while(ite1 != iteEnd1)
-//    {
-//        EntityList::const_iterator tobeRemoved = ite1;
-//        ite1++;
-//
-//        if(i == index){
-//
-//            while (count!=numOfElem-1) {
-//                this->remove(*tobeRemoved);
-//                count++;
-//            }
-//
-//        }
-//        i++;
-//
-//    }
-
-
 }
 
 
