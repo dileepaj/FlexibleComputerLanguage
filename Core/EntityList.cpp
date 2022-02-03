@@ -3,6 +3,8 @@
 #include "ExecutionContext.h"
 #include "Utils.h"
 #include "Int.h"
+#include "list"
+#include "Strings.h"
 
 EntityList::EntityList()
         : st_CurrElemPos(0) {
@@ -405,5 +407,65 @@ PENTITYLIST EntityList::Split(PENTITYLIST splitPos) {
 }
 
 
+PENTITYLIST EntityList::SortASC() {
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+    res = (PENTITYLIST) this->GetCopy();
 
+    // Sorting List using Lambda Function as comparator
+    res->sort([](const PENTITY &first, const PENTITY &second) {
+        if (first->ul_Type == ENTITY_TYPE_INT && second->ul_Type == ENTITY_TYPE_INT) {
+            PInt intFirst = (PInt) (first);
+            PInt intSecond = (PInt) (second);
+            if (intFirst->GetValue() == intSecond->GetValue())
+                return intFirst < intSecond;
+            return intFirst->GetValue() < intSecond->GetValue();
 
+        } else if (first->ul_Type == ENTITY_TYPE_STRING && second->ul_Type == ENTITY_TYPE_STRING) {
+            MSTRING stFirst = ((PString) (first))->GetValue();
+            MSTRING stSecond = ((PString) (second))->GetValue();
+            unsigned int i = 0;
+            while ((i < stFirst.length()) && (i < stSecond.length())) {
+                if (tolower(stFirst[i]) < tolower(stSecond[i])) return true;
+                else if (tolower(stFirst[i]) > tolower(stSecond[i])) return false;
+                ++i;
+            }
+            return (stFirst.length() < stSecond.length());
+        }
+
+    });
+
+    return res;
+}
+
+PENTITYLIST EntityList::SortDSC(){
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+    res = (PENTITYLIST) this->GetCopy();
+
+    // Sorting List using Lambda Function as comparator
+    res->sort([](const PENTITY &first, const PENTITY &second) {
+        if (first->ul_Type == ENTITY_TYPE_INT && second->ul_Type == ENTITY_TYPE_INT) {
+            PInt intFirst = (PInt) (first);
+            PInt intSecond = (PInt) (second);
+            if (intFirst->GetValue() == intSecond->GetValue())
+                return intFirst > intSecond;
+            return intFirst->GetValue() > intSecond->GetValue();
+
+        } else if (first->ul_Type == ENTITY_TYPE_STRING && second->ul_Type == ENTITY_TYPE_STRING) {
+            MSTRING stFirst = ((PString) (first))->GetValue();
+            MSTRING stSecond = ((PString) (second))->GetValue();
+            unsigned int i = 0;
+            while ((i < stFirst.length()) && (i < stSecond.length())) {
+                if (tolower(stFirst[i]) > tolower(stSecond[i])) return true;
+                else if (tolower(stFirst[i]) < tolower(stSecond[i])) return false;
+                ++i;
+            }
+            return (stFirst.length() > stSecond.length());
+        }
+
+    });
+
+    return res;
+
+}
