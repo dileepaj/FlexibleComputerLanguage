@@ -781,6 +781,8 @@
 #define     COMMAND_TYPE_LIST_SPLIT                                     5024
 #define     COMMAND_TYPE_LIST_SORT_ASC                                  5029
 #define     COMMAND_TYPE_LIST_SORT_DSC                                  5030
+#define     COMMAND_TYPE_REMOVE_SUBLIST                                 5027
+
 
 
 

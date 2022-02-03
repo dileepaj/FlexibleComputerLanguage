@@ -1,0 +1,9 @@
+$LIST.RemoveSublist({#1,#2})
+$LIST.SeekToBegin
+$LIST.GetCurrentElement:=ELEM
+$RESULT.GetStringVar:=VAL
+While($ELEM.IsNotNull)
+$VAL.AddPostFix($ELEM.ToString)
+$LIST.GetNextElement:=ELEM
+Do
+$RESULT.SetValue($VAL)

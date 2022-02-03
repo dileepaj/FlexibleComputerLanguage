@@ -1,0 +1,17 @@
+//
+// Created by Isini Dananjana on 1/28/2022.
+//
+
+#ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVESUBLIST
+#define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVESUBLIST_H
+
+
+class TestListRemoveSublist{
+
+public:
+
+    static void TestListRunRemoveSublist();
+};
+
+
+#endif //FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
