@@ -104,7 +104,7 @@ add_executable(FlexibleComputerLanguage1
         Core/TestCases/TestListGetFirstEelem.cpp 
         Core/TestCases/TestListGetFirstEelem.h 
         Core/TestCases/TestListGetLastElem.cpp 
-        Core/TestCases/TestListGetLastElem.h Core/TestCases/TestListGetNthElem.cpp Core/TestCases/TestListGetNthElem.h Core/TestCases/TestListGetSuffix.cpp Core/TestCases/TestListGetSuffix.h Core/TestCases/TestListReverse.cpp Core/TestCases/TestListReverse.h Core/TestCases/TestListRemoveFromStart.cpp Core/TestCases/TestListRemoveFromStart.h)
+        Core/TestCases/TestListGetLastElem.h Core/TestCases/TestListGetNthElem.cpp Core/TestCases/TestListGetNthElem.h Core/TestCases/TestListGetSuffix.cpp Core/TestCases/TestListGetSuffix.h Core/TestCases/TestListReverse.cpp Core/TestCases/TestListReverse.h Core/TestCases/TestListRemoveFromStart.cpp Core/TestCases/TestListRemoveFromStart.h Core/TestCases/TestRemoveElement.cpp Core/TestCases/TestRemoveElement.h)
 
 
 

@@ -38,6 +38,8 @@ public:
     void  ReverseList();
     PENTITY GetNthElement(MINT numberOfElem);
     PENTITYLIST GetSuffix(int numberOfElem);
+    void RemoveElement(int index);
+
 
 };
 
