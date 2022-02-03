@@ -39,6 +39,10 @@ public:
     PENTITY GetNthElement(MINT numberOfElem);
     PENTITYLIST GetSuffix(int numberOfElem);
     PENTITYLIST GetSubList(int stIndex, int numOfElem);
+    PENTITYLIST Split(int splitPos);
+    PENTITYLIST Split(PENTITYLIST splitPos);
+    
+
 
 };
 

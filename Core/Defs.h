@@ -776,7 +776,7 @@
 #define     COMMAND_TYPE_GET_PREFIX                                     5021
 #define     COMMAND_TYPE_GET_SUFFIX                                     5022
 #define     COMMAND_TYPE_GET_SUBLIST                                    5023
-
+#define     COMMAND_TYPE_LIST_SPLIT                                     5024
 
 // Special Commands
 #define		COMMAND_TYPE_ADDITIONAL_FUNCTION							10000
