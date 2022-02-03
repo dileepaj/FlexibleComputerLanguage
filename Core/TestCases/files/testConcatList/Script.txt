@@ -15,7 +15,9 @@ $VAL.AddPostFix($ELEM.ToString)
 $VAL.AddPostFix(" ")
 $LIST2.GetNextElement:=ELEM
 Do
+
 $LIST1.ConcatList($LIST2):=LIST3
+
 $LIST3.SeekToBegin
 $LIST3.GetCurrentElement:=ELEM
 $VAL.AddPostFix("@NEWLINECONCAT LIST@NEWLINE")
