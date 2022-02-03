@@ -214,26 +214,46 @@ PENTITY EntityList::GetlastElement(){
 }
 
 
-void EntityList::RemoveFromStart(int numOfElements){
+void EntityList::RemoveFromStart(int numOfElements) {
 
-    PENTITYLIST  ResList = new EntityList();
+    PENTITYLIST ResList = new EntityList();
     EntityList::const_iterator ite1 = this->begin();
     EntityList::const_iterator iteEnd1 = this->end();
 
     int count = 0;
-    while(ite1 != iteEnd1)
-    {
+    while (ite1 != iteEnd1) {
         EntityList::const_iterator tobeRemoved = ite1;
         ite1++;
 
         this->remove(*tobeRemoved);
 
-        if(count == numOfElements-1){
+        if (count == numOfElements - 1) {
             break;
         }
         count++;
 
     }
+
+}
+    void EntityList::RemoveElement(int index) {
+
+        EntityList::const_iterator ite1 = this->begin();
+        EntityList::const_iterator iteEnd1 = this->end();
+
+        int i = 0;
+        while(ite1 != iteEnd1)
+        {
+            EntityList::const_iterator tobeRemoved = ite1;
+            ite1++;
+
+
+            if(i == index){
+                this->remove(*tobeRemoved);
+                break;
+            }
+            i++;
+
+        }
 
 
 }
@@ -275,5 +295,115 @@ PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
     }
 
 }
+
+
+/*
+ * Split a list into multiple lists
+ * @param : split position
+ * */
+PENTITYLIST EntityList::Split(int splitPos) {
+
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+
+    PENTITYLIST firstSubList;
+    MemoryManager::Inst.CreateObject(&firstSubList);
+
+    PENTITYLIST secondSubList;
+    MemoryManager::Inst.CreateObject(&secondSubList);
+
+    EntityList::const_iterator  iterator1 = this->begin();
+    EntityList::const_iterator  iteratorEnd = this->end();
+
+    //TODO:Index out bound should be handle in build error analyzing stage
+    int itCount = 0;
+
+    for(;iterator1 != iteratorEnd;iterator1++){
+        if(itCount >= splitPos){
+            secondSubList->push_back((*iterator1)->GetCopy());
+        }else{
+            firstSubList->push_back((*iterator1)->GetCopy());
+        }
+        itCount++;
+    }
+
+    res->push_back(firstSubList);
+    res->push_back(secondSubList);
+
+    return res;
+
+}
+
+
+void EntityList::RemoveFromEnd(int numOfElements){
+
+    this->ReverseList();
+    EntityList::const_iterator ite1 = this->begin();
+    EntityList::const_iterator iteEnd1 = this->end();
+    int count = 0;
+    while(ite1 != iteEnd1)
+    {
+        EntityList::const_iterator tobeRemoved = ite1;
+        ite1++;
+
+        this->remove(*tobeRemoved);
+
+        if(count == numOfElements-1){
+            break;
+        }
+        count++;
+
+    }
+    this->ReverseList();
+
+}
+
+
+/*
+ * Split a list into multiple lists
+ * @param : list of split  positions
+ * */
+PENTITYLIST EntityList::Split(PENTITYLIST splitPos) {
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+
+    PENTITYLIST tempSubList;
+    MemoryManager::Inst.CreateObject(&tempSubList);
+
+    EntityList::const_iterator  iterator1 = this->begin();
+    EntityList::const_iterator  iteratorEnd = this->end();
+
+    splitPos->SeekToBegin();
+
+    int itCount = 0;
+
+    for(; iterator1 != iteratorEnd; iterator1++){
+        //Get current split postion
+        int currSplitPost = ((PInt)splitPos->GetCurrElem())->GetValue();
+
+        if(itCount == currSplitPost){
+            /*
+             * Iterator has reached to the current split post
+             * there for rest of the  elements should be included in a new temp sublist
+             * */
+             res->push_back((PENTITYLIST)tempSubList->GetCopy());
+             //clear existing elements
+             tempSubList->clear();
+             //start new sub list
+             tempSubList->push_back((*iterator1)->GetCopy());
+             splitPos->Seek(1, false);
+        }else{
+            tempSubList->push_back((*iterator1)->GetCopy());
+        }
+        itCount++;
+        if(itCount == this->size()){
+            res->push_back((PENTITYLIST)tempSubList->GetCopy());
+            tempSubList->Destroy();
+            return res;
+        }
+    }
+}
+
+
 
 

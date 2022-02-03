@@ -6,7 +6,9 @@
 //  Copyright (c) 2018 Dileepa Jayathilaka. All rights reserved.
 //
 // VERSION 2
-#include "TestListRemoveFromStart.h"
+
+#include "TestListRemoveFromEnd.h"
+#include "TestRemoveElement.h"
 #include "TestListGetLastElem.h"
 #include "TestListGetNthElem.h"
 #include <iostream>
@@ -44,7 +46,7 @@
 #include "TestListGetPrefix.h"
 #include "TestListGetSuffix.h"
 #include "TestGetSublist.h"
-
+#include "TestListSplit.h"
 
 
 using namespace rapidjson;
@@ -114,7 +116,16 @@ int main(int argc, const char * argv[])
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
 
-    TestGetSublist::run();
+      TestListRemoveFromEnd::TestListRunRemovefromEnd();
+
+
+    TestRemoveElement::TestListRunRemoveElement();
+
+
+    //TestGetSublist::run();
+
+    TestListSplit::run();
+
 
 
     return 0;
