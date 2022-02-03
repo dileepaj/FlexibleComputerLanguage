@@ -43,6 +43,8 @@ public:
     PENTITYLIST GetSubList(int stIndex, int numOfElem);
     PENTITYLIST Split(int splitPos);
     PENTITYLIST Split(PENTITYLIST splitPos);
+    PENTITYLIST SortASC();
+    PENTITYLIST SortDSC();
 
 
 

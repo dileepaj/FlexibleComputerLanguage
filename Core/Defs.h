@@ -779,6 +779,10 @@
 #define     COMMAND_TYPE_REMOVE_ELEMENT                                 5028
 #define     COMMAND_TYPE_GET_SUBLIST                                    5023
 #define     COMMAND_TYPE_LIST_SPLIT                                     5024
+#define     COMMAND_TYPE_LIST_SORT_ASC                                  5029
+#define     COMMAND_TYPE_LIST_SORT_DSC                                  5030
+
+
 
 
 // Special Commands

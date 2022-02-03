@@ -47,6 +47,7 @@
 #include "TestListGetSuffix.h"
 #include "TestGetSublist.h"
 #include "TestListSplit.h"
+#include "TestListSort.h"
 
 
 using namespace rapidjson;
@@ -116,17 +117,17 @@ int main(int argc, const char * argv[])
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
 
-      TestListRemoveFromEnd::TestListRunRemovefromEnd();
+      //TestListRemoveFromEnd::TestListRunRemovefromEnd();
 
 
-    TestRemoveElement::TestListRunRemoveElement();
+    //TestRemoveElement::TestListRunRemoveElement();
 
 
     //TestGetSublist::run();
 
-    TestListSplit::run();
+    //TestListSplit::run();
 
-
+    TestListSort::run();
 
     return 0;
 }

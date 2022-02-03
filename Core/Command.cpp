@@ -1635,6 +1635,19 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
             pListRes = pEntityList->Split(pArgList);
         }
     }
+
+    else if(COMMAND_TYPE_LIST_SORT_ASC == ulCommand){
+        if(pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST){
+            pListRes = pEntityList->SortASC();
+        }
+
+    }
+
+    else if(COMMAND_TYPE_LIST_SORT_DSC == ulCommand){
+        if(pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST){
+            pListRes = pEntityList->SortDSC();
+        }
+    }
   
   else {
         if (0 != p_Arg) {
