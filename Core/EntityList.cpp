@@ -238,4 +238,27 @@ void EntityList::RemoveFromStart(int numOfElements){
 
 }
 
+void EntityList::RemoveFromEnd(int numOfElements){
+
+    this->ReverseList();
+    EntityList::const_iterator ite1 = this->begin();
+    EntityList::const_iterator iteEnd1 = this->end();
+    int count = 0;
+    while(ite1 != iteEnd1)
+    {
+        EntityList::const_iterator tobeRemoved = ite1;
+        ite1++;
+
+        this->remove(*tobeRemoved);
+
+        if(count == numOfElements-1){
+            break;
+        }
+        count++;
+
+    }
+    this->ReverseList();
+
+}
+
 

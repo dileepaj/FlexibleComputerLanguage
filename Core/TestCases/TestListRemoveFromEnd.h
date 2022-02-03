@@ -1,0 +1,17 @@
+//
+// Created by Isini Dananjana on 1/28/2022.
+//
+
+#ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
+#define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
+
+
+class TestListRemoveFromEnd {
+
+public:
+
+    static void TestListRunRemovefromEnd();
+};
+
+
+#endif //FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
