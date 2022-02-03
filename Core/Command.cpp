@@ -1579,6 +1579,22 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         }
 
     }
+
+    else if(COMMAND_TYPE_GET_SUBLIST == ulCommand){
+        if(pArg !=0 && pArg->ul_Type == ENTITY_TYPE_LIST){
+            PENTITYLIST pArgList = (PENTITYLIST)(pArg);
+            pArgList->SeekToBegin();
+            PInt stIndex = (PInt)pArgList->GetCurrElem();
+            pArgList->Seek(1, false);
+            PInt noOfElem = (PInt)pArgList->GetCurrElem();
+            pListRes = pEntityList->GetSubList(stIndex->GetValue(),noOfElem->GetValue());
+        }else{
+            //Invalid Argument
+            PENTITYLIST pEmptyRes;
+            MemoryManager::Inst.CreateObject(&pEmptyRes);
+            pListRes = pEmptyRes;
+        }
+    }
   
   
   else {

@@ -239,3 +239,41 @@ void EntityList::RemoveFromStart(int numOfElements){
 }
 
 
+PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
+    this->SeekToBegin();
+    PENTITYLIST pRes;
+    MemoryManager::Inst.CreateObject(&pRes);
+
+    //TODO:Index out bound should be handle in build error analyzing stage
+    EntityList::const_iterator iterator1 = this->begin();
+    EntityList::const_iterator iteratorEnd = this->end();
+    for(int i = 0; i < stIndex;i++){
+        iterator1++;
+    }
+
+    int availableNumberOfElem = this->size() - stIndex;
+    if(numOfElem == 0){
+        return pRes;
+    }
+    if(numOfElem > availableNumberOfElem){
+       for(;iterator1 != iteratorEnd;iterator1++){
+           pRes->push_back((*iterator1)->GetCopy());
+       }
+        return pRes;
+    }
+
+    int count = 0;
+    if(numOfElem <= availableNumberOfElem){
+        for(;iterator1 != iteratorEnd;iterator1++){
+            pRes->push_back((*iterator1)->GetCopy());
+            count++;
+            if(count == numOfElem){
+                break;
+            }
+        }
+        return pRes;
+    }
+
+}
+
+

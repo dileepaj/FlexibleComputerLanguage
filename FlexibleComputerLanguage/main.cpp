@@ -43,6 +43,7 @@
 #include "TestListAddElem.h"
 #include "TestListGetPrefix.h"
 #include "TestListGetSuffix.h"
+#include "TestGetSublist.h"
 
 
 
@@ -113,6 +114,7 @@ int main(int argc, const char * argv[])
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
 
+    TestGetSublist::run();
 
 
     return 0;

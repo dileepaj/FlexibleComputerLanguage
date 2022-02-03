@@ -545,5 +545,6 @@ void DefFileReader::AddFuncNames(MetaData* pMD, MSTRING sKey, MSTRING sVal) {
     ADD_FUNC_NAME(ADD_ELEM)
     ADD_FUNC_NAME(GET_PREFIX)
     ADD_FUNC_NAME(GET_SUFFIX)
+    ADD_FUNC_NAME(GET_SUBLIST)
 
 }
