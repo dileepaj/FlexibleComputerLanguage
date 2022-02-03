@@ -1,2 +1,4 @@
-$NEW.Node({val,valL,valR}):=NodeA
+
+$NEW.Node:=NodeA
+
 $RESULT.SetValue($NodeA.GetRValue)
