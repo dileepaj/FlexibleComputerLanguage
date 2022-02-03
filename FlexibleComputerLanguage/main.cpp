@@ -6,6 +6,8 @@
 //  Copyright (c) 2018 Dileepa Jayathilaka. All rights reserved.
 //
 // VERSION 2
+
+#include "TestListRemoveFromEnd.h"
 #include "TestRemoveElement.h"
 #include "TestListGetLastElem.h"
 #include "TestListGetNthElem.h"
@@ -113,6 +115,9 @@ int main(int argc, const char * argv[])
 //
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
+
+      TestListRemoveFromEnd::TestListRunRemovefromEnd();
+
 
     TestRemoveElement::TestListRunRemoveElement();
 
