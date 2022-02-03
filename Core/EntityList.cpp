@@ -259,3 +259,125 @@ void EntityList::RemoveFromStart(int numOfElements) {
 }
 
 
+PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
+    this->SeekToBegin();
+    PENTITYLIST pRes;
+    MemoryManager::Inst.CreateObject(&pRes);
+
+    //TODO:Index out bound should be handle in build error analyzing stage
+    EntityList::const_iterator iterator1 = this->begin();
+    EntityList::const_iterator iteratorEnd = this->end();
+    for(int i = 0; i < stIndex;i++){
+        iterator1++;
+    }
+
+    int availableNumberOfElem = this->size() - stIndex;
+    if(numOfElem == 0){
+        return pRes;
+    }
+    if(numOfElem > availableNumberOfElem){
+       for(;iterator1 != iteratorEnd;iterator1++){
+           pRes->push_back((*iterator1)->GetCopy());
+       }
+        return pRes;
+    }
+
+    int count = 0;
+    if(numOfElem <= availableNumberOfElem){
+        for(;iterator1 != iteratorEnd;iterator1++){
+            pRes->push_back((*iterator1)->GetCopy());
+            count++;
+            if(count == numOfElem){
+                break;
+            }
+        }
+        return pRes;
+    }
+
+}
+
+
+/*
+ * Split a list into multiple lists
+ * @param : split position
+ * */
+PENTITYLIST EntityList::Split(int splitPos) {
+
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+
+    PENTITYLIST firstSubList;
+    MemoryManager::Inst.CreateObject(&firstSubList);
+
+    PENTITYLIST secondSubList;
+    MemoryManager::Inst.CreateObject(&secondSubList);
+
+    EntityList::const_iterator  iterator1 = this->begin();
+    EntityList::const_iterator  iteratorEnd = this->end();
+
+    //TODO:Index out bound should be handle in build error analyzing stage
+    int itCount = 0;
+
+    for(;iterator1 != iteratorEnd;iterator1++){
+        if(itCount >= splitPos){
+            secondSubList->push_back((*iterator1)->GetCopy());
+        }else{
+            firstSubList->push_back((*iterator1)->GetCopy());
+        }
+        itCount++;
+    }
+
+    res->push_back(firstSubList);
+    res->push_back(secondSubList);
+
+    return res;
+
+}
+
+/*
+ * Split a list into multiple lists
+ * @param : list of split  positions
+ * */
+PENTITYLIST EntityList::Split(PENTITYLIST splitPos) {
+    PENTITYLIST res;
+    MemoryManager::Inst.CreateObject(&res);
+
+    PENTITYLIST tempSubList;
+    MemoryManager::Inst.CreateObject(&tempSubList);
+
+    EntityList::const_iterator  iterator1 = this->begin();
+    EntityList::const_iterator  iteratorEnd = this->end();
+
+    splitPos->SeekToBegin();
+
+    int itCount = 0;
+
+    for(; iterator1 != iteratorEnd; iterator1++){
+        //Get current split postion
+        int currSplitPost = ((PInt)splitPos->GetCurrElem())->GetValue();
+
+        if(itCount == currSplitPost){
+            /*
+             * Iterator has reached to the current split post
+             * there for rest of the  elements should be included in a new temp sublist
+             * */
+             res->push_back((PENTITYLIST)tempSubList->GetCopy());
+             //clear existing elements
+             tempSubList->clear();
+             //start new sub list
+             tempSubList->push_back((*iterator1)->GetCopy());
+             splitPos->Seek(1, false);
+        }else{
+            tempSubList->push_back((*iterator1)->GetCopy());
+        }
+        itCount++;
+        if(itCount == this->size()){
+            res->push_back((PENTITYLIST)tempSubList->GetCopy());
+            tempSubList->Destroy();
+            return res;
+        }
+    }
+}
+
+
+
