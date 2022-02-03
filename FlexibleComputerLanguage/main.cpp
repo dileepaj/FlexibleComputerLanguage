@@ -48,6 +48,7 @@
 #include "TestGetSublist.h"
 #include "TestListSplit.h"
 #include "TestListSort.h"
+#include "TestListRemoveSubList.h"
 
 
 using namespace rapidjson;
@@ -127,7 +128,8 @@ int main(int argc, const char * argv[])
 
     //TestListSplit::run();
 
-    TestListSort::run();
+   // TestListSort::run();
+    TestListRemoveSublist::TestListRunRemoveSublist();
 
     return 0;
 }

@@ -260,6 +260,51 @@ void EntityList::RemoveFromStart(int numOfElements) {
 
 }
 
+void EntityList::RemoveSublist(int index, int numOfElem) {
+
+    EntityList::const_iterator ite1 = this->begin();
+    EntityList::const_iterator iteEnd1 = this->end();
+
+    int count=0;
+
+    for(;ite1 != iteEnd1;){
+
+        EntityList::const_iterator tobeRemoved = ite1;
+        ite1++;
+        if(count>=index){
+            this->remove(*tobeRemoved);
+            numOfElem--;
+            if(numOfElem==0){
+                break;
+            }
+        }
+        count++;
+    }
+
+
+//    int i = 0;
+//    int count = 0;
+//
+//    while(ite1 != iteEnd1)
+//    {
+//        EntityList::const_iterator tobeRemoved = ite1;
+//        ite1++;
+//
+//        if(i == index){
+//
+//            while (count!=numOfElem-1) {
+//                this->remove(*tobeRemoved);
+//                count++;
+//            }
+//
+//        }
+//        i++;
+//
+//    }
+
+
+}
+
 
 PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
     this->SeekToBegin();

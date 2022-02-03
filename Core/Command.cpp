@@ -1533,6 +1533,23 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
         }
 
     }
+    else if (COMMAND_TYPE_REMOVE_SUBLIST== ulCommand) {
+        if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST) {
+            PENTITYLIST pArgList = (PENTITYLIST)(pArg);
+            pArgList->SeekToBegin();
+            PInt stIndex = (PInt)pArgList->GetCurrElem();
+            pArgList->Seek(1, false);
+            PInt noOfElem = (PInt)pArgList->GetCurrElem();
+            pEntityList->RemoveSublist(stIndex->GetValue(),noOfElem->GetValue());
+            pListRes = pEntityList;
+
+
+        } else {
+            pEntityList->RemoveSublist(0,0);
+            pListRes = pEntityList;
+        }
+
+    }
 
 	else if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
 

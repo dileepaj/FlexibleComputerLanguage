@@ -45,6 +45,7 @@ public:
     PENTITYLIST Split(PENTITYLIST splitPos);
     PENTITYLIST SortASC();
     PENTITYLIST SortDSC();
+    void RemoveSublist(int stIndex, int numOfElem);
 
 
 
