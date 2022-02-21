@@ -48,7 +48,7 @@
 #include "TestGetSublist.h"
 #include "TestListSplit.h"
 #include "TestListSort.h"
-
+#include "TestListRemoveFromStart.h"
 
 using namespace rapidjson;
 using json = nlohmann::json;
@@ -92,30 +92,31 @@ int main(int argc, const char * argv[])
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 //
 //        TestListGetFirstEelem::TestListGetFirstElement();
-//
-//  TestListGetLastElem::TestListGetLastElemet();
-//  TestListReverse::TestRunListReverse();
+
+    //TestListGetLastElem::TestListGetLastElemet();
+  //TestListReverse::TestRunListReverse();
 //
 //
 //
 //
 //
 //    TestListGetFirstEelem::TestListGetFirstElement();
-//    TestListConcat::runTest();
-//        TestListAddElem::runTest();
-//           TestListGetPrefix::runTest();
+    //TestListConcat::runTest();
+        TestListAddElem::runTest();
+          // TestListGetPrefix::runTest();
 //
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //        TestListGetLastElem::TestListGetLastElemet();
 //
 //        TestListGetSuffix::run();
-//
+
 //
 //        TestListGetFirstEelem::TestListGetFirstElement();
 //
 //    TestListGetLastElem::TestListGetLastElemet();
 //    TestListRemoveFromStart::TestListRunRemovefromStart();
+//    TestRemoveElement::TestListRunRemoveElement();
 
       //TestListRemoveFromEnd::TestListRunRemovefromEnd();
 
@@ -126,8 +127,8 @@ int main(int argc, const char * argv[])
     //TestGetSublist::run();
 
     //TestListSplit::run();
-
-    TestListSort::run();
+//
+//    TestListSort::run();
 
     return 0;
 }

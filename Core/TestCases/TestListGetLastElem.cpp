@@ -47,10 +47,16 @@ void TestListGetLastElem::TestListGetLastElemet(){
     val2 ->SetValue(2);
     PInt val3 = new Int();
     val3 ->SetValue(3);
+    PInt val4 = new Int();
+    val4 ->SetValue(4);
+    PInt val5 = new Int();
+    val5 ->SetValue(5);
 
     list1->push_back(val1);
     list1->push_back(val2) ;
     list1->push_back(val3);
+    list1->push_back(val4);
+    list1->push_back(val5);
 
 
     ec.map_Var["RESULT"] = pRESULT;

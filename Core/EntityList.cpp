@@ -146,8 +146,9 @@ PENTITYLIST  EntityList::Concat(PENTITYLIST list) {
     return pRes;
 }
 
-void EntityList::AddElem(PENTITY pentity) {
+PENTITY EntityList::AddElem(PENTITY pentity) {
     this->push_back(pentity);
+    return this;
 }
 
 //Will return, elements from the  begging

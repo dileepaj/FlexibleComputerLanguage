@@ -31,7 +31,7 @@ public:
     EntityList *GetInnerCount();
 
     PENTITYLIST Concat(PENTITYLIST list);
-    void AddElem(PENTITY pentity);
+    PENTITY AddElem(PENTITY pentity);
     PENTITYLIST GetPrefix(int index);
     PENTITY GetlastElement();
     void RemoveFromStart(int numOfElements);

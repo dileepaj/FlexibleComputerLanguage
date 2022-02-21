@@ -1,4 +1,4 @@
-$LIST.RemoveElement(#3)
+$LIST.RemoveElement(#1)
 $LIST.SeekToBegin
 $LIST.GetCurrentElement:=ELEM
 $RESULT.GetStringVar:=VAL

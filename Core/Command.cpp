@@ -1576,9 +1576,9 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
 
     } else if (COMMAND_TYPE_ADD_ELEM == ulCommand) {
 
-        MemoryManager::Inst.CreateObject(&pNullRes);
+        //MemoryManager::Inst.CreateObject(&pNullRes);
         if (0 != pArg) {
-            pEntityList->AddElem(pArg);
+            pListRes = (PENTITYLIST)pEntityList->AddElem(pArg);
         }
     } 
   else if (COMMAND_TYPE_GET_NTH_ELEM == ulCommand) {
