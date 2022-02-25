@@ -1,0 +1,2 @@
+$LIST1.SortAsc:=ASC_SORTED
+$LIST1.SortDsc:=DSC_SORTED
