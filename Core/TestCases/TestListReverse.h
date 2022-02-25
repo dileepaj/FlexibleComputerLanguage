@@ -4,12 +4,12 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREVERSE_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREVERSE_H
+#include "TestCaseBase.h"
 
-
-class TestListReverse{
+class TestListReverse :public  TestCaseBase{
 
 public:
-    static void TestRunListReverse();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

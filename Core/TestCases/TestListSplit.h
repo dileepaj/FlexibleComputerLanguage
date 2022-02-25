@@ -5,10 +5,12 @@
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTSPLIT_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTSPLIT_H
 
+#include "TestCaseBase.h"
 
-class TestListSplit {
+class TestListSplit : public  TestCaseBase{
+
 public:
-    static void run();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

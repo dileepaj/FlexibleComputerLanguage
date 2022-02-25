@@ -1,10 +1,1 @@
-$LIST1.AddElem(#12).AddElem(#5).AddElem(#7)
-$LIST1.SeekToBegin
-$LIST1.GetCurrentElement:=ELEM
-$RESULT.GetStringVar:=VAL
-While($ELEM.IsNotNull)
-$VAL.AddPostFix($ELEM.ToString)
-$VAL.AddPostFix(@NEWLINE)
-$LIST1.GetNextElement:=ELEM
-Do
-$RESULT.SetValue($VAL)
+$LIST1.AddElem(4)

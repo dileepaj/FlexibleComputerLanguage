@@ -11,29 +11,31 @@
 #include "EntityList.h"
 #include "Int.h"
 
-void TestListGetLastElem::TestListGetLastElemet(){
-    int id=0;
+
+TestCaseExecutionResult TestListGetLastElem::Execute(TestCaseArgument *arg) {
+
+    TestCaseExecutionResult res;
+    int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("..\\Core\\TestCases\\files\\testLastelem\\Defs.txt");
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testLastelem/Defs.txt));
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
     std::ifstream queryFile(pMD->s_RuleFileName);
     std::string query = "";
     std::string qline = "";
-    while (getline(queryFile, qline))
-    {
+    while (getline(queryFile, qline)) {
         query += qline;
         query += "\n";
     }
 
-
     bool bSucc = sr.ProcessScript(pMD, op, query);
-    if (!bSucc)
-    {
-        std::wcout << "\nFailed to read script\n";
+    if (!bSucc) {
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
+
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
     ec.p_MD = pMD;
@@ -42,27 +44,41 @@ void TestListGetLastElem::TestListGetLastElemet(){
     MemoryManager::Inst.CreateObject(&list1);
 
     PInt val1 = new Int();
-    val1 ->SetValue(1);
+    val1->SetValue(1);
     PInt val2 = new Int();
-    val2 ->SetValue(2);
+    val2->SetValue(2);
     PInt val3 = new Int();
-    val3 ->SetValue(3);
-    PInt val4 = new Int();
-    val4 ->SetValue(4);
-    PInt val5 = new Int();
-    val5 ->SetValue(5);
+    val3->SetValue(3);
 
-    list1->push_back(val1);
-    list1->push_back(val2) ;
-    list1->push_back(val3);
-    list1->push_back(val4);
-    list1->push_back(val5);
-
+    list1->AddElem(val1);
+    list1->AddElem(val2);
+    list1->AddElem(val3);
 
     ec.map_Var["RESULT"] = pRESULT;
-    ec.map_Var["LIST"] = list1;
+    ec.map_Var["LIST1"] = list1;
+
+
 
     op.p_ETL->Execute(&ec);
-    pRESULT->GetAggregatedValue();
-    std::cout<<pRESULT->GetAggregatedValue();
+
+
+    if (list1->size() != 3) {
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+    PInt lastInt =  (PInt)ec.map_Var["ELEM"];
+
+    if (3 != lastInt->GetValue()) {
+        res.succ = false;
+        res.message = _MSTR(List Get Last element failed Incorrect output);
+        return res;
+    }
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
+
 }

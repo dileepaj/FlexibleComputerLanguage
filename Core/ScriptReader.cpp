@@ -392,6 +392,9 @@ void ScriptReader::GetCommandElements(MSTRING sCommand, VEC_CE& vecCE, MetaData*
                         {
                             ce.e_Type = CET_VarName;
                             ce.s_Str = sStr.substr(pMD->s_VarNamePrefix.length(), sStr.length() - pMD->s_VarNamePrefix.length());
+                        }else if(std::all_of(sStr.begin(), sStr.end(), ::isdigit) || (Utils::IsStringPrefix(sStr,"-") && std::all_of(sStr.begin()+1,sStr.end(),::isdigit))){
+                            ce.e_Type = CET_Int;
+                            ce.s_Str = sStr;
                         }
                         else if(Utils::IsStringPrefix(sStr, pMD->s_IntPrefix))
                         {

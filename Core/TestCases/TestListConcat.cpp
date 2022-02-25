@@ -12,11 +12,12 @@
 #include "Int.h"
 #include "Node.h"
 
-void TestListConcat::runTest() {
+TestCaseExecutionResult TestListConcat::Execute(TestCaseArgument *arg) {
+
+    TestCaseExecutionResult res;
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testConcatList/Defs.txt");
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testConcatList/Defs.txt));
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -28,15 +29,17 @@ void TestListConcat::runTest() {
         query += "\n";
     }
 
-
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
+
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
     ec.p_MD = pMD;
-    Node *pRESULT = MemoryManager::Inst.CreateNode(++id);
+
     PENTITYLIST list1;
     MemoryManager::Inst.CreateObject(&list1);
     PENTITYLIST list2;
@@ -65,10 +68,23 @@ void TestListConcat::runTest() {
     list2->push_back(val6);
 
 
-    ec.map_Var["RESULT"] = pRESULT;
+
     ec.map_Var["LIST1"] = list1;
     ec.map_Var["LIST2"] = list2;
 
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+    PENTITYLIST pResultList =(PENTITYLIST) ec.map_Var["RESULT"];
+
+    if(pResultList->size() != list1->size() + list2->size()){
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
+
 }

@@ -5,11 +5,12 @@
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTGETSUBLIST_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTGETSUBLIST_H
 
+#include "TestCaseBase.h"
 
-class TestGetSublist {
+class TestGetSublist : public  TestCaseBase{
 
 public:
-    static void run();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 };
 
 

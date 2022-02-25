@@ -5,12 +5,13 @@
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETSUFFIX_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETSUFFIX_H
 
-
-class TestListGetSuffix {
-
+#include "TestCaseBase.h"
+class TestListGetSuffix : public TestCaseBase{
 public:
-    static void run();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
+
 };
+
 
 
 #endif //FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETSUFFIX_H

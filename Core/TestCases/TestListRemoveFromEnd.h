@@ -4,13 +4,12 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMEND_H
+#include "TestCaseBase.h"
 
-
-class TestListRemoveFromEnd {
+class TestListRemoveFromEnd : public  TestCaseBase{
 
 public:
-
-    static void TestListRunRemovefromEnd();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 };
 
 

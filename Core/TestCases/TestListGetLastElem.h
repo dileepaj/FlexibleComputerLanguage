@@ -4,13 +4,12 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETLASTELEM_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETLASTELEM_H
+#include "TestCaseBase.h"
 
-
-class TestListGetLastElem {
+class TestListGetLastElem : public TestCaseBase{
 
 public:
-    static void TestListGetLastElemet();
-
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 };
 
 

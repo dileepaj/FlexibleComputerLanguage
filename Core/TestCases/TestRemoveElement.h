@@ -5,11 +5,11 @@
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMSTART_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTREMOVEFROMSTART_H
 
-
-class TestRemoveElement {
+#include "TestCaseBase.h"
+class TestRemoveElement : public  TestCaseBase{
 
 public:
-    static void TestListRunRemoveElement();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

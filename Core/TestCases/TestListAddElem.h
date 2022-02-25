@@ -4,11 +4,11 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTADDELEM_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTADDELEM_H
+#include "TestCaseBase.h"
 
-
-class TestListAddElem {
+class TestListAddElem : public TestCaseBase {
 public:
-    static void runTest();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

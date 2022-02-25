@@ -12,11 +12,11 @@
 #include "Int.h"
 #include "Node.h"
 
-void TestListGetPrefix::runTest() {
+TestCaseExecutionResult TestListGetPrefix::Execute(TestCaseArgument *arg) {
+    TestCaseExecutionResult res;
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testGetPrefixList/Defs.txt");
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testGetPrefixList/Defs.txt));;
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -29,9 +29,12 @@ void TestListGetPrefix::runTest() {
     }
 
 
+
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
@@ -64,5 +67,31 @@ void TestListGetPrefix::runTest() {
     ec.map_Var["RESULT"] = pRESULT;
     ec.map_Var["LIST1"] = list1;
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+    PENTITYLIST prefixList = (PENTITYLIST)ec.map_Var["LIST2"];
+
+    if(prefixList->size() != 3){
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+    PInt firstResultElem;
+    PInt lastResultElem;
+
+    prefixList->SeekToBegin();
+    firstResultElem = (PInt)prefixList->GetCurrElem();
+    prefixList->SeekToEnd();
+    lastResultElem = (PInt)prefixList->GetCurrElem();
+
+
+
+    if( 8 != firstResultElem->GetValue() && 3 != lastResultElem->GetValue()){
+        res.succ = false;
+        res.message = _MSTR(List prefix failed);
+        return res;
+    }
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
 }

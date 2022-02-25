@@ -11,11 +11,12 @@
 #include "EntityList.h"
 #include "Int.h"
 
-void TestRemoveElement::TestListRunRemoveElement(){
+TestCaseExecutionResult TestRemoveElement::Execute(TestCaseArgument *arg) {
+    TestCaseExecutionResult res;
     int id=0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testRemoveElement/Defs.txt");
+
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testRemoveElement/Defs.txt));;
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -30,10 +31,13 @@ void TestRemoveElement::TestListRunRemoveElement(){
 
 
     bool bSucc = sr.ProcessScript(pMD, op, query);
-    if (!bSucc)
-    {
-        std::wcout << "\nFailed to read script\n";
+
+    if (!bSucc) {
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
+
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
     ec.p_MD = pMD;
@@ -61,6 +65,26 @@ void TestRemoveElement::TestListRunRemoveElement(){
     ec.map_Var["LIST"] = list1;
 
     op.p_ETL->Execute(&ec);
-    pRESULT->GetAggregatedValue();
-    std::cout<<pRESULT->GetAggregatedValue();
+
+    if(list1->size() != 3){
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+    list1->SeekToBegin();
+    PInt newFirstElem =  (PInt)list1->GetCurrElem();
+
+    if(newFirstElem->GetValue() != 2){
+        res.succ = false;
+        res.message = _MSTR(List remove failed);
+        return res;
+
+    }
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
+
 }

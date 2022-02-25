@@ -1,21 +1,24 @@
 //
-// Created by Isini Dananjana on 1/24/2022.
+// Created by Isini Danjana on 2/24/2022.
 //
 
-#include <DefFileReader.h>
-#include <ScriptReader.h>
-#include "TestListRemoveFromStart.h"
+#include "TestRemoveFromStart.h"
+#include "iostream"
+#include "DefFileReader.h"
+#include "ScriptReader.h"
 #include "MetaData.h"
 #include "ExecutionContext.h"
-#include "Node.h"
+#include "MemMan.h"
 #include "EntityList.h"
 #include "Int.h"
+#include "Node.h"
 
-void TestListRemoveFromStart::TestListRunRemovefromStart(){
+TestCaseExecutionResult TestRemoveFromStart::Execute(TestCaseArgument* arg){
+    TestCaseExecutionResult res;
     int id=0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testRemovefromStart/Defs.txt");
+
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testRemovefromStart/Defs.txt));
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -30,9 +33,11 @@ void TestListRemoveFromStart::TestListRunRemovefromStart(){
 
 
     bool bSucc = sr.ProcessScript(pMD, op, query);
-    if (!bSucc)
-    {
-        std::wcout << "\nFailed to read script\n";
+    if (!bSucc) {
+
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
@@ -61,6 +66,28 @@ void TestListRemoveFromStart::TestListRunRemovefromStart(){
     ec.map_Var["LIST"] = list1;
 
     op.p_ETL->Execute(&ec);
-    pRESULT->GetAggregatedValue();
-    std::cout<<pRESULT->GetAggregatedValue();
+
+
+    if (list1->size() != 1) {
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+
+    //check existing elements , after removing three elements form start
+    list1->SeekToBegin();
+    PInt existingElem = (PInt)list1->GetCurrElem();
+
+    if (existingElem->GetValue()  != 4) {
+        res.succ = false;
+        res.message = _MSTR(Remove Element failed);
+        return res;
+    }
+
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
 }

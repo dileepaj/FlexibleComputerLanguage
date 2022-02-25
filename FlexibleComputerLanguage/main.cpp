@@ -7,10 +7,6 @@
 //
 // VERSION 2
 
-#include "TestListRemoveFromEnd.h"
-#include "TestRemoveElement.h"
-#include "TestListGetLastElem.h"
-#include "TestListGetNthElem.h"
 #include <iostream>
 #include <unistd.h>
 #include <fcntl.h>
@@ -39,16 +35,8 @@
 #include "EntityList.h"
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
-#include "TestListGetFirstEelem.h"
-#include "TestListReverse.h"
-#include "TestListConcat.h"
-#include "TestListAddElem.h"
-#include "TestListGetPrefix.h"
-#include "TestListGetSuffix.h"
-#include "TestGetSublist.h"
-#include "TestListSplit.h"
-#include "TestListSort.h"
-#include "TestListRemoveFromStart.h"
+
+
 
 using namespace rapidjson;
 using json = nlohmann::json;
@@ -58,77 +46,41 @@ INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, const char * argv[])
 {
-//    std::cout << "Started\n";
-//    //Tests tt;
-//   // tt.RunTest6();
-//    std::string line;
-//    std::string jsonline;
-//    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
-//    if (jsonfile.is_open())
+    std::cout << "Started\n";
+    //Tests tt;
+    // tt.RunTest6();
+    std::string line;
+    std::string jsonline;
+    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
+    if (jsonfile.is_open())
+    {
+        getline (jsonfile,line);
+        jsonline = line;
+        jsonfile.close();
+    }
+    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
+
+//    std::string scriptline;
+//    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
+//    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
+//    std::string script="";
+//
+//    while(getline(scriptfile,scriptline))
 //    {
-//        getline (jsonfile,line);
-//        jsonline = line;
-//        jsonfile.close();
+//        script+=scriptline;
+//        script+="\n";
 //    }
-//    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
 //
-////    std::string scriptline;
-////    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
-////    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
-////    std::string script="";
-////
-////    while(getline(scriptfile,scriptline))
-////    {
-////        script+=scriptline;
-////        script+="\n";
-////    }
-////
-////    std::string res = QueryExecuter::run(jsonroot,script);
-////    std::cout << "\n";
-////    std::cout <<res;
-////
-////    LogJsonParser::LogNodeTreetoJson(jsonroot);
+//    std::string res = QueryExecuter::run(jsonroot,script);
+//    std::cout << "\n";
+//    std::cout <<res;
 //
-//    QueryTreeScript::QueryNodeTree(jsonroot);
-//
-//        TestListGetFirstEelem::TestListGetFirstElement();
+//    LogJsonParser::LogNodeTreetoJson(jsonroot);
 
-    //TestListGetLastElem::TestListGetLastElemet();
-  //TestListReverse::TestRunListReverse();
-//
-//
-//
-//
-//
-//    TestListGetFirstEelem::TestListGetFirstElement();
-    //TestListConcat::runTest();
-        TestListAddElem::runTest();
-          // TestListGetPrefix::runTest();
-//
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//
-//        TestListGetLastElem::TestListGetLastElemet();
-//
-//        TestListGetSuffix::run();
-
-//
-//        TestListGetFirstEelem::TestListGetFirstElement();
-//
-//    TestListGetLastElem::TestListGetLastElemet();
-//    TestListRemoveFromStart::TestListRunRemovefromStart();
-//    TestRemoveElement::TestListRunRemoveElement();
-
-      //TestListRemoveFromEnd::TestListRunRemovefromEnd();
+    QueryTreeScript::QueryNodeTree(jsonroot);
 
 
-    //TestRemoveElement::TestListRunRemoveElement();
 
-
-    //TestGetSublist::run();
-
-    //TestListSplit::run();
-//
-//    TestListSort::run();
 
     return 0;
 }

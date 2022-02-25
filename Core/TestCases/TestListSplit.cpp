@@ -13,11 +13,12 @@
 #include "Node.h"
 
 
-void TestListSplit::run() {
+TestCaseExecutionResult TestListSplit::Execute(TestCaseArgument *arg)  {
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testListSplit/Defs.txt");
+    TestCaseExecutionResult res;
+
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testListSplit/Defs.txt));
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -32,16 +33,20 @@ void TestListSplit::run() {
 
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
+
+
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
     ec.p_MD = pMD;
     Node *pRESULT = MemoryManager::Inst.CreateNode(++id);
     PENTITYLIST list1;
     MemoryManager::Inst.CreateObject(&list1);
-    PENTITYLIST list2;
-    MemoryManager::Inst.CreateObject(&list2);
+
 
     PInt val1 = new Int();
     val1->SetValue(1);
@@ -68,8 +73,19 @@ void TestListSplit::run() {
 
     ec.map_Var["RESULT"] = pRESULT;
     ec.map_Var["LIST1"] = list1;
-    ec.map_Var["LIST2"] = list2;
+
 
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+    PENTITYLIST pResList = (PENTITYLIST)ec.map_Var["SPLITLIST"];
+
+    if(pResList->size() != 4){
+        res.succ = false;
+        res.message = _MSTR(List split failed);
+        return res;
+    }
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
 }

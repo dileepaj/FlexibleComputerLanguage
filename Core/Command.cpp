@@ -1482,8 +1482,8 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
 
     else if (COMMAND_TYPE_REVERSE_LIST == ulCommand) {
 
-        pEntityList->ReverseList();
-        MemoryManager::Inst.CreateObject(&pNullRes);
+        pListRes = pEntityList->ReverseList();
+
 
     }
 
@@ -1497,12 +1497,12 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
     else if (COMMAND_TYPE_REMOVE_FROM_START == ulCommand) {
         if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
             PInt pIntArg = (PInt) pArg;
-            pEntityList->RemoveFromStart(pIntArg->GetValue());
-            pListRes = pEntityList;
+
+            pListRes = pEntityList->RemoveFromStart(pIntArg->GetValue());
 
         } else {
-            pEntityList->RemoveFromStart(0);
-            pListRes = pEntityList;
+
+            pListRes = pEntityList->RemoveFromStart(0);
         }
 
     }
@@ -1511,12 +1511,11 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
     else if (COMMAND_TYPE_REMOVE_ELEMENT == ulCommand) {
         if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
             PInt pIntArg = (PInt) pArg;
-            pEntityList->RemoveElement(pIntArg->GetValue());
-            pListRes = pEntityList;
+            pListRes = pEntityList->RemoveElement(pIntArg->GetValue());
 
         } else {
-            pEntityList->RemoveElement(0);
-            pListRes = pEntityList;
+
+            pListRes = pEntityList->RemoveElement(0);
         }
 
     }
@@ -1524,12 +1523,12 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
   else if (COMMAND_TYPE_REMOVE_FROM_END == ulCommand) {
         if (pArg != 0 && pArg->ul_Type == ENTITY_TYPE_INT) {
             PInt pIntArg = (PInt) pArg;
-            pEntityList->RemoveFromEnd(pIntArg->GetValue());
-            pListRes = pEntityList;
+
+            pListRes =  pEntityList->RemoveFromEnd(pIntArg->GetValue());
 
         } else {
-            pEntityList->RemoveFromEnd(0);
-            pListRes = pEntityList;
+
+            pListRes = pEntityList->RemoveFromEnd(0);
         }
 
     }
@@ -1637,16 +1636,13 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
     }
 
     else if(COMMAND_TYPE_LIST_SORT_ASC == ulCommand){
-        if(pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST){
-            pListRes = pEntityList->SortASC();
-        }
 
+            pListRes = pEntityList->SortASC();
     }
 
     else if(COMMAND_TYPE_LIST_SORT_DSC == ulCommand){
-        if(pArg != 0 && pArg->ul_Type == ENTITY_TYPE_LIST){
+
             pListRes = pEntityList->SortDSC();
-        }
     }
   
   else {

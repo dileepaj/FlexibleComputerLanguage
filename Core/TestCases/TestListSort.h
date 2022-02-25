@@ -4,12 +4,11 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTSORT_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTSORT_H
+#include "TestCaseBase.h"
 
-
-class TestListSort {
+class TestListSort :  public TestCaseBase {
 public:
-    void  static run();
-
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

@@ -34,12 +34,12 @@ public:
     PENTITY AddElem(PENTITY pentity);
     PENTITYLIST GetPrefix(int index);
     PENTITY GetlastElement();
-    void RemoveFromStart(int numOfElements);
-    void RemoveFromEnd(int numOfElements);
-    void  ReverseList();
+    PENTITYLIST RemoveFromStart(int numOfElements);
+    PENTITYLIST RemoveFromEnd(int numOfElements);
+    PENTITYLIST ReverseList();
     PENTITY GetNthElement(MINT numberOfElem);
     PENTITYLIST GetSuffix(int numberOfElem);
-    void RemoveElement(int index);
+    PENTITYLIST RemoveElement(int index);
     PENTITYLIST GetSubList(int stIndex, int numOfElem);
     PENTITYLIST Split(int splitPos);
     PENTITYLIST Split(PENTITYLIST splitPos);

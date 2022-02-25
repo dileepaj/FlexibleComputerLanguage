@@ -12,12 +12,13 @@
 #include "Int.h"
 #include "Node.h"
 
-void TestListAddElem::runTest() {
 
+TestCaseExecutionResult TestListAddElem::Execute(TestCaseArgument *arg) {
+
+    TestCaseExecutionResult res;
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testAddElem/Defs.txt");
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testAddElem/Defs.txt));
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -29,18 +30,19 @@ void TestListAddElem::runTest() {
         query += "\n";
     }
 
-
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
+
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
     ec.p_MD = pMD;
     Node *pRESULT = MemoryManager::Inst.CreateNode(++id);
     PENTITYLIST list1;
     MemoryManager::Inst.CreateObject(&list1);
-
 
     PInt val1 = new Int();
     val1->SetValue(1);
@@ -58,5 +60,25 @@ void TestListAddElem::runTest() {
 
 
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+    if (list1->size() != 4) {
+        res.succ = false;
+        res.message = _MSTR(Result list size is incorrect);
+        return res;
+    }
+
+    list1->SeekToEnd();
+    PInt lastInt = (PInt) list1->GetCurrElem();
+
+    if (4 != lastInt->GetValue()) {
+        res.succ = false;
+        res.message = _MSTR(Add element failed number 4 is not included in the list);
+        return res;
+    }
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
+
 }

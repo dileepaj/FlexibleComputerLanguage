@@ -14,11 +14,13 @@
 #include "Node.h"
 #include "Strings.h"
 
-void TestListSort::run()  {
+TestCaseExecutionResult TestListSort::Execute(TestCaseArgument *arg) {
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testListSort/Defs.txt");
+    TestCaseExecutionResult res;
+
+
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testListSort/Defs.txt));;
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -33,7 +35,9 @@ void TestListSort::run()  {
 
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
@@ -85,5 +89,21 @@ void TestListSort::run()  {
     ec.map_Var["LIST2"] = list2;
 
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+
+    PENTITYLIST pListASC = (PENTITYLIST)ec.map_Var["ASC_SORTED"];
+    PENTITYLIST pListDSC = (PENTITYLIST)ec.map_Var["DSC_SORTED"];
+
+    if(pListASC->size() != 6 && pListDSC->size() != 6 ){
+        res.succ = false;
+        res.message = _MSTR(Size of result list);
+        return res;
+    }
+
+
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
+
 }

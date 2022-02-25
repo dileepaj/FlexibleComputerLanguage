@@ -5,10 +5,11 @@
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETPREFIX_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETPREFIX_H
 
+#include "TestCaseBase.h"
 
-class TestListGetPrefix {
+class TestListGetPrefix : public TestCaseBase{
 public:
-    static void runTest();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

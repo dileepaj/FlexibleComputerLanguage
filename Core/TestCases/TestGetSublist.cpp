@@ -12,11 +12,12 @@
 #include "Int.h"
 #include "Node.h"
 
-void TestGetSublist::run() {
+TestCaseExecutionResult TestGetSublist::Execute(TestCaseArgument *arg) {
     int id = 0;
     DefFileReader dfr;
-    // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!
-    MetaData *pMD = dfr.Read("../Core/TestCases/files/testGetSublist/Defs.txt");
+    TestCaseExecutionResult res;
+
+    MetaData *pMD = dfr.Read(arg->scriptsFolder + _MSTR(testGetSublist/Defs.txt));;
     ScriptReader sr;
     ScriptReaderOutput op;
     //Read Query to string
@@ -31,7 +32,9 @@ void TestGetSublist::run() {
 
     bool bSucc = sr.ProcessScript(pMD, op, query);
     if (!bSucc) {
-        std::wcout << "\nFailed to read script\n";
+        res.message = _MSTR(Failed to read script);
+        res.succ = false;
+        return res;
     }
     ExecutionContext ec;
     ec.p_mapFunctions = &op.map_Functions;
@@ -66,5 +69,28 @@ void TestGetSublist::run() {
     ec.map_Var["RESULT"] = pRESULT;
     ec.map_Var["LIST1"] = list1;
     op.p_ETL->Execute(&ec);
-    std::cout << pRESULT->GetAggregatedValue();
+
+    PENTITYLIST subList = (PENTITYLIST) ec.map_Var["SUBLIST"];
+
+    if(subList->size() != 3){
+        res.succ = false;
+        res.message = _MSTR(Incorrect result list size);
+        return res;
+    }
+
+    subList->SeekToBegin();
+    PInt subFirstElem = (PInt) subList->GetCurrElem();
+    subList->SeekToEnd();
+    PInt subLastElem = (PInt)subList->GetCurrElem();
+
+
+    if(subFirstElem->GetValue() != 2 || subLastElem->GetValue() != 4){
+        res.succ = false;
+        res.message = _MSTR(Incorrect sublist);
+        return res;
+    }
+    res.succ = true;
+    res.message = EMPTY_STRING;
+    return res;
+
 }

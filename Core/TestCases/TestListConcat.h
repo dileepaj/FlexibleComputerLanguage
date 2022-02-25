@@ -4,11 +4,11 @@
 
 #ifndef FLEXIBLECOMPUTERLANGUAGE_TESTLISTCONCAT_H
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTCONCAT_H
-
+#include "TestCaseBase.h"
 #include "CommonIncludes.h"
-class TestListConcat {
+class TestListConcat : public TestCaseBase{
 public:
-    static void runTest();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 };
 
 
