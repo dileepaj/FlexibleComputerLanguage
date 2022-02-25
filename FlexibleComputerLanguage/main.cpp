@@ -35,7 +35,8 @@
 #include "EntityList.h"
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
-
+#include "TestCaseExecuter.h"
+#include "TestCaseBase.h"
 
 
 using namespace rapidjson;
@@ -79,6 +80,12 @@ int main(int argc, const char * argv[])
 
     QueryTreeScript::QueryNodeTree(jsonroot);
 
+
+    TestCaseArgument *targ = new TestCaseArgument();
+    targ->scriptsFolder = "../Core/TestCases/files/";
+
+    TestCaseExecuter testCaseExecuter;
+    testCaseExecuter.ExecuteAllTestCases(targ);
 
 
 
