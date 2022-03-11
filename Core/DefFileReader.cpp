@@ -244,6 +244,8 @@ void DefFileReader::AddKeyAndValue(MetaData* pMD, MSTRING sKey, MSTRING sVal)
     else if(_MSTR(LOAD_FROM_CODE_LIBRARY) == sKey)
     {
         pMD->s_LoadFromCodeLibrary = sVal;
+    }else if(_MSTR(IMPORT_LIBRARY) == sKey){
+        pMD->s_LDALImport = sVal;
     }
     
     // LDEL

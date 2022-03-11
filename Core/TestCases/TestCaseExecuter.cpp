@@ -30,6 +30,7 @@
 #include "TestGetSublist.h"
 #include "TestRemoveFromStart.h"
 #include "TestListSplit.h"
+#include "TestImportKeyword.h"
 
 
 TestCaseExecuter::TestCaseExecuter() {
@@ -62,6 +63,7 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
     RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
     RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
+    RegisterTestCase(_MSTR(TestImportKeyword), new TestImportKeyword);
     RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
     RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
 }

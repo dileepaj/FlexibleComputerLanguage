@@ -1,0 +1,4 @@
+IMPORT ..\\Core\\TestCases\\files\\testImportKeyword\\lib\\lib_script.txt
+
+{$RESULT}:=FUNCARG
+SetNodeValues($FUNCARG)
