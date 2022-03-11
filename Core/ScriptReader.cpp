@@ -102,7 +102,10 @@ bool ScriptReader::ProcessScript(MetaData* pMD, ScriptReaderOutput& op, MSTRING 
 		return false;
 	}
 
-    lstLines = PreProcess(lstLines);
+    if(pMD->s_LDALImport.length() != 0){
+        lstLines = PreProcess(lstLines);
+    }
+
 
 	MemoryManager::Inst.CreateObject(&op.p_ETL);
 	ExecutionTemplateList* pCurrFunction = 0;
@@ -183,6 +186,7 @@ std::list<MSTRING> ScriptReader::PreProcess(LST_STR& lstLines){
         LST_STR::const_iterator tobeRemoved = ite1;
         MSTRING currLine = *ite1;
         ite1++;
+
 
 
         if(currLine.find(p_MetaData->s_LDALImport) != std::string::npos){

@@ -52,19 +52,19 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestLoadFromCodeLibrary), new TestLoadFromCodeLibrary);
     RegisterTestCase(_MSTR(TestStringEnclosure), new TestStringEnclosure);
     RegisterTestCase(_MSTR(TestListSeek), new TestListSeek);
-    //RegisterTestCase(_MSTR(TestListAddElem), new TestListAddElem);
-//    RegisterTestCase(_MSTR(TestListConcat), new TestListConcat);
+    RegisterTestCase(_MSTR(TestListAddElem), new TestListAddElem);
+    RegisterTestCase(_MSTR(TestListConcat), new TestListConcat);
     RegisterTestCase(_MSTR(TestListGetFirstElem), new TestListGetFirstElem);
-//    RegisterTestCase(_MSTR(TestListGetLastElem), new TestListGetLastElem);
-//    RegisterTestCase(_MSTR(TestListReverse), new TestListReverse);
-//    RegisterTestCase(_MSTR(TestListGetPrefix), new TestListGetPrefix);
-//    RegisterTestCase(_MSTR(TestListGetSuffix), new TestListGetSuffix);
-//    RegisterTestCase(_MSTR(TestRemoveElement), new TestRemoveElement);
-//    RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
-//    RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
-//    RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
-//    RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
-//    RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
+    RegisterTestCase(_MSTR(TestListGetLastElem), new TestListGetLastElem);
+    RegisterTestCase(_MSTR(TestListReverse), new TestListReverse);
+    RegisterTestCase(_MSTR(TestListGetPrefix), new TestListGetPrefix);
+    RegisterTestCase(_MSTR(TestListGetSuffix), new TestListGetSuffix);
+    RegisterTestCase(_MSTR(TestRemoveElement), new TestRemoveElement);
+    RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
+    RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
+    RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
+    RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
+    RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
 }
 
 void TestCaseExecuter::ExecuteAllTestCases(TestCaseArgument *arg) {
