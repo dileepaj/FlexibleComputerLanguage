@@ -43,8 +43,8 @@ void TestCaseExecuter::RegisterTestCase(MSTRING testName, TestCaseBase *testcase
 
 void TestCaseExecuter::RegisterAllTestCases() {
     //RegisterTestCase(_MSTR(TestTestCase), new TestTestCase);
-    RegisterTestCase(_MSTR(TestListInnerCount), new TestListInnerCount);
-    RegisterTestCase(_MSTR(TestListInnerCountWithScript), new TestListInnerCountWithScript);
+      RegisterTestCase(_MSTR(TestListInnerCount), new TestListInnerCount);
+      RegisterTestCase(_MSTR(TestListInnerCountWithScript), new TestListInnerCountWithScript);
     RegisterTestCase(_MSTR(TestListFilter), new TestListFilter);
     RegisterTestCase(_MSTR(TestListGroupBy), new TestListGroupBy);
     RegisterTestCase(_MSTR(TestFilterSubtree), new TestFilterSubtree);
@@ -52,20 +52,19 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestLoadFromCodeLibrary), new TestLoadFromCodeLibrary);
     RegisterTestCase(_MSTR(TestStringEnclosure), new TestStringEnclosure);
     RegisterTestCase(_MSTR(TestListSeek), new TestListSeek);
-    RegisterTestCase(_MSTR(TestListAddElem), new TestListAddElem);
-    RegisterTestCase(_MSTR(TestListConcat), new TestListConcat);
+    //RegisterTestCase(_MSTR(TestListAddElem), new TestListAddElem);
+//    RegisterTestCase(_MSTR(TestListConcat), new TestListConcat);
     RegisterTestCase(_MSTR(TestListGetFirstElem), new TestListGetFirstElem);
-    RegisterTestCase(_MSTR(TestListGetLastElem), new TestListGetLastElem);
-    RegisterTestCase(_MSTR(TestListReverse), new TestListReverse);
-    RegisterTestCase(_MSTR(TestListGetPrefix), new TestListGetPrefix);
-    RegisterTestCase(_MSTR(TestListGetSuffix), new TestListGetSuffix);
-    RegisterTestCase(_MSTR(TestRemoveElement), new TestRemoveElement);
-    RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
-    RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
-    RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
-    RegisterTestCase(_MSTR(TestImportKeyword), new TestImportKeyword);
-    RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
-    RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
+//    RegisterTestCase(_MSTR(TestListGetLastElem), new TestListGetLastElem);
+//    RegisterTestCase(_MSTR(TestListReverse), new TestListReverse);
+//    RegisterTestCase(_MSTR(TestListGetPrefix), new TestListGetPrefix);
+//    RegisterTestCase(_MSTR(TestListGetSuffix), new TestListGetSuffix);
+//    RegisterTestCase(_MSTR(TestRemoveElement), new TestRemoveElement);
+//    RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
+//    RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
+//    RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
+//    RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
+//    RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
 }
 
 void TestCaseExecuter::ExecuteAllTestCases(TestCaseArgument *arg) {

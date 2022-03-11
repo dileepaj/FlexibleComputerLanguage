@@ -86,7 +86,8 @@ int main(int argc, const char * argv[])
 
     MSTRING testCaseName = "TestImportKeyword";
     TestCaseExecuter testCaseExecuter;
-    testCaseExecuter.ExecuteTestCase((MSTRING &) testCaseName, targ);
+    //testCaseExecuter.ExecuteTestCase((MSTRING &) testCaseName, targ);
+    testCaseExecuter.ExecuteAllTestCases(targ);
 
 
 
