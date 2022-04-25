@@ -50,17 +50,17 @@ int main(int argc, const char * argv[])
     std::cout << "Started\n";
 //    Tests tt;
 //     tt.RunTest6();
-    std::string line;
-    std::string jsonline;
-    std::ifstream jsonfile ("G:\\logJSON.txt");
-    if (jsonfile.is_open())
-    {
-        getline (jsonfile,line);
-        jsonline = line;
-        jsonfile.close();
-    }
+//    std::string line;
+//    std::string jsonline;
+//    std::ifstream jsonfile ("G:\\logJSON.txt");
+//    if (jsonfile.is_open())
+//    {
+//        getline (jsonfile,line);
+//        jsonline = line;
+//        jsonfile.close();
+//    }
     //Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
-    Node* commonjsonroot = LogJsonParser::CommonJSONToNodeTree(jsonline);
+//    Node* commonjsonroot = LogJsonParser::CommonJSONToNodeTree(jsonline);
 
 
 //    std::string scriptline;
@@ -88,7 +88,7 @@ int main(int argc, const char * argv[])
 
     TestCaseExecuter testCaseExecuter;
     //testCaseExecuter.ExecuteAllTestCases(targ);
-    std::string testCaseVariable = "TestcommonJsonParser";
+    std::string testCaseVariable = "TestDateConvert";
     testCaseExecuter.ExecuteTestCase(testCaseVariable, targ);
 
     return 0;

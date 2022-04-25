@@ -1120,6 +1120,54 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                 pNodeRes = (PNODE) pNode->GetCustomObj();
                 break;
             }
+            case COMMAND_TYPE_DATE_CONVERT: {
+                if (ENTITY_TYPE_STRING == pArg->ul_Type) {
+                    PString pStrArg = (PString) pArg;
+                    MSTRING sVal = pStrArg->GetValue();
+                    MSTRING delimiter = "/";
+                    MSTRING year = sVal.substr(0, sVal.find(delimiter));
+                    sVal.erase(0, sVal.find(delimiter) + delimiter.length());
+                    MSTRING month = sVal.substr(0, sVal.find(delimiter));
+                    sVal.erase(0, sVal.find(delimiter) + delimiter.length());
+                    MSTRING date = sVal.substr(0, sVal.find(delimiter));
+                    sVal.erase(0, sVal.find(delimiter) + delimiter.length());
+
+                    MSTRING monthStr;
+                    if(month == "Jan")
+                        monthStr = "01";
+                    else if(month == "Feb")
+                        monthStr = "02";
+                    else if(month == "Mar")
+                        monthStr = "03";
+                    else if(month == "Apr")
+                        monthStr = "04";
+                    else if(month == "May")
+                        monthStr = "05";
+                    else if(month == "Jun")
+                        monthStr = "06";
+                    else if(month == "Jul")
+                        monthStr = "07";
+                    else if(month == "Aug")
+                        monthStr = "08";
+                    else if(month == "Sep")
+                        monthStr = "09";
+                    else if(month == "Oct")
+                        monthStr = "10";
+                    else if(month == "Nov")
+                        monthStr = "11";
+                    else if(month == "Dec")
+                        monthStr = "12";
+                    else
+                        monthStr = "";
+
+                    MemoryManager::Inst.CreateObject(&pStrRes);
+                    MSTRING resultDate = year + "/" + monthStr + "/" + date;
+                    pStrRes->SetValue(resultDate);
+
+                }
+                break;
+            }
+
         }
     }
 

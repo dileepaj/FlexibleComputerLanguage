@@ -245,7 +245,7 @@ void DefFileReader::AddKeyAndValue(MetaData* pMD, MSTRING sKey, MSTRING sVal)
     {
         pMD->s_LoadFromCodeLibrary = sVal;
     }
-    
+
     // LDEL
     else if(_MSTR(LDEL_SCRIPT_FILE) == sKey) {
         pMD->s_ScriptFile = sVal;
@@ -551,6 +551,6 @@ void DefFileReader::AddFuncNames(MetaData* pMD, MSTRING sKey, MSTRING sVal) {
     ADD_FUNC_NAME(LIST_SPLIT)
     ADD_FUNC_NAME(LIST_SORT_ASC)
     ADD_FUNC_NAME(LIST_SORT_DSC)
-
+    ADD_FUNC_NAME(DATE_CONVERT)
 
 }
