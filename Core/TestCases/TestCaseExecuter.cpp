@@ -30,6 +30,8 @@
 #include "TestGetSublist.h"
 #include "TestRemoveFromStart.h"
 #include "TestListSplit.h"
+#include "TestCommonJsonParser.h"
+#include "TestDateConvert.h"
 
 
 TestCaseExecuter::TestCaseExecuter() {
@@ -63,7 +65,11 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
     RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
     RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
+    RegisterTestCase(_MSTR(TestcommonJsonParser),new TestCommonJsonParser);
+    RegisterTestCase(_MSTR(TestDateConvert),new TestDateConvert);
     RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
+
+
 }
 
 void TestCaseExecuter::ExecuteAllTestCases(TestCaseArgument *arg) {

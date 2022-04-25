@@ -48,18 +48,20 @@ INITIALIZE_EASYLOGGINGPP
 int main(int argc, const char * argv[])
 {
     std::cout << "Started\n";
-    //Tests tt;
-    // tt.RunTest6();
-    std::string line;
-    std::string jsonline;
-    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
-    if (jsonfile.is_open())
-    {
-        getline (jsonfile,line);
-        jsonline = line;
-        jsonfile.close();
-    }
-    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
+//    Tests tt;
+//     tt.RunTest6();
+//    std::string line;
+//    std::string jsonline;
+//    std::ifstream jsonfile ("G:\\logJSON.txt");
+//    if (jsonfile.is_open())
+//    {
+//        getline (jsonfile,line);
+//        jsonline = line;
+//        jsonfile.close();
+//    }
+    //Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
+//    Node* commonjsonroot = LogJsonParser::CommonJSONToNodeTree(jsonline);
+
 
 //    std::string scriptline;
 //    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
@@ -78,16 +80,16 @@ int main(int argc, const char * argv[])
 //
 //    LogJsonParser::LogNodeTreetoJson(jsonroot);
 
-    QueryTreeScript::QueryNodeTree(jsonroot);
+   // QueryTreeScript::QueryNodeTree(jsonroot);
 
 
     TestCaseArgument *targ = new TestCaseArgument();
     targ->scriptsFolder = "../Core/TestCases/files/";
 
     TestCaseExecuter testCaseExecuter;
-    testCaseExecuter.ExecuteAllTestCases(targ);
-
-
+    //testCaseExecuter.ExecuteAllTestCases(targ);
+    std::string testCaseVariable = "TestDateConvert";
+    testCaseExecuter.ExecuteTestCase(testCaseVariable, targ);
 
     return 0;
 }
