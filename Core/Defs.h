@@ -690,9 +690,9 @@
 #define     COMMAND_TYPE_GET_BOOLEAN                                    64
 #define     COMMAND_TYPE_GET_CUSTOM_OBJ                                 65
 #define     COMMAND_TYPE_SET_ATTRIBUTES                                 66
+#define     COMMAND_TYPE_DATE_CONVERT                                   67
 #define     COMMAND_TYPE_ADD_INNER_OBJ                                  68
 #define     COMMAND_TYPE_SET_NORMAL_STRING                              69
-
 
 // String commands
 #define		COMMAND_TYPE_IS_STRING_EQUAL_TO								1000
@@ -738,6 +738,7 @@
 #define		COMMAND_TYPE_TOSTRING										2200
 #define     COMMAND_TYPE_SET_INTEGER                                    2201
 
+
 // Bool Commands
 #define		COMMAND_TYPE_BOOL_AND										4000
 #define		COMMAND_TYPE_BOOL_OR										4001
@@ -766,7 +767,25 @@
 #define     COMMAND_TYPE_EXTRACT_NODE_LIST_TOP                          5012
 #define     COMMAND_TYPE_GET_OLDEST_DATE                                5013
 #define     COMMAND_TYPE_GET_LATEST_DATE                                5014
-#define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF                5015
+#define     COMMAND_TYPE_GET_UNIQUE_NODE_LIST_WITH_NODE_REF             5015
+#define     COMMAND_TYPE_GET_FIRST_ELEM                                 5016
+#define     COMMAND_TYPE_GET_LAST_ELEM                                  5017
+#define     COMMAND_TYPE_REMOVE_FROM_START                              5025
+#define     COMMAND_TYPE_REMOVE_FROM_END                                5026
+#define     COMMAND_TYPE_REVERSE_LIST                                   5031
+#define     COMMAND_TYPE_GET_NTH_ELEM                                   5018
+#define     COMMAND_TYPE_CONCAT                                         5019
+#define     COMMAND_TYPE_ADD_ELEM                                       5020
+#define     COMMAND_TYPE_GET_PREFIX                                     5021
+#define     COMMAND_TYPE_GET_SUFFIX                                     5022
+#define     COMMAND_TYPE_REMOVE_ELEMENT                                 5028
+#define     COMMAND_TYPE_GET_SUBLIST                                    5023
+#define     COMMAND_TYPE_LIST_SPLIT                                     5024
+#define     COMMAND_TYPE_LIST_SORT_ASC                                  5029
+#define     COMMAND_TYPE_LIST_SORT_DSC                                  5030
+
+
+
 
 // Special Commands
 #define		COMMAND_TYPE_ADDITIONAL_FUNCTION							10000
