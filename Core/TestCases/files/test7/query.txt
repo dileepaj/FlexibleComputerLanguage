@@ -1,0 +1,14 @@
+$RESULT.SetCustomString(object)
+$RESULT.SetRValue(4)
+
+//$DATA.SetCustomString(object)
+//$DATA.SetRValue(4)
+//$DATA.SetLValue(data)
+
+//the below single line can be added instead of the above 3 lines
+
+$RESULT.AddInnerObject(data):=DATA
+
+
+
+

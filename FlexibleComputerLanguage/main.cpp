@@ -62,7 +62,6 @@ int main(int argc, const char * argv[])
     //Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
 //    Node* commonjsonroot = LogJsonParser::CommonJSONToNodeTree(jsonline);
 
-
 //    std::string scriptline;
 //    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
 //    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
