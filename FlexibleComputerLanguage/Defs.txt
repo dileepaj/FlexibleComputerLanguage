@@ -99,6 +99,7 @@ DEF MASK_LOGDATA				MaskLogdata
 DEF SET_ATTRIBUTES				SetAttributes
 DEF ADD_INNER_OBJ				AddInnerObject
 DEF	SET_NORMAL_STRING			SetNormalString
+DEF SET_INNER_ARRAY								SetInnerArray
 
 DEF	LDEL_SCRIPT_FILE				            script.ldel
 DEF	LDEL_LOG_FILE					            log.txt

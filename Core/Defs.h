@@ -694,7 +694,7 @@
 #define     COMMAND_TYPE_DATE_CONVERT                                   68
 #define     COMMAND_TYPE_ADD_INNER_OBJ                                  69
 #define     COMMAND_TYPE_SET_NORMAL_STRING                              70
-
+#define     COMMAND_TYPE_SET_INNER_ARRAY                                71
 
 // String commands
 #define		COMMAND_TYPE_IS_STRING_EQUAL_TO								1000

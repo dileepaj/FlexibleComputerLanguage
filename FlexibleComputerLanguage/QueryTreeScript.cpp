@@ -17,6 +17,7 @@ using namespace std;
 void QueryTreeScript::QueryNodeTree(Node* root){
 
     ifstream queryFile ("../Core/TestCases/files/TestSetNormalBoolean");
+
     string query="";
     string qline="";
     while(getline(queryFile,qline))

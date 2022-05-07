@@ -740,6 +740,15 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
         
         switch(ulCommand)
         {
+            case COMMAND_TYPE_SET_INNER_ARRAY : {
+                if(ENTITY_TYPE_STRING == pArg->ul_Type){
+                    String* pStrArg = (String*)pArg;
+                    if(pStrArg != 0 ){
+                        MemoryManager::Inst.CreateObject(&pNullRes);
+                        pNodeRes = pNode->AddNode();
+                        pNodeRes->SetCustomString("array");
+                        pNodeRes->SetLValue((PMCHAR)pStrArg->GetValue().c_str());
+
             case COMMAND_TYPE_SET_NORMAL_STRING : {
                 if(ENTITY_TYPE_LIST == pArg->ul_Type){
                     String* pStrArg = (String*)pArg;
@@ -771,6 +780,7 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                         }else{
                             std::cout<<"Please enter only 2 values!!!";
                         }
+
                     }
                 }
                 break;
