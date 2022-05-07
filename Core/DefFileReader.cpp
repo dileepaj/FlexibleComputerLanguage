@@ -245,7 +245,10 @@ void DefFileReader::AddKeyAndValue(MetaData* pMD, MSTRING sKey, MSTRING sVal)
     {
         pMD->s_LoadFromCodeLibrary = sVal;
     }
-
+    else if(_MSTR(NEW_KEYWORD) == sKey){
+        pMD->s_NewKeyword = sVal;
+    }
+    
     // LDEL
     else if(_MSTR(LDEL_SCRIPT_FILE) == sKey) {
         pMD->s_ScriptFile = sVal;
@@ -536,6 +539,13 @@ void DefFileReader::AddFuncNames(MetaData* pMD, MSTRING sKey, MSTRING sVal) {
 	ADD_FUNC_NAME(GET_UNIQUE_NODE_LIST_WITH_NODE_REF)
 	ADD_FUNC_NAME(SET_INTEGER)
     ADD_FUNC_NAME(SET_ATTRIBUTES)
+
+    //Generator functions
+    ADD_FUNC_NAME(NEW_INT)
+    ADD_FUNC_NAME(NEW_STRING)
+    ADD_FUNC_NAME(NEW_NODE)
+    ADD_FUNC_NAME(NEW_BOOL)
+
     ADD_FUNC_NAME(SET_INNER_BOOLEAN)
     ADD_FUNC_NAME(ADD_INNER_OBJ)
     ADD_FUNC_NAME(SET_INNER_ARRAY)

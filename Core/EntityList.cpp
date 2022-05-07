@@ -98,6 +98,7 @@ EntityList *EntityList::GetInnerCount() {
     }
     return pListRes;
 }
+
 PENTITYLIST EntityList::ReverseList()  {
       EntityList::reverse();
       return this;

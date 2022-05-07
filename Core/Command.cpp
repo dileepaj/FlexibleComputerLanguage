@@ -19,6 +19,7 @@
 #include <functional>
 #include <LogJsonParser.h>
 #include <QueryExecuter.h>
+#include "Generator.h"
 
 Command::Command()
         : ul_CommandType(COMMAND_TYPE_INVALID), p_Arg(0), p_EntityArg(0), s_AdditionalFuncName(EMPTY_STRING) {
@@ -129,6 +130,9 @@ PENTITY Command::Execute(PENTITY pEntity, ExecutionContext *pContext) {
         return pRet;
     } else {
 
+        if(ENTITY_TYPE_GENERATOR == pEntity->ul_Type){
+            return ExecuteGeneratorCommand(ul_CommandType,pEntity,pContext);
+        }
         if (ENTITY_TYPE_LIST == pEntity->ul_Type) {
             if (0 != p_Arg) {
                 p_EntityArg = p_Arg->Execute(pContext);
@@ -1845,13 +1849,179 @@ PENTITY Command::ExecuteListCommand(MULONG ulCommand, PENTITY pEntity, Execution
     return 0;
 }
 
-void Command::AddSubtreeToNodeList(PENTITYLIST pList, PNODE pRoot) {
-    pList->push_back(pRoot);
-    PNODE pChild = pRoot->GetFirstChild();
-    while (0 != pChild) {
-        AddSubtreeToNodeList(pList, pChild);
-        pChild = pChild->GetRightSibling();
+PENTITY Command::ExecuteGeneratorCommand(MULONG ulCommand, PENTITY pEntity, ExecutionContext *pContext) {
+    PGEN pGenerator = (PGEN)pEntity;
+    if(0 == pGenerator)
+    {
+        return 0;
     }
+
+    // now handle commands that would not explicitly need the execution context
+    // for these command, for the sake of simplicity, we first evaluate the command argument and use it subsequently
+    PENTITY pArg = 0;
+    if(0 != p_Arg)
+    {
+        p_EntityArg = p_Arg->Execute(pContext);
+        pArg = p_EntityArg;
+    }
+
+
+    PNODE pNodeRes = 0;
+    PInt pIntRes = 0;
+    PString pStrRes = 0;
+    PENTITYLIST pNodeListRes = 0;
+    PNull pNullRes = 0;
+    PBool pBoolRes = 0;
+    PENTITY pEntityRes = 0;
+    PENTITYLIST pEntityListRes = 0;
+    Value<MULONG, ENTITY_TYPE_INT>* pVal;
+
+
+
+    switch (ul_CommandType) {
+
+        case COMMAND_TYPE_NEW_INT :
+        {
+            if(pArg != 0){
+
+                if(pArg->ul_Type == ENTITY_TYPE_INT){
+                    PInt pIntArg = (PInt)pArg;
+                    pIntRes = pGenerator->GenerateInteger(pIntArg->GetValue());
+                }else if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                    PString pStringArg = (PString)pArg;
+                    MSTRING argVal = pStringArg->GetValue();
+                    int argValInt;
+                    try {
+                        argValInt = std::stoi(argVal);
+                    }catch (ERROR_INVALID_ARG &err){
+                        argValInt = 0;
+                    }
+                    pIntRes = pGenerator->GenerateInteger(argValInt);
+
+                }else{
+                    //Invalid argument types
+                    pIntRes = pGenerator->GenerateInteger(0);
+                }
+            }else{
+                //No argument
+                pIntRes = pGenerator->GenerateInteger(0);
+            }
+            break;
+        }
+        case COMMAND_TYPE_NEW_STRING:
+        {
+
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_STRING){
+                    PString pArgVal = (PString)pArg;
+                    MSTRING strVal = pArgVal->GetValue();
+                    pStrRes = pGenerator->GenerateString(strVal);
+                }else{
+                    //Invalid argument
+                    pStrRes = pGenerator->GenerateString("");
+                }
+
+            }else{
+                //No argument
+                pStrRes = pGenerator->GenerateString("");
+            }
+            break;
+
+        }
+        case COMMAND_TYPE_NEW_NODE:{
+
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_LIST){
+                    PENTITYLIST pArgList = (PENTITYLIST)pArg;
+                    MSTRING nodeValue="";
+                    MSTRING nodeRValue = "";
+                    MSTRING nodeLValue = "";
+                    MSTRING nodeCusValue = "";
+
+                    EntityList::const_iterator ite1 = pArgList->begin();
+                    EntityList::const_iterator iteEnd = pArgList->end();
+                    int index = 0;
+                    for(;ite1 != iteEnd;ite1++){
+                        switch (index) {
+                            case 0:{
+                                nodeValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 1:{
+                                nodeLValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 2:{
+                                nodeRValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                            case 3:{
+                                nodeCusValue = ((PString)(*ite1))->GetValue();
+                                break;
+                            }
+                        }
+                        index++;
+                    }
+                    pNodeRes = pGenerator->GenerateNode(nodeValue,nodeLValue,nodeRValue,nodeCusValue);
+
+                } else{
+                    //Invalid Argument
+                    pNodeRes =  pGenerator->GenerateNode("","","","");
+                }
+            }else{
+                //No arguments
+                pNodeRes =  pGenerator->GenerateNode("","","","");
+            }
+            break;
+        }
+
+        case COMMAND_TYPE_NEW_BOOL :
+        {
+            if(0 != pArg){
+                if(pArg->ul_Type == ENTITY_TYPE_BOOL){
+                    PBool pArgVal = (PBool)pArg;
+                    pBoolRes = pGenerator->GenerateBool(pArgVal->GetValue());
+                }else{
+                    //Invalid argument
+                    pBoolRes = pGenerator->GenerateBool(false);
+                }
+            }else{
+                //No argument
+                pBoolRes = pGenerator->GenerateBool(false);
+            }
+            break;
+        }
+
+    }
+
+
+    if(0 != pIntRes){
+        return pIntRes;
+    }
+
+    if(0 != pStrRes){
+        return pStrRes;
+    }
+
+    if(0 != pNodeRes){
+        return pNodeRes;
+    }
+
+    if(0 != pBoolRes){
+        return pBoolRes;
+    }
+    return 0;
+
+}
+void Command::AddSubtreeToNodeList(PENTITYLIST pList, PNODE pRoot)
+{
+	pList->push_back(pRoot);
+	PNODE pChild = pRoot->GetFirstChild();
+	while(0 != pChild)
+	{
+		AddSubtreeToNodeList(pList, pChild);
+		pChild = pChild->GetRightSibling();
+	}
 }
 
 void Command::FilterSubTree(PNODE root, ExecutionTemplate *arg, ExecutionContext *context, PENTITYLIST resultList) {

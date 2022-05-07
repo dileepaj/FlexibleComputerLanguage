@@ -172,8 +172,14 @@ DEF	GET_LATEST_DATE					            GetLatestDate
 DEF	ADD_PERIOD					                AddPeriod
 DEF	GET_UNIQUE_NODE_LIST_WITH_NODE_REF			GetUniqueNodeListWithNodeRef
 DEF SET_INTEGER                 SetInteger
+DEF NEW_KEYWORD                 NEW
+DEF NEW_INT                     Integer
+DEF NEW_STRING                  String
+DEF NEW_NODE                    Node
+DEF NEW_BOOL                    Bool
 DEF SET_INNER_BOOLEAN           SetInnerBoolean
 DEF GET_FIRST_ELEM          GetFirstElem
 DEF GET_NTH_ELEM            GetNthElem
 DEF	STRING_ENCLOSURE_SYMBOL				"
 DEF CONCAT                  ConcatList
+

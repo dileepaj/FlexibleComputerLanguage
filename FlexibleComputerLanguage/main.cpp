@@ -35,6 +35,7 @@
 #include "EntityList.h"
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
+#include "TestNewObjectGenerator.h"
 #include "TestCaseExecuter.h"
 #include "TestCaseBase.h"
 
@@ -47,6 +48,7 @@ INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, const char * argv[])
 {
+
     std::cout << "Started\n";
 //    Tests tt;
 //     tt.RunTest6();
@@ -69,18 +71,40 @@ int main(int argc, const char * argv[])
 //
 //    while(getline(scriptfile,scriptline))
 //    {
-//        script+=scriptline;
-//        script+="\n";
+//        getline (jsonfile,line);
+//        jsonline = line;
+//        jsonfile.close();
 //    }
+//    Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
 //
-//    std::string res = QueryExecuter::run(jsonroot,script);
-//    std::cout << "\n";
-//    std::cout <<res;
+////    std::string scriptline;
+////    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
+////    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
+////    std::string script="";
+////
+////    while(getline(scriptfile,scriptline))
+////    {
+////        script+=scriptline;
+////        script+="\n";
+////    }
+////
+////    std::string res = QueryExecuter::run(jsonroot,script);
+////    std::cout << "\n";
+////    std::cout <<res;
+////
+////    LogJsonParser::LogNodeTreetoJson(jsonroot);
 //
+//    QueryTreeScript::QueryNodeTree(jsonroot);
+//
+
 //    LogJsonParser::LogNodeTreetoJson(jsonroot);
 
    // QueryTreeScript::QueryNodeTree(jsonroot);
 
+      TestNewObjectGenerator::TestNewInt();
+      //TestNewObjectGenerator::TestNewString();
+     //TestNewObjectGenerator::TestNewNode();
+    //TestNewObjectGenerator::TestNewBool();
 
     TestCaseArgument *targ = new TestCaseArgument();
     targ->scriptsFolder = "../Core/TestCases/files/";

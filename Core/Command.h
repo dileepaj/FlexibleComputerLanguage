@@ -28,6 +28,7 @@ public:
 private:
 	//PENTITY ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pArg);
     PENTITY ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, ExecutionContext* pContext);
+    PENTITY ExecuteGeneratorCommand(MULONG ulCommand, PENTITY pEntity, ExecutionContext* pContext);
 	PENTITY ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pArg);
 	PENTITY ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pArg);
 	PENTITY ExecuteBoolCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pArg);

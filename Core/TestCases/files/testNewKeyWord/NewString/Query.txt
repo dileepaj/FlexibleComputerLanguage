@@ -1,0 +1,6 @@
+
+$NEW.String("Initial value"):=VAR
+
+$VAR.AddPostFix("@NEWLINESECOND LINE")
+
+$RESULT.SetValue($VAR)

@@ -1,0 +1,8 @@
+
+$NEW.Integer:=VAL
+
+$NEW.Integer(5):=VAL
+
+
+$VAL.Add(5)
+$RESULT.SetValue($VAL.ToString)

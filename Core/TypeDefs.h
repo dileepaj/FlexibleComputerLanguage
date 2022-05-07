@@ -30,7 +30,7 @@ class ELLineAnnotation;
 class ELCachedEvaluationResult;
 class ELBlockDetectiveResultElement;
 class String;
-
+class Generator;
 #ifndef WIDECHAR
 typedef char				MCHAR;
 typedef std::string			MSTRING;
@@ -76,6 +76,7 @@ typedef unsigned short		MUSHORT;
 typedef MBYTE*				PMBYTE;
 typedef void*               PVOID;
 
+typedef Generator*           PGEN;
 typedef Node*				PNODE;
 typedef Entity*				PENTITY;
 typedef Command*			PCOMMAND;
@@ -120,6 +121,7 @@ typedef std::vector<ELLineAnnotation*> VEC_ELLINEANNOTATION;
 typedef std::map<WIDECHAR, unsigned long> MAP_CHAR_ULONG;
 typedef std::map<unsigned long, ELCachedEvaluationResult*> MAP_ULONG_CACHED_EVALUATION_RESULT;
 typedef std::vector<ELBlockDetectiveResultElement*> VEC_ELBLOCKDETECTIVE_RESULT_ELEMENT;
+typedef std::invalid_argument ERROR_INVALID_ARG;
 
 #endif
 

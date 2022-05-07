@@ -9,6 +9,7 @@ class ExecutionContext;
 class EntityList : public Entity, public LST_ENTITYPTR {
     EntityList::size_type st_CurrElemPos;
 public:
+
     EntityList();
 
     virtual ~EntityList();
@@ -45,9 +46,6 @@ public:
     PENTITYLIST Split(PENTITYLIST splitPos);
     PENTITYLIST SortASC();
     PENTITYLIST SortDSC();
-
-
-
 };
 
 #endif

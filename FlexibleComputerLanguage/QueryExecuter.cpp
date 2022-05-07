@@ -71,6 +71,6 @@ MSTRING QueryExecuter::run(Node *root, MSTRING querycode)
     //std::cout<<"result array size: "<<result->size()<<"\n";
     TestCaseExecutionResult();
     return ResultGenerator::CreateResult(pRESULT);
-   //return "Done";
+    //return "Done";
 
 }
