@@ -1,0 +1,12 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$RESULT.GetStringVar:=RESULTSTRING
+$X.FilterSubtree($Item.GetValue.IsHavingSubstring(itemName)):=ELEM
+$ELEM.SeekToBegin
+$ELEM.GetCurrentElement:=ELEM2
+While($ELEM2.CheckNotNull)
+$RESULTSTRING.AddPostFix($ELEM2.FirstChild.GetValue)
+$RESULTSTRING.AddPostFix(  )
+$ELEM.GetNextElement:=ELEM2
+Do
+$RESULT.SetValue($RESULTSTRING)

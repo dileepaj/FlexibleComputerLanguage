@@ -36,7 +36,8 @@
 #include "QueryExecuter.h"
 #include "QueryTreeScript.h"
 #include "TestNewObjectGenerator.h"
-
+#include "TestCaseExecuter.h"
+#include "TestCaseBase.h"
 
 
 using namespace rapidjson;
@@ -47,13 +48,28 @@ INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, const char * argv[])
 {
-//    std::cout << "Started\n";
-//    //Tests tt;
-//    // tt.RunTest6();
+
+    std::cout << "Started\n";
+//    Tests tt;
+//     tt.RunTest6();
 //    std::string line;
 //    std::string jsonline;
-//    std::ifstream jsonfile ("../FlexibleComputerLanguage/QueryResult/LogFile.txt");
+//    std::ifstream jsonfile ("G:\\logJSON.txt");
 //    if (jsonfile.is_open())
+//    {
+//        getline (jsonfile,line);
+//        jsonline = line;
+//        jsonfile.close();
+//    }
+    //Node* jsonroot = LogJsonParser::LogJSONToNodeTree(jsonline);
+//    Node* commonjsonroot = LogJsonParser::CommonJSONToNodeTree(jsonline);
+
+//    std::string scriptline;
+//    std::ifstream scriptfile ("C:\\Users\\Michelle\\Desktop\\queries.txt");
+//    //std::ifstream scriptfile ("D:/MurtazaCode/FlexibleComputerLanguage/FlexibleComputerLanguage/Masking/maskscript.txt");
+//    std::string script="";
+//
+//    while(getline(scriptfile,scriptline))
 //    {
 //        getline (jsonfile,line);
 //        jsonline = line;
@@ -81,12 +97,22 @@ int main(int argc, const char * argv[])
 //    QueryTreeScript::QueryNodeTree(jsonroot);
 //
 
+//    LogJsonParser::LogNodeTreetoJson(jsonroot);
+
+   // QueryTreeScript::QueryNodeTree(jsonroot);
+
       TestNewObjectGenerator::TestNewInt();
       //TestNewObjectGenerator::TestNewString();
      //TestNewObjectGenerator::TestNewNode();
     //TestNewObjectGenerator::TestNewBool();
 
+    TestCaseArgument *targ = new TestCaseArgument();
+    targ->scriptsFolder = "../Core/TestCases/files/";
 
+    TestCaseExecuter testCaseExecuter;
+    //testCaseExecuter.ExecuteAllTestCases(targ);
+    std::string testCaseVariable = "TestDateConvert";
+    testCaseExecuter.ExecuteTestCase(testCaseVariable, targ);
 
     return 0;
 }
