@@ -1,0 +1,1 @@
+$LIST1.ConcatList($LIST2):=RESULT
