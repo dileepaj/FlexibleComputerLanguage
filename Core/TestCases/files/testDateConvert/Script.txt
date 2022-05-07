@@ -1,0 +1,5 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$RESULT.DateConvert(2022/Jan/02):=RESULTDATE
+$RESULT.SetValue($RESULTDATE)
+

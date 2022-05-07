@@ -18,6 +18,21 @@
 #include "TestStringEnclosure.h"
 #include "TestListSeek.h"
 #include "TestCompound1.h"
+#include "TestListAddElem.h"
+#include "TestListConcat.h"
+#include "TestListGetFirstElem.h"
+#include "TestListGetLastElem.h"
+#include "TestListReverse.h"
+#include "TestListGetPrefix.h"
+#include "TestListGetSuffix.h"
+#include "TestRemoveElement.h"
+#include "TestListRemoveFromEnd.h"
+#include "TestGetSublist.h"
+#include "TestRemoveFromStart.h"
+#include "TestListSplit.h"
+#include "TestCommonJsonParser.h"
+#include "TestDateConvert.h"
+
 
 TestCaseExecuter::TestCaseExecuter() {
     RegisterAllTestCases();
@@ -38,7 +53,23 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestLoadFromCodeLibrary), new TestLoadFromCodeLibrary);
     RegisterTestCase(_MSTR(TestStringEnclosure), new TestStringEnclosure);
     RegisterTestCase(_MSTR(TestListSeek), new TestListSeek);
+    RegisterTestCase(_MSTR(TestListAddElem), new TestListAddElem);
+    RegisterTestCase(_MSTR(TestListConcat), new TestListConcat);
+    RegisterTestCase(_MSTR(TestListGetFirstElem), new TestListGetFirstElem);
+    RegisterTestCase(_MSTR(TestListGetLastElem), new TestListGetLastElem);
+    RegisterTestCase(_MSTR(TestListReverse), new TestListReverse);
+    RegisterTestCase(_MSTR(TestListGetPrefix), new TestListGetPrefix);
+    RegisterTestCase(_MSTR(TestListGetSuffix), new TestListGetSuffix);
+    RegisterTestCase(_MSTR(TestRemoveElement), new TestRemoveElement);
+    RegisterTestCase(_MSTR(TestListRemoveFromEnd), new TestListRemoveFromEnd);
+    RegisterTestCase(_MSTR(TestGetSublist), new TestGetSublist);
+    RegisterTestCase(_MSTR(TestRemoveFromStart), new TestRemoveFromStart);
+    RegisterTestCase(_MSTR(TestListSplit), new TestListSplit);
+    RegisterTestCase(_MSTR(TestcommonJsonParser),new TestCommonJsonParser);
+    RegisterTestCase(_MSTR(TestDateConvert),new TestDateConvert);
     RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
+
+
 }
 
 void TestCaseExecuter::ExecuteAllTestCases(TestCaseArgument *arg) {

@@ -1,0 +1,21 @@
+$RESULT.SetCustomString(object)
+$RESULT.SetRValue(4)
+
+//$RESULT.AddNode:=TEST
+
+//$TEST.SetCustomString(normal)
+//$TEST.SetRValue(4)
+//$TEST.SetLValue(City)
+//$TEST.SetValue(Kandy)
+
+//$TEST.SetValue(Colombo)
+
+//With the help of "SetNormalString" short hand method, above number of lines can be reduced with the below single line
+$RESULT.SetNormalString({City , Kandy}):=TEST
+
+//As it returns an entity, its value can be changed too
+$TEST.SetValue(Colombo)
+
+
+
+
