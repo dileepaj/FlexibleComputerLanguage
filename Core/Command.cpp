@@ -740,6 +740,42 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
         
         switch(ulCommand)
         {
+            case COMMAND_TYPE_SET_NORMAL_STRING : {
+                if(ENTITY_TYPE_LIST == pArg->ul_Type){
+                    String* pStrArg = (String*)pArg;
+                    if(0 != pStrArg){
+                        MemoryManager::Inst.CreateObject(&pBoolRes);
+                        pNodeRes = pNode->AddNode();
+                        pNodeRes->SetCustomString("normal");
+
+                        pBoolRes->SetValue(false);
+                        PENTITYLIST pIntListArg = (PENTITYLIST)pArg;
+                        EntityList::const_iterator ite1 = pIntListArg->begin();
+                        EntityList::const_iterator iteEnd1 = pIntListArg->end();
+
+                        if(pIntListArg->size() == 2){
+                            for( ; ite1 != iteEnd1; ++ite1)
+                            {
+                                if(ite1 == pIntListArg->begin()){
+                                    //set left value
+                                    String* pStrArg = (String*)pIntListArg->GetCurrElem();
+                                    pNodeRes->SetLValue((PMCHAR)pStrArg->GetValue().c_str());
+                                    pIntListArg->SeekToEnd();
+
+                                }else{
+                                    //set the value
+                                    String* pStrArg = (String*)pIntListArg->GetCurrElem();
+                                    pNodeRes->SetValue((PMCHAR)pStrArg->GetValue().c_str());
+                                }
+                            }
+                        }else{
+                            std::cout<<"Please enter only 2 values!!!";
+                        }
+                    }
+                }
+                break;
+            }
+
             case COMMAND_TYPE_ADD_INNER_OBJ: {
                 if(ENTITY_TYPE_STRING == pArg->ul_Type){
                     String* pStrArg = (String*)pArg;

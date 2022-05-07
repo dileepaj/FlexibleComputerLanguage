@@ -1,0 +1,1 @@
+[{"ROOT":{"peoples":[{"name":"Tharindu","city":"Gampaha"},{"name":"Isini","city":"Kandy"},{"name":"Chamodh","city":"Gampaha"}]}}]
