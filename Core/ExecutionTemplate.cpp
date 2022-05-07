@@ -128,8 +128,23 @@ PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 		while(pCurr && (ite1 != iteEnd1))
 		{
 			PENTITY pNew = ExecuteCommand(pCurr, pContext, *ite1);
-			pCurr->Destroy();
-			pCurr = pNew;
+            bool destroy = true;
+            for(auto const& var:pContext->map_Var){
+                /*
+                 * If calling variable already exist in the context , it should be
+                 * kept for the feature usage
+                 * */
+                if(pCurr == var.second){
+                    destroy =false;
+                    break;
+                }
+            }
+            if(destroy){
+                pCurr->Destroy();
+
+            }
+            pCurr = pNew;
+
 			++ite1;
 		}
 		return pCurr;
@@ -160,8 +175,24 @@ PENTITY ExecutionTemplate::Execute(ExecutionContext *pContext)
 		while(ite1 != iteEnd1)
 		{
 			PENTITY pNew = ExecuteCommand(pCurr, pContext, *ite1);
-			pCurr->Destroy();
-			pCurr = pNew;
+
+            bool destroy = true;
+            for(auto const& var:pContext->map_Var){
+                /*
+                 * If calling variable already exist in the context , it should be
+                 * kept for the feature usage
+                 * */
+                if(pCurr == var.second){
+                    destroy =false;
+                    break;
+                }
+            }
+            if(destroy){
+                pCurr->Destroy();
+
+            }
+            pCurr = pNew;
+
 			++ite1;
 		}
 		return pCurr;
