@@ -7,7 +7,7 @@
 //
 
 #include "TestListSeek.h"
-#include "../Strings.h"
+#include "../String.h"
 #include "EntityList.h"
 #include "MemMan.h"
 #include "TestCaseIncludes.h"

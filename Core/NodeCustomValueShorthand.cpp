@@ -11,7 +11,7 @@
 #include "ExecutionTemplate.h"
 #include "ExecutionContext.h"
 #include "MetaData.h"
-#include "Strings.h"
+#include "String.h"
 
 PENTITY NodeCustomValueShorthand::ExecuteSpecialCommand(PENTITY entity, ExecutionContext* context, Command* cmd) {
     MSTRING customstr = cmd->GetAdditionalFuncName();

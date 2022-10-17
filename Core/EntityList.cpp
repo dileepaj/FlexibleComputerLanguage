@@ -4,7 +4,7 @@
 #include "Utils.h"
 #include "Int.h"
 #include "list"
-#include "Strings.h"
+#include "String.h"
 
 EntityList::EntityList()
         : st_CurrElemPos(0) {
@@ -271,7 +271,7 @@ PENTITYLIST EntityList::RemoveElement(int index) {
 
 PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
     this->SeekToBegin();
-    PENTITYLIST pRes;
+    PENTITYLIST pRes = 0;
     MemoryManager::Inst.CreateObject(&pRes);
 
 
@@ -304,6 +304,7 @@ PENTITYLIST EntityList::GetSubList(int stIndex, int numOfElem){
         return pRes;
     }
 
+    return pRes;
 }
 
 
@@ -375,7 +376,7 @@ PENTITYLIST EntityList::RemoveFromEnd(int numOfElements){
  * @param : list of split  positions
  * */
 PENTITYLIST EntityList::Split(PENTITYLIST splitPos) {
-    PENTITYLIST res;
+    PENTITYLIST res = 0;
     MemoryManager::Inst.CreateObject(&res);
 
     PENTITYLIST tempSubList;
@@ -413,6 +414,7 @@ PENTITYLIST EntityList::Split(PENTITYLIST splitPos) {
             return res;
         }
     }
+    return res;
 }
 
 
@@ -441,7 +443,7 @@ PENTITYLIST EntityList::SortASC() {
             }
             return (stFirst.length() < stSecond.length());
         }
-
+        return false;
     });
 
     return res;
@@ -472,7 +474,7 @@ PENTITYLIST EntityList::SortDSC(){
             }
             return (stFirst.length() > stSecond.length());
         }
-
+        return false;
     });
 
     return res;

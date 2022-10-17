@@ -3,8 +3,8 @@
 //
 
 #include "TestListReverse.h"
-#include <DefFileReader.h>
-#include <ScriptReader.h>
+#include "DefFileReader.h"
+#include "ScriptReader.h"
 #include "MetaData.h"
 #include "ExecutionContext.h"
 #include "Node.h"

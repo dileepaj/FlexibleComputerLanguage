@@ -7,7 +7,7 @@
 //
 
 #include "TestListFilter.h"
-#include "../Strings.h"
+#include "../String.h"
 #include "EntityList.h"
 #include "MemMan.h"
 #include "Value.h"

@@ -9,7 +9,7 @@
 #include "Value.h"
 #include "Int.h"
 #include "EntityList.h"
-#include "Strings.h"
+#include "String.h"
 #include "DateTime.h"
 #include "Bool.h"
 

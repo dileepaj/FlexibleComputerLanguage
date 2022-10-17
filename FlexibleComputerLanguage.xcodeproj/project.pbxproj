@@ -7,19 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A07698020FF987C007413AF /* TestListSeek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A07697E20FF987C007413AF /* TestListSeek.cpp */; };
 		3A33964020B6725F0019F245 /* NodeCustomValueShorthand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33963C20B6725F0019F245 /* NodeCustomValueShorthand.cpp */; };
 		3A33964120B6725F0019F245 /* SpecialCommandExecuter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33963E20B6725F0019F245 /* SpecialCommandExecuter.cpp */; };
-		3A33966320B679840019F245 /* TestCaseBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965020B679840019F245 /* TestCaseBase.cpp */; };
-		3A33966420B679840019F245 /* TestCaseExecuter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965220B679840019F245 /* TestCaseExecuter.cpp */; };
-		3A33966520B679840019F245 /* TestCustomStrFilterShorthand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965520B679840019F245 /* TestCustomStrFilterShorthand.cpp */; };
-		3A33966620B679840019F245 /* TestFilterSubtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965720B679840019F245 /* TestFilterSubtree.cpp */; };
-		3A33966720B679840019F245 /* TestListFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965920B679840019F245 /* TestListFilter.cpp */; };
-		3A33966820B679840019F245 /* TestListGroupBy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965B20B679840019F245 /* TestListGroupBy.cpp */; };
-		3A33966920B679840019F245 /* TestListInnerCount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965D20B679840019F245 /* TestListInnerCount.cpp */; };
-		3A33966A20B679840019F245 /* TestListInnerCountWithScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33965F20B679840019F245 /* TestListInnerCountWithScript.cpp */; };
-		3A33966B20B679840019F245 /* TestTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33966120B679840019F245 /* TestTestCase.cpp */; };
-		3A33966E20B6A77A0019F245 /* TestLoadFromCodeLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A33966C20B6A77A0019F245 /* TestLoadFromCodeLibrary.cpp */; };
 		3AB047A220A1D37600AE312D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB047A120A1D37600AE312D /* main.cpp */; };
 		3AB047A420A1D37600AE312D /* FlexibleComputerLanguage.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AB047A320A1D37600AE312D /* FlexibleComputerLanguage.1 */; };
 		3AB047D020A1D3F700AE312D /* Bool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB047AC20A1D3F700AE312D /* Bool.cpp */; };
@@ -35,8 +24,40 @@
 		3AB047DA20A1D3F700AE312D /* StringOperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB047C820A1D3F700AE312D /* StringOperations.cpp */; };
 		3AB047DB20A1D3F700AE312D /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB047CA20A1D3F700AE312D /* Tests.cpp */; };
 		3AB047DC20A1D3F700AE312D /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB047CD20A1D3F700AE312D /* Utils.cpp */; };
-		3AB1A8A120B9690500DEDF6D /* TestStringEnclosure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1A89F20B9690500DEDF6D /* TestStringEnclosure.cpp */; };
-		3AB4376A2108B2EE00A251F9 /* TestCompound1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB437682108B2EE00A251F9 /* TestCompound1.cpp */; };
+		3AC8DC6728FD46160020C8B2 /* DateTimeOperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC6628FD46160020C8B2 /* DateTimeOperations.cpp */; };
+		3AC8DC6D28FD46BA0020C8B2 /* Generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC6C28FD46BA0020C8B2 /* Generator.cpp */; };
+		3AC8DD3F28FD476D0020C8B2 /* TestCompound1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7228FD47640020C8B2 /* TestCompound1.cpp */; };
+		3AC8DD4028FD476D0020C8B2 /* TestDateConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7328FD47640020C8B2 /* TestDateConvert.cpp */; };
+		3AC8DD4128FD476D0020C8B2 /* TestListAddElem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7428FD47640020C8B2 /* TestListAddElem.cpp */; };
+		3AC8DD4228FD476D0020C8B2 /* TestListSplit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7528FD47650020C8B2 /* TestListSplit.cpp */; };
+		3AC8DD4328FD476D0020C8B2 /* TestListGetNthElem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7728FD47650020C8B2 /* TestListGetNthElem.cpp */; };
+		3AC8DD4428FD476D0020C8B2 /* TestListInnerCount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7828FD47650020C8B2 /* TestListInnerCount.cpp */; };
+		3AC8DD4528FD476D0020C8B2 /* TestCaseBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DC7928FD47650020C8B2 /* TestCaseBase.cpp */; };
+		3AC8DD4628FD476D0020C8B2 /* TestCustomStrFilterShorthand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD0E28FD47650020C8B2 /* TestCustomStrFilterShorthand.cpp */; };
+		3AC8DD4728FD476D0020C8B2 /* TestCommonJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD0F28FD47660020C8B2 /* TestCommonJsonParser.cpp */; };
+		3AC8DD4828FD476D0020C8B2 /* TestCaseExecuter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1028FD47660020C8B2 /* TestCaseExecuter.cpp */; };
+		3AC8DD4928FD476D0020C8B2 /* TestListGetLastElem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1228FD47660020C8B2 /* TestListGetLastElem.cpp */; };
+		3AC8DD4A28FD476D0020C8B2 /* TestListGroupBy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1428FD47660020C8B2 /* TestListGroupBy.cpp */; };
+		3AC8DD4B28FD476D0020C8B2 /* TestLoadFromCodeLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1528FD47660020C8B2 /* TestLoadFromCodeLibrary.cpp */; };
+		3AC8DD4C28FD476D0020C8B2 /* TestNewObjectGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1628FD47670020C8B2 /* TestNewObjectGenerator.cpp */; };
+		3AC8DD4D28FD476D0020C8B2 /* TestRemoveFromStart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1828FD47670020C8B2 /* TestRemoveFromStart.cpp */; };
+		3AC8DD4E28FD476D0020C8B2 /* TestListInnerCountWithScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1D28FD47680020C8B2 /* TestListInnerCountWithScript.cpp */; };
+		3AC8DD4F28FD476D0020C8B2 /* TestListConcat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1E28FD47680020C8B2 /* TestListConcat.cpp */; };
+		3AC8DD5028FD476D0020C8B2 /* TestListGetFirstElem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD1F28FD47680020C8B2 /* TestListGetFirstElem.cpp */; };
+		3AC8DD5128FD476D0020C8B2 /* TestListReverse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2028FD47680020C8B2 /* TestListReverse.cpp */; };
+		3AC8DD5228FD476D0020C8B2 /* TestFilterSubtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2628FD47690020C8B2 /* TestFilterSubtree.cpp */; };
+		3AC8DD5328FD476D0020C8B2 /* TestGetSublist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2728FD47690020C8B2 /* TestGetSublist.cpp */; };
+		3AC8DD5428FD476D0020C8B2 /* TestListSeek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2828FD47690020C8B2 /* TestListSeek.cpp */; };
+		3AC8DD5528FD476D0020C8B2 /* TestStringEnclosure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2B28FD476A0020C8B2 /* TestStringEnclosure.cpp */; };
+		3AC8DD5628FD476D0020C8B2 /* TestListRemoveFromEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD2C28FD476A0020C8B2 /* TestListRemoveFromEnd.cpp */; };
+		3AC8DD5728FD476D0020C8B2 /* TestListFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3528FD476B0020C8B2 /* TestListFilter.cpp */; };
+		3AC8DD5828FD476D0020C8B2 /* TestListGetPrefix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3628FD476B0020C8B2 /* TestListGetPrefix.cpp */; };
+		3AC8DD5928FD476D0020C8B2 /* TestListSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3728FD476B0020C8B2 /* TestListSort.cpp */; };
+		3AC8DD5A28FD476D0020C8B2 /* TestTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3A28FD476C0020C8B2 /* TestTestCase.cpp */; };
+		3AC8DD5B28FD476D0020C8B2 /* TestListGetSuffix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3C28FD476C0020C8B2 /* TestListGetSuffix.cpp */; };
+		3AC8DD5C28FD476D0020C8B2 /* TestRemoveElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD3D28FD476D0020C8B2 /* TestRemoveElement.cpp */; };
+		3AC8DD6228FD48330020C8B2 /* ResultGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD6128FD48330020C8B2 /* ResultGenerator.cpp */; };
+		3AC8DD6528FD4A4E0020C8B2 /* LogJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8DD6328FD4A4E0020C8B2 /* LogJsonParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,8 +74,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A07697E20FF987C007413AF /* TestListSeek.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestListSeek.cpp; sourceTree = "<group>"; };
-		3A07697F20FF987C007413AF /* TestListSeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestListSeek.h; sourceTree = "<group>"; };
 		3A33963C20B6725F0019F245 /* NodeCustomValueShorthand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeCustomValueShorthand.cpp; sourceTree = "<group>"; };
 		3A33963D20B6725F0019F245 /* NodeCustomValueShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeCustomValueShorthand.h; sourceTree = "<group>"; };
 		3A33963E20B6725F0019F245 /* SpecialCommandExecuter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpecialCommandExecuter.cpp; sourceTree = "<group>"; };
@@ -71,27 +90,6 @@
 		3A33964D20B679840019F245 /* TestListFilterScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListFilterScriptDefs.txt; sourceTree = "<group>"; };
 		3A33964E20B679840019F245 /* TestListGroupByScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListGroupByScript.txt; sourceTree = "<group>"; };
 		3A33964F20B679840019F245 /* TestListGroupByScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListGroupByScriptDefs.txt; sourceTree = "<group>"; };
-		3A33965020B679840019F245 /* TestCaseBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCaseBase.cpp; sourceTree = "<group>"; };
-		3A33965120B679840019F245 /* TestCaseBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseBase.h; sourceTree = "<group>"; };
-		3A33965220B679840019F245 /* TestCaseExecuter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCaseExecuter.cpp; sourceTree = "<group>"; };
-		3A33965320B679840019F245 /* TestCaseExecuter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseExecuter.h; sourceTree = "<group>"; };
-		3A33965420B679840019F245 /* TestCaseIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseIncludes.h; sourceTree = "<group>"; };
-		3A33965520B679840019F245 /* TestCustomStrFilterShorthand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCustomStrFilterShorthand.cpp; sourceTree = "<group>"; };
-		3A33965620B679840019F245 /* TestCustomStrFilterShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCustomStrFilterShorthand.h; sourceTree = "<group>"; };
-		3A33965720B679840019F245 /* TestFilterSubtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestFilterSubtree.cpp; sourceTree = "<group>"; };
-		3A33965820B679840019F245 /* TestFilterSubtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFilterSubtree.h; sourceTree = "<group>"; };
-		3A33965920B679840019F245 /* TestListFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListFilter.cpp; sourceTree = "<group>"; };
-		3A33965A20B679840019F245 /* TestListFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListFilter.h; sourceTree = "<group>"; };
-		3A33965B20B679840019F245 /* TestListGroupBy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGroupBy.cpp; sourceTree = "<group>"; };
-		3A33965C20B679840019F245 /* TestListGroupBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGroupBy.h; sourceTree = "<group>"; };
-		3A33965D20B679840019F245 /* TestListInnerCount.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListInnerCount.cpp; sourceTree = "<group>"; };
-		3A33965E20B679840019F245 /* TestListInnerCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListInnerCount.h; sourceTree = "<group>"; };
-		3A33965F20B679840019F245 /* TestListInnerCountWithScript.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListInnerCountWithScript.cpp; sourceTree = "<group>"; };
-		3A33966020B679840019F245 /* TestListInnerCountWithScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListInnerCountWithScript.h; sourceTree = "<group>"; };
-		3A33966120B679840019F245 /* TestTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTestCase.cpp; sourceTree = "<group>"; };
-		3A33966220B679840019F245 /* TestTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTestCase.h; sourceTree = "<group>"; };
-		3A33966C20B6A77A0019F245 /* TestLoadFromCodeLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLoadFromCodeLibrary.cpp; sourceTree = "<group>"; };
-		3A33966D20B6A77A0019F245 /* TestLoadFromCodeLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoadFromCodeLibrary.h; sourceTree = "<group>"; };
 		3AB0479E20A1D37600AE312D /* FlexibleComputerLanguage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlexibleComputerLanguage; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB047A120A1D37600AE312D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3AB047A320A1D37600AE312D /* FlexibleComputerLanguage.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FlexibleComputerLanguage.1; sourceTree = "<group>"; };
@@ -132,12 +130,186 @@
 		3AB047CD20A1D3F700AE312D /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		3AB047CE20A1D3F700AE312D /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		3AB047CF20A1D3F700AE312D /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
-		3AB1A89F20B9690500DEDF6D /* TestStringEnclosure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStringEnclosure.cpp; sourceTree = "<group>"; };
-		3AB1A8A020B9690500DEDF6D /* TestStringEnclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStringEnclosure.h; sourceTree = "<group>"; };
-		3AB437682108B2EE00A251F9 /* TestCompound1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestCompound1.cpp; sourceTree = "<group>"; };
-		3AB437692108B2EE00A251F9 /* TestCompound1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCompound1.h; sourceTree = "<group>"; };
 		3AB4376B2108B32400A251F9 /* TestCompound1Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCompound1Script.txt; sourceTree = "<group>"; };
 		3AB4376C2108B32400A251F9 /* TestCompound1ScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCompound1ScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DC6328FD46150020C8B2 /* DateTimeOperations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DateTimeOperations.hpp; sourceTree = "<group>"; };
+		3AC8DC6428FD46150020C8B2 /* DateTimeOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeOperations.h; sourceTree = "<group>"; };
+		3AC8DC6528FD46150020C8B2 /* DateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTime.h; sourceTree = "<group>"; };
+		3AC8DC6628FD46160020C8B2 /* DateTimeOperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DateTimeOperations.cpp; sourceTree = "<group>"; };
+		3AC8DC6B28FD46B90020C8B2 /* Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
+		3AC8DC6C28FD46BA0020C8B2 /* Generator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Generator.cpp; sourceTree = "<group>"; };
+		3AC8DC6E28FD47640020C8B2 /* TestListGetLastElem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGetLastElem.h; sourceTree = "<group>"; };
+		3AC8DC6F28FD47640020C8B2 /* TestStringEnclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStringEnclosure.h; sourceTree = "<group>"; };
+		3AC8DC7028FD47640020C8B2 /* TestListConcat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListConcat.h; sourceTree = "<group>"; };
+		3AC8DC7128FD47640020C8B2 /* TestListFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListFilter.h; sourceTree = "<group>"; };
+		3AC8DC7228FD47640020C8B2 /* TestCompound1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCompound1.cpp; sourceTree = "<group>"; };
+		3AC8DC7328FD47640020C8B2 /* TestDateConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestDateConvert.cpp; sourceTree = "<group>"; };
+		3AC8DC7428FD47640020C8B2 /* TestListAddElem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListAddElem.cpp; sourceTree = "<group>"; };
+		3AC8DC7528FD47650020C8B2 /* TestListSplit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListSplit.cpp; sourceTree = "<group>"; };
+		3AC8DC7628FD47650020C8B2 /* TestListGetSuffix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGetSuffix.h; sourceTree = "<group>"; };
+		3AC8DC7728FD47650020C8B2 /* TestListGetNthElem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGetNthElem.cpp; sourceTree = "<group>"; };
+		3AC8DC7828FD47650020C8B2 /* TestListInnerCount.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListInnerCount.cpp; sourceTree = "<group>"; };
+		3AC8DC7928FD47650020C8B2 /* TestCaseBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCaseBase.cpp; sourceTree = "<group>"; };
+		3AC8DC7B28FD47650020C8B2 /* CodeLibrary1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CodeLibrary1.txt; sourceTree = "<group>"; };
+		3AC8DC7D28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC7E28FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DC7F28FD47650020C8B2 /* TestInnerCountScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestInnerCountScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DC8128FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC8228FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DC8328FD47650020C8B2 /* TestInnerCountScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestInnerCountScript.txt; sourceTree = "<group>"; };
+		3AC8DC8528FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC8628FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DC8728FD47650020C8B2 /* TestFilterSubtreeScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestFilterSubtreeScript.txt; sourceTree = "<group>"; };
+		3AC8DC8A28FD47650020C8B2 /* Query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Query.txt; sourceTree = "<group>"; };
+		3AC8DC8B28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC8D28FD47650020C8B2 /* JSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSON.txt; sourceTree = "<group>"; };
+		3AC8DC8E28FD47650020C8B2 /* Query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Query.txt; sourceTree = "<group>"; };
+		3AC8DC8F28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9128FD47650020C8B2 /* Query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Query.txt; sourceTree = "<group>"; };
+		3AC8DC9228FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9428FD47650020C8B2 /* Query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Query.txt; sourceTree = "<group>"; };
+		3AC8DC9528FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9728FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9828FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DC9A28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9B28FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DC9D28FD47650020C8B2 /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
+		3AC8DC9E28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DC9F28FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DCA028FD47650020C8B2 /* TestListFilterScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListFilterScript.txt; sourceTree = "<group>"; };
+		3AC8DCA128FD47650020C8B2 /* TestCustomStrFilterShorthandScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCustomStrFilterShorthandScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DCA228FD47650020C8B2 /* TestCustomStrFilterShorthandScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCustomStrFilterShorthandScript.txt; sourceTree = "<group>"; };
+		3AC8DCA428FD47650020C8B2 /* query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = query.txt; sourceTree = "<group>"; };
+		3AC8DCA528FD47650020C8B2 /* tree.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tree.txt; sourceTree = "<group>"; };
+		3AC8DCA728FD47650020C8B2 /* query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = query.txt; sourceTree = "<group>"; };
+		3AC8DCA828FD47650020C8B2 /* tree.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tree.txt; sourceTree = "<group>"; };
+		3AC8DCA928FD47650020C8B2 /* TestLoadFromCodeLibraryScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestLoadFromCodeLibraryScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DCAB28FD47650020C8B2 /* result.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result.txt; sourceTree = "<group>"; };
+		3AC8DCAC28FD47650020C8B2 /* AppVerifierLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog; sourceTree = "<group>"; };
+		3AC8DCAE28FD47650020C8B2 /* report */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report; sourceTree = "<group>"; };
+		3AC8DCAF28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCB128FD47650020C8B2 /* MyScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyScript.txt; sourceTree = "<group>"; };
+		3AC8DCB228FD47650020C8B2 /* resultJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resultJSON.json; sourceTree = "<group>"; };
+		3AC8DCB428FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCB528FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DCB728FD47650020C8B2 /* AppVerifierLog_ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog_; sourceTree = "<group>"; };
+		3AC8DCB828FD47650020C8B2 /* AppVerifierLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog; sourceTree = "<group>"; };
+		3AC8DCB928FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCBA28FD47650020C8B2 /* AppVerifierLogWin */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLogWin; sourceTree = "<group>"; };
+		3AC8DCBC28FD47650020C8B2 /* AppVerifierLogRead - Copy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "AppVerifierLogRead - Copy.txt"; sourceTree = "<group>"; };
+		3AC8DCBD28FD47650020C8B2 /* AppVerifierLogRead.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppVerifierLogRead.txt; sourceTree = "<group>"; };
+		3AC8DCBF28FD47650020C8B2 /* query.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = query.txt; sourceTree = "<group>"; };
+		3AC8DCC028FD47650020C8B2 /* tree.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tree.txt; sourceTree = "<group>"; };
+		3AC8DCC128FD47650020C8B2 /* TestListGroupByScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListGroupByScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DCC228FD47650020C8B2 /* TestListGroupByScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListGroupByScript.txt; sourceTree = "<group>"; };
+		3AC8DCC428FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCC528FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DCC728FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCC828FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DCCA28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCCB28FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DCCC28FD47650020C8B2 /* TestSetNormalBoolean */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSetNormalBoolean; sourceTree = "<group>"; };
+		3AC8DCCE28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCCF28FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DCD028FD47650020C8B2 /* TestLoadFromCodeLibraryScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestLoadFromCodeLibraryScript.txt; sourceTree = "<group>"; };
+		3AC8DCD128FD47650020C8B2 /* TestStringEnclosureScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestStringEnclosureScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DCD328FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCD428FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DCD628FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCD728FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DCD928FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCDB28FD47650020C8B2 /* ExtractTestCaseInfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExtractTestCaseInfo.txt; sourceTree = "<group>"; };
+		3AC8DCDD28FD47650020C8B2 /* AppVerifierLog1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog1; sourceTree = "<group>"; };
+		3AC8DCE028FD47650020C8B2 /* AppVerifierLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog; sourceTree = "<group>"; };
+		3AC8DCE128FD47650020C8B2 /* POC.rar */ = {isa = PBXFileReference; lastKnownFileType = file; path = POC.rar; sourceTree = "<group>"; };
+		3AC8DCE228FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCE328FD47650020C8B2 /* report */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report; sourceTree = "<group>"; };
+		3AC8DCE428FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DCE528FD47650020C8B2 /* report_Unix1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report_Unix1; sourceTree = "<group>"; };
+		3AC8DCE628FD47650020C8B2 /* report_Unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report_Unix; sourceTree = "<group>"; };
+		3AC8DCE728FD47650020C8B2 /* report_Unix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report_Unix.txt; sourceTree = "<group>"; };
+		3AC8DCE828FD47650020C8B2 /* info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info; sourceTree = "<group>"; };
+		3AC8DCE928FD47650020C8B2 /* report */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report; sourceTree = "<group>"; };
+		3AC8DCEA28FD47650020C8B2 /* report_ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report_; sourceTree = "<group>"; };
+		3AC8DCEB28FD47650020C8B2 /* Y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Y; sourceTree = "<group>"; };
+		3AC8DCEC28FD47650020C8B2 /* AppVerifierLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppVerifierLog.txt; sourceTree = "<group>"; };
+		3AC8DCED28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCEF28FD47650020C8B2 /* AppVerifierLogRead2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppVerifierLogRead2.txt; sourceTree = "<group>"; };
+		3AC8DCF028FD47650020C8B2 /* AppVerifierLogRead3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppVerifierLogRead3.txt; sourceTree = "<group>"; };
+		3AC8DCF128FD47650020C8B2 /* AppVerifierLogUnixSmall */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLogUnixSmall; sourceTree = "<group>"; };
+		3AC8DCF228FD47650020C8B2 /* AppVerifierLogUnix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLogUnix; sourceTree = "<group>"; };
+		3AC8DCF428FD47650020C8B2 /* AppVerifierLog_ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog_; sourceTree = "<group>"; };
+		3AC8DCF528FD47650020C8B2 /* AppVerifierLog1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog1; sourceTree = "<group>"; };
+		3AC8DCF628FD47650020C8B2 /* AppVerifierLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppVerifierLog; sourceTree = "<group>"; };
+		3AC8DCF828FD47650020C8B2 /* report */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report; sourceTree = "<group>"; };
+		3AC8DCF928FD47650020C8B2 /* report_ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = report_; sourceTree = "<group>"; };
+		3AC8DCFA28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DCFC28FD47650020C8B2 /* AppVerifierLogRead2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppVerifierLogRead2.txt; sourceTree = "<group>"; };
+		3AC8DCFD28FD47650020C8B2 /* AppVerifierLogRead2 - Copy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "AppVerifierLogRead2 - Copy.txt"; sourceTree = "<group>"; };
+		3AC8DCFF28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DD0128FD47650020C8B2 /* MyScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyScript.txt; sourceTree = "<group>"; };
+		3AC8DD0328FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DD0428FD47650020C8B2 /* Script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Script.txt; sourceTree = "<group>"; };
+		3AC8DD0528FD47650020C8B2 /* TestListFilterScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestListFilterScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DD0728FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DD0828FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DD0928FD47650020C8B2 /* TestFilterSubtreeScriptDefs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestFilterSubtreeScriptDefs.txt; sourceTree = "<group>"; };
+		3AC8DD0B28FD47650020C8B2 /* Defs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Defs.txt; sourceTree = "<group>"; };
+		3AC8DD0C28FD47650020C8B2 /* script.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script.txt; sourceTree = "<group>"; };
+		3AC8DD0D28FD47650020C8B2 /* TestStringEnclosureScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestStringEnclosureScript.txt; sourceTree = "<group>"; };
+		3AC8DD0E28FD47650020C8B2 /* TestCustomStrFilterShorthand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCustomStrFilterShorthand.cpp; sourceTree = "<group>"; };
+		3AC8DD0F28FD47660020C8B2 /* TestCommonJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCommonJsonParser.cpp; sourceTree = "<group>"; };
+		3AC8DD1028FD47660020C8B2 /* TestCaseExecuter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCaseExecuter.cpp; sourceTree = "<group>"; };
+		3AC8DD1128FD47660020C8B2 /* TestCustomStrFilterShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCustomStrFilterShorthand.h; sourceTree = "<group>"; };
+		3AC8DD1228FD47660020C8B2 /* TestListGetLastElem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGetLastElem.cpp; sourceTree = "<group>"; };
+		3AC8DD1328FD47660020C8B2 /* TestListGetNthElem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGetNthElem.h; sourceTree = "<group>"; };
+		3AC8DD1428FD47660020C8B2 /* TestListGroupBy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGroupBy.cpp; sourceTree = "<group>"; };
+		3AC8DD1528FD47660020C8B2 /* TestLoadFromCodeLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLoadFromCodeLibrary.cpp; sourceTree = "<group>"; };
+		3AC8DD1628FD47670020C8B2 /* TestNewObjectGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestNewObjectGenerator.cpp; sourceTree = "<group>"; };
+		3AC8DD1728FD47670020C8B2 /* TestRemoveElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRemoveElement.h; sourceTree = "<group>"; };
+		3AC8DD1828FD47670020C8B2 /* TestRemoveFromStart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRemoveFromStart.cpp; sourceTree = "<group>"; };
+		3AC8DD1928FD47670020C8B2 /* TestRemoveFromStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRemoveFromStart.h; sourceTree = "<group>"; };
+		3AC8DD1A28FD47670020C8B2 /* TestTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTestCase.h; sourceTree = "<group>"; };
+		3AC8DD1B28FD47680020C8B2 /* TestCommonJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCommonJsonParser.h; sourceTree = "<group>"; };
+		3AC8DD1C28FD47680020C8B2 /* TestListSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListSort.h; sourceTree = "<group>"; };
+		3AC8DD1D28FD47680020C8B2 /* TestListInnerCountWithScript.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListInnerCountWithScript.cpp; sourceTree = "<group>"; };
+		3AC8DD1E28FD47680020C8B2 /* TestListConcat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListConcat.cpp; sourceTree = "<group>"; };
+		3AC8DD1F28FD47680020C8B2 /* TestListGetFirstElem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGetFirstElem.cpp; sourceTree = "<group>"; };
+		3AC8DD2028FD47680020C8B2 /* TestListReverse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListReverse.cpp; sourceTree = "<group>"; };
+		3AC8DD2128FD47680020C8B2 /* TestFilterSubtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFilterSubtree.h; sourceTree = "<group>"; };
+		3AC8DD2228FD47690020C8B2 /* TestCaseBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseBase.h; sourceTree = "<group>"; };
+		3AC8DD2328FD47690020C8B2 /* TestLoadFromCodeLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoadFromCodeLibrary.h; sourceTree = "<group>"; };
+		3AC8DD2428FD47690020C8B2 /* TestCompound1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCompound1.h; sourceTree = "<group>"; };
+		3AC8DD2528FD47690020C8B2 /* TestListRemoveFromEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListRemoveFromEnd.h; sourceTree = "<group>"; };
+		3AC8DD2628FD47690020C8B2 /* TestFilterSubtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestFilterSubtree.cpp; sourceTree = "<group>"; };
+		3AC8DD2728FD47690020C8B2 /* TestGetSublist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestGetSublist.cpp; sourceTree = "<group>"; };
+		3AC8DD2828FD47690020C8B2 /* TestListSeek.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListSeek.cpp; sourceTree = "<group>"; };
+		3AC8DD2928FD47690020C8B2 /* TestDateConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDateConvert.h; sourceTree = "<group>"; };
+		3AC8DD2A28FD476A0020C8B2 /* TestListSeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListSeek.h; sourceTree = "<group>"; };
+		3AC8DD2B28FD476A0020C8B2 /* TestStringEnclosure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStringEnclosure.cpp; sourceTree = "<group>"; };
+		3AC8DD2C28FD476A0020C8B2 /* TestListRemoveFromEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListRemoveFromEnd.cpp; sourceTree = "<group>"; };
+		3AC8DD2D28FD476A0020C8B2 /* TestListGroupBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGroupBy.h; sourceTree = "<group>"; };
+		3AC8DD2E28FD476A0020C8B2 /* TestListReverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListReverse.h; sourceTree = "<group>"; };
+		3AC8DD2F28FD476A0020C8B2 /* TestCaseExecuter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseExecuter.h; sourceTree = "<group>"; };
+		3AC8DD3028FD476A0020C8B2 /* TestListGetFirstElem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGetFirstElem.h; sourceTree = "<group>"; };
+		3AC8DD3128FD476A0020C8B2 /* TestNewObjectGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNewObjectGenerator.h; sourceTree = "<group>"; };
+		3AC8DD3228FD476B0020C8B2 /* TestListInnerCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListInnerCount.h; sourceTree = "<group>"; };
+		3AC8DD3328FD476B0020C8B2 /* TestListGetPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListGetPrefix.h; sourceTree = "<group>"; };
+		3AC8DD3428FD476B0020C8B2 /* TestListInnerCountWithScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListInnerCountWithScript.h; sourceTree = "<group>"; };
+		3AC8DD3528FD476B0020C8B2 /* TestListFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListFilter.cpp; sourceTree = "<group>"; };
+		3AC8DD3628FD476B0020C8B2 /* TestListGetPrefix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGetPrefix.cpp; sourceTree = "<group>"; };
+		3AC8DD3728FD476B0020C8B2 /* TestListSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListSort.cpp; sourceTree = "<group>"; };
+		3AC8DD3828FD476B0020C8B2 /* TestListSplit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListSplit.h; sourceTree = "<group>"; };
+		3AC8DD3928FD476B0020C8B2 /* TestGetSublist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGetSublist.h; sourceTree = "<group>"; };
+		3AC8DD3A28FD476C0020C8B2 /* TestTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTestCase.cpp; sourceTree = "<group>"; };
+		3AC8DD3B28FD476C0020C8B2 /* TestCaseIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseIncludes.h; sourceTree = "<group>"; };
+		3AC8DD3C28FD476C0020C8B2 /* TestListGetSuffix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestListGetSuffix.cpp; sourceTree = "<group>"; };
+		3AC8DD3D28FD476D0020C8B2 /* TestRemoveElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRemoveElement.cpp; sourceTree = "<group>"; };
+		3AC8DD3E28FD476D0020C8B2 /* TestListAddElem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListAddElem.h; sourceTree = "<group>"; };
+		3AC8DD6028FD48330020C8B2 /* ResultGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultGenerator.h; sourceTree = "<group>"; };
+		3AC8DD6128FD48330020C8B2 /* ResultGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResultGenerator.cpp; sourceTree = "<group>"; };
+		3AC8DD6328FD4A4E0020C8B2 /* LogJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogJsonParser.cpp; sourceTree = "<group>"; };
+		3AC8DD6428FD4A4E0020C8B2 /* LogJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogJsonParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,34 +326,69 @@
 		3A33964420B679840019F245 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				3AC8DC7A28FD47650020C8B2 /* files */,
+				3AC8DC7928FD47650020C8B2 /* TestCaseBase.cpp */,
+				3AC8DD2228FD47690020C8B2 /* TestCaseBase.h */,
+				3AC8DD1028FD47660020C8B2 /* TestCaseExecuter.cpp */,
+				3AC8DD2F28FD476A0020C8B2 /* TestCaseExecuter.h */,
+				3AC8DD3B28FD476C0020C8B2 /* TestCaseIncludes.h */,
+				3AC8DD0F28FD47660020C8B2 /* TestCommonJsonParser.cpp */,
+				3AC8DD1B28FD47680020C8B2 /* TestCommonJsonParser.h */,
+				3AC8DC7228FD47640020C8B2 /* TestCompound1.cpp */,
+				3AC8DD2428FD47690020C8B2 /* TestCompound1.h */,
+				3AC8DD0E28FD47650020C8B2 /* TestCustomStrFilterShorthand.cpp */,
+				3AC8DD1128FD47660020C8B2 /* TestCustomStrFilterShorthand.h */,
+				3AC8DC7328FD47640020C8B2 /* TestDateConvert.cpp */,
+				3AC8DD2928FD47690020C8B2 /* TestDateConvert.h */,
+				3AC8DD2628FD47690020C8B2 /* TestFilterSubtree.cpp */,
+				3AC8DD2128FD47680020C8B2 /* TestFilterSubtree.h */,
+				3AC8DD2728FD47690020C8B2 /* TestGetSublist.cpp */,
+				3AC8DD3928FD476B0020C8B2 /* TestGetSublist.h */,
+				3AC8DC7428FD47640020C8B2 /* TestListAddElem.cpp */,
+				3AC8DD3E28FD476D0020C8B2 /* TestListAddElem.h */,
+				3AC8DD1E28FD47680020C8B2 /* TestListConcat.cpp */,
+				3AC8DC7028FD47640020C8B2 /* TestListConcat.h */,
+				3AC8DD3528FD476B0020C8B2 /* TestListFilter.cpp */,
+				3AC8DC7128FD47640020C8B2 /* TestListFilter.h */,
+				3AC8DD1F28FD47680020C8B2 /* TestListGetFirstElem.cpp */,
+				3AC8DD3028FD476A0020C8B2 /* TestListGetFirstElem.h */,
+				3AC8DD1228FD47660020C8B2 /* TestListGetLastElem.cpp */,
+				3AC8DC6E28FD47640020C8B2 /* TestListGetLastElem.h */,
+				3AC8DC7728FD47650020C8B2 /* TestListGetNthElem.cpp */,
+				3AC8DD1328FD47660020C8B2 /* TestListGetNthElem.h */,
+				3AC8DD3628FD476B0020C8B2 /* TestListGetPrefix.cpp */,
+				3AC8DD3328FD476B0020C8B2 /* TestListGetPrefix.h */,
+				3AC8DD3C28FD476C0020C8B2 /* TestListGetSuffix.cpp */,
+				3AC8DC7628FD47650020C8B2 /* TestListGetSuffix.h */,
+				3AC8DD1428FD47660020C8B2 /* TestListGroupBy.cpp */,
+				3AC8DD2D28FD476A0020C8B2 /* TestListGroupBy.h */,
+				3AC8DC7828FD47650020C8B2 /* TestListInnerCount.cpp */,
+				3AC8DD3228FD476B0020C8B2 /* TestListInnerCount.h */,
+				3AC8DD1D28FD47680020C8B2 /* TestListInnerCountWithScript.cpp */,
+				3AC8DD3428FD476B0020C8B2 /* TestListInnerCountWithScript.h */,
+				3AC8DD2C28FD476A0020C8B2 /* TestListRemoveFromEnd.cpp */,
+				3AC8DD2528FD47690020C8B2 /* TestListRemoveFromEnd.h */,
+				3AC8DD2028FD47680020C8B2 /* TestListReverse.cpp */,
+				3AC8DD2E28FD476A0020C8B2 /* TestListReverse.h */,
+				3AC8DD2828FD47690020C8B2 /* TestListSeek.cpp */,
+				3AC8DD2A28FD476A0020C8B2 /* TestListSeek.h */,
+				3AC8DD3728FD476B0020C8B2 /* TestListSort.cpp */,
+				3AC8DD1C28FD47680020C8B2 /* TestListSort.h */,
+				3AC8DC7528FD47650020C8B2 /* TestListSplit.cpp */,
+				3AC8DD3828FD476B0020C8B2 /* TestListSplit.h */,
+				3AC8DD1528FD47660020C8B2 /* TestLoadFromCodeLibrary.cpp */,
+				3AC8DD2328FD47690020C8B2 /* TestLoadFromCodeLibrary.h */,
+				3AC8DD1628FD47670020C8B2 /* TestNewObjectGenerator.cpp */,
+				3AC8DD3128FD476A0020C8B2 /* TestNewObjectGenerator.h */,
+				3AC8DD3D28FD476D0020C8B2 /* TestRemoveElement.cpp */,
+				3AC8DD1728FD47670020C8B2 /* TestRemoveElement.h */,
+				3AC8DD1828FD47670020C8B2 /* TestRemoveFromStart.cpp */,
+				3AC8DD1928FD47670020C8B2 /* TestRemoveFromStart.h */,
+				3AC8DD2B28FD476A0020C8B2 /* TestStringEnclosure.cpp */,
+				3AC8DC6F28FD47640020C8B2 /* TestStringEnclosure.h */,
+				3AC8DD3A28FD476C0020C8B2 /* TestTestCase.cpp */,
+				3AC8DD1A28FD47670020C8B2 /* TestTestCase.h */,
 				3A33964520B679840019F245 /* files */,
-				3A33965020B679840019F245 /* TestCaseBase.cpp */,
-				3A33965120B679840019F245 /* TestCaseBase.h */,
-				3A33965220B679840019F245 /* TestCaseExecuter.cpp */,
-				3A33965320B679840019F245 /* TestCaseExecuter.h */,
-				3A33965420B679840019F245 /* TestCaseIncludes.h */,
-				3A33965520B679840019F245 /* TestCustomStrFilterShorthand.cpp */,
-				3A33965620B679840019F245 /* TestCustomStrFilterShorthand.h */,
-				3A33965720B679840019F245 /* TestFilterSubtree.cpp */,
-				3A33965820B679840019F245 /* TestFilterSubtree.h */,
-				3A33965920B679840019F245 /* TestListFilter.cpp */,
-				3A33965A20B679840019F245 /* TestListFilter.h */,
-				3A33965B20B679840019F245 /* TestListGroupBy.cpp */,
-				3A33965C20B679840019F245 /* TestListGroupBy.h */,
-				3A33965D20B679840019F245 /* TestListInnerCount.cpp */,
-				3A33965E20B679840019F245 /* TestListInnerCount.h */,
-				3A33965F20B679840019F245 /* TestListInnerCountWithScript.cpp */,
-				3A33966020B679840019F245 /* TestListInnerCountWithScript.h */,
-				3A33966120B679840019F245 /* TestTestCase.cpp */,
-				3A33966220B679840019F245 /* TestTestCase.h */,
-				3A33966C20B6A77A0019F245 /* TestLoadFromCodeLibrary.cpp */,
-				3A33966D20B6A77A0019F245 /* TestLoadFromCodeLibrary.h */,
-				3AB1A89F20B9690500DEDF6D /* TestStringEnclosure.cpp */,
-				3AB1A8A020B9690500DEDF6D /* TestStringEnclosure.h */,
-				3A07697E20FF987C007413AF /* TestListSeek.cpp */,
-				3A07697F20FF987C007413AF /* TestListSeek.h */,
-				3AB437682108B2EE00A251F9 /* TestCompound1.cpp */,
-				3AB437692108B2EE00A251F9 /* TestCompound1.h */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -226,6 +433,10 @@
 			isa = PBXGroup;
 			children = (
 				3AB047A120A1D37600AE312D /* main.cpp */,
+				3AC8DD6328FD4A4E0020C8B2 /* LogJsonParser.cpp */,
+				3AC8DD6428FD4A4E0020C8B2 /* LogJsonParser.h */,
+				3AC8DD6128FD48330020C8B2 /* ResultGenerator.cpp */,
+				3AC8DD6028FD48330020C8B2 /* ResultGenerator.h */,
 				3AB047A320A1D37600AE312D /* FlexibleComputerLanguage.1 */,
 			);
 			path = FlexibleComputerLanguage;
@@ -235,6 +446,12 @@
 			isa = PBXGroup;
 			children = (
 				3A33964420B679840019F245 /* TestCases */,
+				3AC8DC6C28FD46BA0020C8B2 /* Generator.cpp */,
+				3AC8DC6B28FD46B90020C8B2 /* Generator.h */,
+				3AC8DC6528FD46150020C8B2 /* DateTime.h */,
+				3AC8DC6628FD46160020C8B2 /* DateTimeOperations.cpp */,
+				3AC8DC6428FD46150020C8B2 /* DateTimeOperations.h */,
+				3AC8DC6328FD46150020C8B2 /* DateTimeOperations.hpp */,
 				3A33964320B676950019F245 /* String.h */,
 				3A33964220B675C10019F245 /* ISpecialCommand.h */,
 				3A33963C20B6725F0019F245 /* NodeCustomValueShorthand.cpp */,
@@ -280,6 +497,440 @@
 				3AB047CF20A1D3F700AE312D /* Value.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		3AC8DC7A28FD47650020C8B2 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC7B28FD47650020C8B2 /* CodeLibrary1.txt */,
+				3AC8DC7C28FD47650020C8B2 /* testGetPrefixList */,
+				3AC8DC7F28FD47650020C8B2 /* TestInnerCountScriptDefs.txt */,
+				3AC8DC8028FD47650020C8B2 /* testDateConvert */,
+				3AC8DC8328FD47650020C8B2 /* TestInnerCountScript.txt */,
+				3AC8DC8428FD47650020C8B2 /* testConcatList */,
+				3AC8DC8728FD47650020C8B2 /* TestFilterSubtreeScript.txt */,
+				3AC8DC8828FD47650020C8B2 /* testNewKeyWord */,
+				3AC8DC9628FD47650020C8B2 /* testGetSublist */,
+				3AC8DC9928FD47650020C8B2 /* testLastelem */,
+				3AC8DC9C28FD47650020C8B2 /* testCommonJsonParser */,
+				3AC8DCA028FD47650020C8B2 /* TestListFilterScript.txt */,
+				3AC8DCA128FD47650020C8B2 /* TestCustomStrFilterShorthandScriptDefs.txt */,
+				3AC8DCA228FD47650020C8B2 /* TestCustomStrFilterShorthandScript.txt */,
+				3AC8DCA328FD47650020C8B2 /* test9 */,
+				3AC8DCA628FD47650020C8B2 /* test7 */,
+				3AC8DCA928FD47650020C8B2 /* TestLoadFromCodeLibraryScriptDefs.txt */,
+				3AC8DCAA28FD47650020C8B2 /* test6 */,
+				3AC8DCB328FD47650020C8B2 /* testGetNthElem */,
+				3AC8DCB628FD47650020C8B2 /* test1 */,
+				3AC8DCBE28FD47650020C8B2 /* test8 */,
+				3AC8DCC128FD47650020C8B2 /* TestListGroupByScriptDefs.txt */,
+				3AC8DCC228FD47650020C8B2 /* TestListGroupByScript.txt */,
+				3AC8DCC328FD47650020C8B2 /* testGetSuffixList */,
+				3AC8DCC628FD47650020C8B2 /* testRemovefromEnd */,
+				3AC8DCC928FD47650020C8B2 /* testGetFirstElem */,
+				3AC8DCCC28FD47650020C8B2 /* TestSetNormalBoolean */,
+				3AC8DCCD28FD47650020C8B2 /* testListSplit */,
+				3AC8DCD028FD47650020C8B2 /* TestLoadFromCodeLibraryScript.txt */,
+				3AC8DCD128FD47650020C8B2 /* TestStringEnclosureScriptDefs.txt */,
+				3AC8DCD228FD47650020C8B2 /* testRemovefromStart */,
+				3AC8DCD528FD47650020C8B2 /* testListSort */,
+				3AC8DCD828FD47650020C8B2 /* test4 */,
+				3AC8DCDC28FD47650020C8B2 /* test3 */,
+				3AC8DCF328FD47650020C8B2 /* test2 */,
+				3AC8DCFE28FD47650020C8B2 /* test5 */,
+				3AC8DD0228FD47650020C8B2 /* testAddElem */,
+				3AC8DD0528FD47650020C8B2 /* TestListFilterScriptDefs.txt */,
+				3AC8DD0628FD47650020C8B2 /* testRemoveElement */,
+				3AC8DD0928FD47650020C8B2 /* TestFilterSubtreeScriptDefs.txt */,
+				3AC8DD0A28FD47650020C8B2 /* testReverse */,
+				3AC8DD0D28FD47650020C8B2 /* TestStringEnclosureScript.txt */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+		3AC8DC7C28FD47650020C8B2 /* testGetPrefixList */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC7D28FD47650020C8B2 /* Defs.txt */,
+				3AC8DC7E28FD47650020C8B2 /* Script.txt */,
+			);
+			path = testGetPrefixList;
+			sourceTree = "<group>";
+		};
+		3AC8DC8028FD47650020C8B2 /* testDateConvert */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC8128FD47650020C8B2 /* Defs.txt */,
+				3AC8DC8228FD47650020C8B2 /* Script.txt */,
+			);
+			path = testDateConvert;
+			sourceTree = "<group>";
+		};
+		3AC8DC8428FD47650020C8B2 /* testConcatList */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC8528FD47650020C8B2 /* Defs.txt */,
+				3AC8DC8628FD47650020C8B2 /* Script.txt */,
+			);
+			path = testConcatList;
+			sourceTree = "<group>";
+		};
+		3AC8DC8828FD47650020C8B2 /* testNewKeyWord */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC8928FD47650020C8B2 /* NewString */,
+				3AC8DC8C28FD47650020C8B2 /* NewInteger */,
+				3AC8DC9028FD47650020C8B2 /* NewNode */,
+				3AC8DC9328FD47650020C8B2 /* NewBool */,
+			);
+			path = testNewKeyWord;
+			sourceTree = "<group>";
+		};
+		3AC8DC8928FD47650020C8B2 /* NewString */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC8A28FD47650020C8B2 /* Query.txt */,
+				3AC8DC8B28FD47650020C8B2 /* Defs.txt */,
+			);
+			path = NewString;
+			sourceTree = "<group>";
+		};
+		3AC8DC8C28FD47650020C8B2 /* NewInteger */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC8D28FD47650020C8B2 /* JSON.txt */,
+				3AC8DC8E28FD47650020C8B2 /* Query.txt */,
+				3AC8DC8F28FD47650020C8B2 /* Defs.txt */,
+			);
+			path = NewInteger;
+			sourceTree = "<group>";
+		};
+		3AC8DC9028FD47650020C8B2 /* NewNode */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC9128FD47650020C8B2 /* Query.txt */,
+				3AC8DC9228FD47650020C8B2 /* Defs.txt */,
+			);
+			path = NewNode;
+			sourceTree = "<group>";
+		};
+		3AC8DC9328FD47650020C8B2 /* NewBool */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC9428FD47650020C8B2 /* Query.txt */,
+				3AC8DC9528FD47650020C8B2 /* Defs.txt */,
+			);
+			path = NewBool;
+			sourceTree = "<group>";
+		};
+		3AC8DC9628FD47650020C8B2 /* testGetSublist */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC9728FD47650020C8B2 /* Defs.txt */,
+				3AC8DC9828FD47650020C8B2 /* Script.txt */,
+			);
+			path = testGetSublist;
+			sourceTree = "<group>";
+		};
+		3AC8DC9928FD47650020C8B2 /* testLastelem */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC9A28FD47650020C8B2 /* Defs.txt */,
+				3AC8DC9B28FD47650020C8B2 /* script.txt */,
+			);
+			path = testLastelem;
+			sourceTree = "<group>";
+		};
+		3AC8DC9C28FD47650020C8B2 /* testCommonJsonParser */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DC9D28FD47650020C8B2 /* json.txt */,
+				3AC8DC9E28FD47650020C8B2 /* Defs.txt */,
+				3AC8DC9F28FD47650020C8B2 /* Script.txt */,
+			);
+			path = testCommonJsonParser;
+			sourceTree = "<group>";
+		};
+		3AC8DCA328FD47650020C8B2 /* test9 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCA428FD47650020C8B2 /* query.txt */,
+				3AC8DCA528FD47650020C8B2 /* tree.txt */,
+			);
+			path = test9;
+			sourceTree = "<group>";
+		};
+		3AC8DCA628FD47650020C8B2 /* test7 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCA728FD47650020C8B2 /* query.txt */,
+				3AC8DCA828FD47650020C8B2 /* tree.txt */,
+			);
+			path = test7;
+			sourceTree = "<group>";
+		};
+		3AC8DCAA28FD47650020C8B2 /* test6 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCAB28FD47650020C8B2 /* result.txt */,
+				3AC8DCAC28FD47650020C8B2 /* AppVerifierLog */,
+				3AC8DCAD28FD47650020C8B2 /* Output */,
+				3AC8DCAF28FD47650020C8B2 /* Defs.txt */,
+				3AC8DCB028FD47650020C8B2 /* Scripts */,
+				3AC8DCB228FD47650020C8B2 /* resultJSON.json */,
+			);
+			path = test6;
+			sourceTree = "<group>";
+		};
+		3AC8DCAD28FD47650020C8B2 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCAE28FD47650020C8B2 /* report */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		3AC8DCB028FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCB128FD47650020C8B2 /* MyScript.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DCB328FD47650020C8B2 /* testGetNthElem */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCB428FD47650020C8B2 /* Defs.txt */,
+				3AC8DCB528FD47650020C8B2 /* script.txt */,
+			);
+			path = testGetNthElem;
+			sourceTree = "<group>";
+		};
+		3AC8DCB628FD47650020C8B2 /* test1 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCB728FD47650020C8B2 /* AppVerifierLog_ */,
+				3AC8DCB828FD47650020C8B2 /* AppVerifierLog */,
+				3AC8DCB928FD47650020C8B2 /* Defs.txt */,
+				3AC8DCBA28FD47650020C8B2 /* AppVerifierLogWin */,
+				3AC8DCBB28FD47650020C8B2 /* Scripts */,
+			);
+			path = test1;
+			sourceTree = "<group>";
+		};
+		3AC8DCBB28FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCBC28FD47650020C8B2 /* AppVerifierLogRead - Copy.txt */,
+				3AC8DCBD28FD47650020C8B2 /* AppVerifierLogRead.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DCBE28FD47650020C8B2 /* test8 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCBF28FD47650020C8B2 /* query.txt */,
+				3AC8DCC028FD47650020C8B2 /* tree.txt */,
+			);
+			path = test8;
+			sourceTree = "<group>";
+		};
+		3AC8DCC328FD47650020C8B2 /* testGetSuffixList */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCC428FD47650020C8B2 /* Defs.txt */,
+				3AC8DCC528FD47650020C8B2 /* Script.txt */,
+			);
+			path = testGetSuffixList;
+			sourceTree = "<group>";
+		};
+		3AC8DCC628FD47650020C8B2 /* testRemovefromEnd */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCC728FD47650020C8B2 /* Defs.txt */,
+				3AC8DCC828FD47650020C8B2 /* script.txt */,
+			);
+			path = testRemovefromEnd;
+			sourceTree = "<group>";
+		};
+		3AC8DCC928FD47650020C8B2 /* testGetFirstElem */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCCA28FD47650020C8B2 /* Defs.txt */,
+				3AC8DCCB28FD47650020C8B2 /* script.txt */,
+			);
+			path = testGetFirstElem;
+			sourceTree = "<group>";
+		};
+		3AC8DCCD28FD47650020C8B2 /* testListSplit */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCCE28FD47650020C8B2 /* Defs.txt */,
+				3AC8DCCF28FD47650020C8B2 /* Script.txt */,
+			);
+			path = testListSplit;
+			sourceTree = "<group>";
+		};
+		3AC8DCD228FD47650020C8B2 /* testRemovefromStart */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCD328FD47650020C8B2 /* Defs.txt */,
+				3AC8DCD428FD47650020C8B2 /* script.txt */,
+			);
+			path = testRemovefromStart;
+			sourceTree = "<group>";
+		};
+		3AC8DCD528FD47650020C8B2 /* testListSort */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCD628FD47650020C8B2 /* Defs.txt */,
+				3AC8DCD728FD47650020C8B2 /* Script.txt */,
+			);
+			path = testListSort;
+			sourceTree = "<group>";
+		};
+		3AC8DCD828FD47650020C8B2 /* test4 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCD928FD47650020C8B2 /* Defs.txt */,
+				3AC8DCDA28FD47650020C8B2 /* Scripts */,
+			);
+			path = test4;
+			sourceTree = "<group>";
+		};
+		3AC8DCDA28FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCDB28FD47650020C8B2 /* ExtractTestCaseInfo.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DCDC28FD47650020C8B2 /* test3 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCDD28FD47650020C8B2 /* AppVerifierLog1 */,
+				3AC8DCDE28FD47650020C8B2 /* Output */,
+				3AC8DCEC28FD47650020C8B2 /* AppVerifierLog.txt */,
+				3AC8DCED28FD47650020C8B2 /* Defs.txt */,
+				3AC8DCEE28FD47650020C8B2 /* Scripts */,
+				3AC8DCF128FD47650020C8B2 /* AppVerifierLogUnixSmall */,
+				3AC8DCF228FD47650020C8B2 /* AppVerifierLogUnix */,
+			);
+			path = test3;
+			sourceTree = "<group>";
+		};
+		3AC8DCDE28FD47650020C8B2 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCDF28FD47650020C8B2 /* POC */,
+				3AC8DCE528FD47650020C8B2 /* report_Unix1 */,
+				3AC8DCE628FD47650020C8B2 /* report_Unix */,
+				3AC8DCE728FD47650020C8B2 /* report_Unix.txt */,
+				3AC8DCE828FD47650020C8B2 /* info */,
+				3AC8DCE928FD47650020C8B2 /* report */,
+				3AC8DCEA28FD47650020C8B2 /* report_ */,
+				3AC8DCEB28FD47650020C8B2 /* Y */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		3AC8DCDF28FD47650020C8B2 /* POC */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCE028FD47650020C8B2 /* AppVerifierLog */,
+				3AC8DCE128FD47650020C8B2 /* POC.rar */,
+				3AC8DCE228FD47650020C8B2 /* Defs.txt */,
+				3AC8DCE328FD47650020C8B2 /* report */,
+				3AC8DCE428FD47650020C8B2 /* Script.txt */,
+			);
+			path = POC;
+			sourceTree = "<group>";
+		};
+		3AC8DCEE28FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCEF28FD47650020C8B2 /* AppVerifierLogRead2.txt */,
+				3AC8DCF028FD47650020C8B2 /* AppVerifierLogRead3.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DCF328FD47650020C8B2 /* test2 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCF428FD47650020C8B2 /* AppVerifierLog_ */,
+				3AC8DCF528FD47650020C8B2 /* AppVerifierLog1 */,
+				3AC8DCF628FD47650020C8B2 /* AppVerifierLog */,
+				3AC8DCF728FD47650020C8B2 /* Output */,
+				3AC8DCFA28FD47650020C8B2 /* Defs.txt */,
+				3AC8DCFB28FD47650020C8B2 /* Scripts */,
+			);
+			path = test2;
+			sourceTree = "<group>";
+		};
+		3AC8DCF728FD47650020C8B2 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCF828FD47650020C8B2 /* report */,
+				3AC8DCF928FD47650020C8B2 /* report_ */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		3AC8DCFB28FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCFC28FD47650020C8B2 /* AppVerifierLogRead2.txt */,
+				3AC8DCFD28FD47650020C8B2 /* AppVerifierLogRead2 - Copy.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DCFE28FD47650020C8B2 /* test5 */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DCFF28FD47650020C8B2 /* Defs.txt */,
+				3AC8DD0028FD47650020C8B2 /* Scripts */,
+			);
+			path = test5;
+			sourceTree = "<group>";
+		};
+		3AC8DD0028FD47650020C8B2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DD0128FD47650020C8B2 /* MyScript.txt */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3AC8DD0228FD47650020C8B2 /* testAddElem */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DD0328FD47650020C8B2 /* Defs.txt */,
+				3AC8DD0428FD47650020C8B2 /* Script.txt */,
+			);
+			path = testAddElem;
+			sourceTree = "<group>";
+		};
+		3AC8DD0628FD47650020C8B2 /* testRemoveElement */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DD0728FD47650020C8B2 /* Defs.txt */,
+				3AC8DD0828FD47650020C8B2 /* script.txt */,
+			);
+			path = testRemoveElement;
+			sourceTree = "<group>";
+		};
+		3AC8DD0A28FD47650020C8B2 /* testReverse */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8DD0B28FD47650020C8B2 /* Defs.txt */,
+				3AC8DD0C28FD47650020C8B2 /* script.txt */,
+			);
+			path = testReverse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,35 +984,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A33966820B679840019F245 /* TestListGroupBy.cpp in Sources */,
-				3A07698020FF987C007413AF /* TestListSeek.cpp in Sources */,
+				3AC8DD4928FD476D0020C8B2 /* TestListGetLastElem.cpp in Sources */,
 				3A33964120B6725F0019F245 /* SpecialCommandExecuter.cpp in Sources */,
+				3AC8DD4B28FD476D0020C8B2 /* TestLoadFromCodeLibrary.cpp in Sources */,
 				3AB047D720A1D3F700AE312D /* MemMan.cpp in Sources */,
-				3A33966320B679840019F245 /* TestCaseBase.cpp in Sources */,
+				3AC8DD4F28FD476D0020C8B2 /* TestListConcat.cpp in Sources */,
 				3AB047D220A1D3F700AE312D /* CPlusPlusEntry.cpp in Sources */,
+				3AC8DD5028FD476D0020C8B2 /* TestListGetFirstElem.cpp in Sources */,
+				3AC8DD5628FD476D0020C8B2 /* TestListRemoveFromEnd.cpp in Sources */,
 				3AB047D520A1D3F700AE312D /* ExecutionTemplate.cpp in Sources */,
 				3AB047A220A1D37600AE312D /* main.cpp in Sources */,
-				3A33966620B679840019F245 /* TestFilterSubtree.cpp in Sources */,
-				3A33966E20B6A77A0019F245 /* TestLoadFromCodeLibrary.cpp in Sources */,
-				3A33966420B679840019F245 /* TestCaseExecuter.cpp in Sources */,
+				3AC8DD5C28FD476D0020C8B2 /* TestRemoveElement.cpp in Sources */,
+				3AC8DD5728FD476D0020C8B2 /* TestListFilter.cpp in Sources */,
+				3AC8DD4328FD476D0020C8B2 /* TestListGetNthElem.cpp in Sources */,
+				3AC8DD5B28FD476D0020C8B2 /* TestListGetSuffix.cpp in Sources */,
+				3AC8DD5428FD476D0020C8B2 /* TestListSeek.cpp in Sources */,
+				3AC8DD4028FD476D0020C8B2 /* TestDateConvert.cpp in Sources */,
+				3AC8DC6D28FD46BA0020C8B2 /* Generator.cpp in Sources */,
 				3AB047D420A1D3F700AE312D /* EntityList.cpp in Sources */,
 				3A33964020B6725F0019F245 /* NodeCustomValueShorthand.cpp in Sources */,
+				3AC8DD4D28FD476D0020C8B2 /* TestRemoveFromStart.cpp in Sources */,
+				3AC8DD5228FD476D0020C8B2 /* TestFilterSubtree.cpp in Sources */,
 				3AB047D120A1D3F700AE312D /* Command.cpp in Sources */,
 				3AB047D320A1D3F700AE312D /* DefFileReader.cpp in Sources */,
+				3AC8DD4828FD476D0020C8B2 /* TestCaseExecuter.cpp in Sources */,
+				3AC8DD4528FD476D0020C8B2 /* TestCaseBase.cpp in Sources */,
 				3AB047DB20A1D3F700AE312D /* Tests.cpp in Sources */,
-				3A33966720B679840019F245 /* TestListFilter.cpp in Sources */,
+				3AC8DD4E28FD476D0020C8B2 /* TestListInnerCountWithScript.cpp in Sources */,
+				3AC8DD5328FD476D0020C8B2 /* TestGetSublist.cpp in Sources */,
 				3AB047D920A1D3F700AE312D /* ScriptReader.cpp in Sources */,
+				3AC8DC6728FD46160020C8B2 /* DateTimeOperations.cpp in Sources */,
 				3AB047DC20A1D3F700AE312D /* Utils.cpp in Sources */,
 				3AB047DA20A1D3F700AE312D /* StringOperations.cpp in Sources */,
 				3AB047D620A1D3F700AE312D /* ExecutionTemplateList.cpp in Sources */,
-				3A33966520B679840019F245 /* TestCustomStrFilterShorthand.cpp in Sources */,
+				3AC8DD6528FD4A4E0020C8B2 /* LogJsonParser.cpp in Sources */,
+				3AC8DD5A28FD476D0020C8B2 /* TestTestCase.cpp in Sources */,
+				3AC8DD3F28FD476D0020C8B2 /* TestCompound1.cpp in Sources */,
+				3AC8DD4C28FD476D0020C8B2 /* TestNewObjectGenerator.cpp in Sources */,
+				3AC8DD5128FD476D0020C8B2 /* TestListReverse.cpp in Sources */,
 				3AB047D020A1D3F700AE312D /* Bool.cpp in Sources */,
-				3A33966B20B679840019F245 /* TestTestCase.cpp in Sources */,
-				3AB4376A2108B2EE00A251F9 /* TestCompound1.cpp in Sources */,
-				3A33966920B679840019F245 /* TestListInnerCount.cpp in Sources */,
-				3AB1A8A120B9690500DEDF6D /* TestStringEnclosure.cpp in Sources */,
-				3A33966A20B679840019F245 /* TestListInnerCountWithScript.cpp in Sources */,
+				3AC8DD4228FD476D0020C8B2 /* TestListSplit.cpp in Sources */,
+				3AC8DD4428FD476D0020C8B2 /* TestListInnerCount.cpp in Sources */,
+				3AC8DD4728FD476D0020C8B2 /* TestCommonJsonParser.cpp in Sources */,
+				3AC8DD5928FD476D0020C8B2 /* TestListSort.cpp in Sources */,
+				3AC8DD4A28FD476D0020C8B2 /* TestListGroupBy.cpp in Sources */,
+				3AC8DD5828FD476D0020C8B2 /* TestListGetPrefix.cpp in Sources */,
+				3AC8DD4628FD476D0020C8B2 /* TestCustomStrFilterShorthand.cpp in Sources */,
+				3AC8DD5528FD476D0020C8B2 /* TestStringEnclosure.cpp in Sources */,
+				3AC8DD4128FD476D0020C8B2 /* TestListAddElem.cpp in Sources */,
 				3AB047D820A1D3F700AE312D /* Node.cpp in Sources */,
+				3AC8DD6228FD48330020C8B2 /* ResultGenerator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

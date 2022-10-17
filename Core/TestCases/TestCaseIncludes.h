@@ -10,7 +10,7 @@
 #define LogAnalyzer_TestCaseIncludes_h
 
 #include "Int.h"
-#include "../Strings.h"
+#include "../String.h"
 #include "Bool.h"
 #include "Value.h"
 #include "MemMan.h"

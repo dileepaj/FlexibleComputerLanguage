@@ -17,8 +17,8 @@
 #include <set>
 #include <algorithm>
 #include <functional>
-#include <LogJsonParser.h>
-#include <QueryExecuter.h>
+//#include <LogJsonParser.h>
+//#include <QueryExecuter.h>
 #include "Generator.h"
 
 Command::Command()
@@ -752,6 +752,10 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                         pNodeRes = pNode->AddNode();
                         pNodeRes->SetCustomString("array");
                         pNodeRes->SetLValue((PMCHAR)pStrArg->GetValue().c_str());
+                    }
+                }
+                break;
+            }
 
             case COMMAND_TYPE_SET_NORMAL_STRING : {
                 if(ENTITY_TYPE_LIST == pArg->ul_Type){
@@ -1118,8 +1122,6 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                 }
                 break;
             }
-//                pNodeRes = pNode->GetRightSibling();
-//                break;
             case COMMAND_TYPE_LAST_CHILD: {
                 pNodeRes = pNode->GetLastChild();
                 break;
@@ -1235,8 +1237,7 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
             }
 
             //Set boolean value to a object
-            case COMMAND_TYPE_SET_INNER_BOOLEAN:
-            {
+            case COMMAND_TYPE_SET_INNER_BOOLEAN: {
                 MemoryManager::Inst.CreateObject(&pNullRes);
                 if(ENTITY_TYPE_LIST == pArg->ul_Type)
                 {

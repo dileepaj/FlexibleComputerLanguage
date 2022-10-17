@@ -7,7 +7,7 @@
 #include "MemMan.h"
 #include "Int.h"
 #include "ExecutionContext.h"
-#include "Strings.h"
+#include "String.h"
 #include "Bool.h"
 #include "Node.h"
 

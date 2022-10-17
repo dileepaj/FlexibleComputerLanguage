@@ -12,7 +12,7 @@
 #include "Node.h"
 #include "MemMan.h"
 #include "CommonIncludes.h"
-#include "OTPParser.h"
+//#include "OTPParser.h"
 #include "LogJsonParser.h"
 #include "ResultGenerator.h"
 #include "iostream"

@@ -11,7 +11,7 @@
 #include "MemMan.h"
 #include "Node.h"
 #include "LogJsonParser.h"
-#include "OTPParser.h"
+//#include "OTPParser.h"
 #include "ResultGenerator.h"
 
 
