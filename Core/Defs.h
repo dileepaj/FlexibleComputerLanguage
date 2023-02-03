@@ -727,6 +727,10 @@
 #define     COMMAND_TYPE_GET_TIME_24_HOUR_FORMAT                        8015
 #define     COMMAND_TYPE_GET_YEAR                                       8016
 #define     COMMAND_TYPE_ADD_PERIOD                                     8017
+#define     COMMAND_TYPE_MULTIPLY                                       8018
+#define     COMMAND_TYPE_DIVIDE                                         8019
+#define     COMMAND_TYPE_AVERAGE                                        8020
+#define     COMMAND_TYPE_PERCENTAGE                                     8021
 
 // Int Commands
 #define		COMMAND_TYPE_IS_INT_EQUAL_TO								2000

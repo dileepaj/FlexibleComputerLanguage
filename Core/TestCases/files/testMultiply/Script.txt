@@ -1,0 +1,10 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$X.FilterSubtree($Item.GetValue.IsHavingSubstring(weavingLabourCostPerUnit)):=COSTLIST
+$COSTLIST.SeekToBegin
+$COSTLIST.GetCurrentElement:=COSTLISTELEM
+$X.FilterSubtree($Item.GetValue.IsStringEqualTo(ඒකකගණන/அலகுகள்எண்)):=UNITLIST
+$UNITLIST.SeekToBegin
+$UNITLIST.GetCurrentElement:=UNITLISTELEM
+$UNITLISTELEM.GetLValue.Multiply($COSTLISTELEM.GetLValue):=WAGE
+$RESULT.SetValue($WAGE)

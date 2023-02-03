@@ -6,7 +6,7 @@
 #include "MemMan.h"
 #include "Node.h"
 #include "MetaData.h"
-#include "String.h"
+#include "Strings.h"
 #include "Entity.h"
 #include "easylogging++.h"
 #include "rapidjson/document.h"

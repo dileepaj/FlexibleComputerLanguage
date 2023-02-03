@@ -12,7 +12,7 @@
 #include "EntityList.h"
 #include "Int.h"
 #include "Node.h"
-#include "String.h"
+#include "Strings.h"
 
 TestCaseExecutionResult TestListSort::Execute(TestCaseArgument *arg) {
     int id = 0;

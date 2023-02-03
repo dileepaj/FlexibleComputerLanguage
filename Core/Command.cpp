@@ -17,6 +17,7 @@
 #include <set>
 #include <algorithm>
 #include <functional>
+#include <cmath>
 //#include <LogJsonParser.h>
 //#include <QueryExecuter.h>
 #include "Generator.h"
@@ -192,6 +193,7 @@ PENTITY Command::ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pA
     PBool pBoolRes = 0;
     PNull pNullRes = 0;
     PString pStrRes = 0;
+    PInt pIntRes = 0;
 
     switch (ulCommand) {
         case COMMAND_TYPE_IS_INT_EQUAL_TO: {
@@ -251,13 +253,16 @@ PENTITY Command::ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pA
             }
             break;
         }
-        case COMMAND_TYPE_ADD: {
-            if (ENTITY_TYPE_INT == pArg->ul_Type) {
-                MemoryManager::Inst.CreateObject(&pNullRes);
-                PInt pIntArg = (PInt) pArg;
-                MULONG ulVal = pInt->GetValue();
+        case COMMAND_TYPE_ADD:
+        {
+            if(ENTITY_TYPE_INT == pArg->ul_Type)
+            {
+                MemoryManager::Inst.CreateObject(&pNullRes);// create a null object
+                PInt pIntArg = (PInt)pArg; //cast the argument into an integer
+                MULONG ulVal = pInt->GetValue(); //get its integer value
                 ulVal += (pIntArg->GetValue());
                 pInt->SetValue(ulVal);
+                pIntRes = pInt;
             }
             break;
         }
@@ -268,6 +273,57 @@ PENTITY Command::ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pA
                 MULONG ulVal = pInt->GetValue();
                 ulVal -= (pIntArg->GetValue());
                 pInt->SetValue(ulVal);
+            }
+            break;
+        }
+        case COMMAND_TYPE_MULTIPLY:
+        {
+            if(ENTITY_TYPE_INT == pArg->ul_Type)
+            {
+                MemoryManager::Inst.CreateObject(&pIntRes);
+                PInt pIntArg = (PInt)pArg;
+                MULONG ulVal = pInt->GetValue();
+                ulVal = ulVal * pIntArg->GetValue();
+                pIntRes->SetValue(ulVal);
+            }
+            break;
+        }
+        case COMMAND_TYPE_DIVIDE:
+        {
+            if(ENTITY_TYPE_INT == pArg->ul_Type)
+            {
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                PInt pIntArg = (PInt)pArg;
+                MULONG ulVal = pInt->GetValue();
+                ulVal = ulVal / pIntArg->GetValue();
+                pInt->SetValue(ulVal);
+                pIntRes = pInt;
+            }
+            break;
+        }
+        case COMMAND_TYPE_PERCENTAGE:
+        {
+            if(ENTITY_TYPE_INT == pArg->ul_Type)
+            {
+                MemoryManager::Inst.CreateObject(&pStrRes);
+                PInt pIntArg = (PInt)pArg;
+                float ulVal = pInt->GetValue();
+                ulVal = ulVal / pIntArg->GetValue();
+                std::string floatString = std::to_string(roundf(ulVal * 10000 ) / 100);
+                pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3) + "%");
+            }
+            break;
+        }
+        case COMMAND_TYPE_AVERAGE:
+        {
+            if(ENTITY_TYPE_INT == pArg->ul_Type)
+            {
+                MemoryManager::Inst.CreateObject(&pStrRes);
+                PInt pIntArg = (PInt)pArg;
+                float ulVal = pInt->GetValue();
+                ulVal = ulVal / pIntArg->GetValue();
+                std::string floatString = std::to_string(roundf(ulVal * 100 ) / 100);
+                pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
             }
             break;
         }
@@ -288,7 +344,10 @@ PENTITY Command::ExecuteIntCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pA
             break;
         }
     }
-
+    if(0 != pIntRes)
+    {
+        return pIntRes;
+    }
     if (0 != pBoolRes) {
         return pBoolRes;
     }
@@ -626,6 +685,121 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
             sVal += ".";
             pString->SetValue(sVal);
         }
+        case COMMAND_TYPE_ADD: {
+            MemoryManager::Inst.CreateObject(&pStrRes);
+
+            if(ENTITY_TYPE_STRING == pArg->ul_Type) {
+                PString pStrArg = (PString) pArg;
+                if ((pString->GetValue().find(".") != std::string::npos) ||
+                    (pStrArg->GetValue().find(".") != std::string::npos)) {
+                    double ulVal = std::stod(pString->GetValue());
+                    double ulVal2 = std::stod(pStrArg->GetValue());
+                    std::string floatString = std::to_string(ulVal + ulVal2);
+                    pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
+                } else {
+                    int intVal = std::stoi(pString->GetValue());
+                    int intVal2 = std::stoi(pStrArg->GetValue());
+                    std::string floatString = std::to_string(intVal + intVal2);
+                    pStrRes->SetValue(floatString);
+                }
+            }else{
+                PInt pIntArg = (PInt) pArg;
+                if (pString->GetValue().find(".") != std::string::npos) {
+                    double ulVal = std::stod(pString->GetValue());
+                    double ulVal2 = pIntArg->GetValue();
+                    std::string floatString = std::to_string(ulVal + ulVal2);
+                    pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
+                } else {
+                    int intVal = std::stoi(pString->GetValue());
+                    int intVal2 = pIntArg->GetValue();
+                    std::string floatString = std::to_string(intVal + intVal2);
+                    pStrRes->SetValue(floatString);
+                }
+            }
+            break;
+        }
+        case COMMAND_TYPE_MULTIPLY: {
+            MemoryManager::Inst.CreateObject(&pStrRes);
+
+            if(ENTITY_TYPE_STRING == pArg->ul_Type) {
+                PString pStrArg = (PString) pArg;
+                if ((pString->GetValue().find(".") != std::string::npos) ||
+                    (pStrArg->GetValue().find(".") != std::string::npos)) {
+                    double ulVal = std::stod(pString->GetValue());
+                    double ulVal2 = std::stod(pStrArg->GetValue());
+                    std::string floatString = std::to_string(ulVal * ulVal2);
+                    pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
+                } else {
+                    int intVal = std::stoi(pString->GetValue());
+                    int intVal2 = std::stoi(pStrArg->GetValue());
+                    std::string floatString = std::to_string(intVal * intVal2);
+                    pStrRes->SetValue(floatString);
+
+                }
+            }else{
+                PInt pIntArg = (PInt) pArg;
+                if (pString->GetValue().find(".") != std::string::npos) {
+                    double ulVal = std::stod(pString->GetValue());
+                    double ulVal2 = pIntArg->GetValue();
+                    std::string floatString = std::to_string(ulVal * ulVal2);
+                    pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
+                } else {
+                    int intVal = std::stoi(pString->GetValue());
+                    int intVal2 = pIntArg->GetValue();
+                    std::string floatString = std::to_string(intVal * intVal2);
+                    pStrRes->SetValue(floatString);
+
+                }
+            }
+            break;
+        }
+        case COMMAND_TYPE_AVERAGE: {
+            MemoryManager::Inst.CreateObject(&pStrRes);
+            double ulVal = std::stod(pString->GetValue());
+            double ulVal2;
+            if(ENTITY_TYPE_STRING == pArg->ul_Type)
+            {
+                PString pStrArg = (PString) pArg;
+                ulVal2 = std::stod(pStrArg->GetValue());
+            }else{
+                PInt pIntArg = (PInt) pArg;
+                ulVal2 = pIntArg->GetValue();
+            }
+            double ulVal3;
+            if (ulVal2 == 0) {
+                ulVal3 = 0;
+            } else {
+                ulVal3 = ulVal / ulVal2;
+            }
+            std::string floatString = std::to_string(roundf(ulVal3 * 100) / 100);
+            pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3));
+            break;
+        }
+        case COMMAND_TYPE_PERCENTAGE: {
+            MemoryManager::Inst.CreateObject(&pStrRes);
+            double ulVal = std::stod(pString->GetValue());
+            double ulVal2;
+
+            if(ENTITY_TYPE_STRING == pArg->ul_Type)
+            {
+                PString pStrArg = (PString) pArg;
+                ulVal2 = std::stod(pStrArg->GetValue());
+            }else{
+                PInt pIntArg = (PInt) pArg;
+                ulVal2 = pIntArg->GetValue();
+            }
+            double ulVal3;
+            if (ulVal2 == 0) {
+                ulVal3 = 0;
+            } else {
+                ulVal3 = ulVal / ulVal2;
+            }
+
+            std::string floatString = std::to_string(roundf(ulVal3 * 10000) / 100);
+            pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3) + "%");
+            break;
+        }
+
             break;
     }
     if (0 != pNodeRes) {
@@ -644,7 +818,6 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
     if (0 != pStrRes) {
         return pStrRes;
     }
-
     return 0;
 }
 

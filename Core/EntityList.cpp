@@ -4,7 +4,7 @@
 #include "Utils.h"
 #include "Int.h"
 #include "list"
-#include "String.h"
+#include "Strings.h"
 
 EntityList::EntityList()
         : st_CurrElemPos(0) {
