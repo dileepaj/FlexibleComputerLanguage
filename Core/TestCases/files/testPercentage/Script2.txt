@@ -1,0 +1,8 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$Y.GetIntegerVar:=NUM1
+$Y.GetIntegerVar:=NUM2
+$NUM1.Add(#40)
+$NUM2.Add(#50)
+$NUM1.Percentage($NUM2):=WAGE
+$RESULT.SetValue($WAGE)

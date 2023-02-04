@@ -32,6 +32,10 @@
 #include "TestListSplit.h"
 #include "TestCommonJsonParser.h"
 #include "TestDateConvert.h"
+#include "TestCaseAverage.h"
+#include "TestCaseAddition.h"
+#include "TestCaseMultiply.h"
+#include "TestCasePercentage.h"
 
 
 TestCaseExecuter::TestCaseExecuter() {
@@ -68,6 +72,11 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestcommonJsonParser),new TestCommonJsonParser);
     RegisterTestCase(_MSTR(TestDateConvert),new TestDateConvert);
     RegisterTestCase(_MSTR(TestCompound1), new TestCompound1);
+    RegisterTestCase(_MSTR(TestCaseAddition), new TestCaseAddition);
+    RegisterTestCase(_MSTR(TestCaseMultiply), new TestCaseMultiply);
+    RegisterTestCase(_MSTR(TestCaseAverage), new TestCaseAverage);
+    RegisterTestCase(_MSTR(TestCasePercentage), new TestCasePercentage);
+
 
 
 }

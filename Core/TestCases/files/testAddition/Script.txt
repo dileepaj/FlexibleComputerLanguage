@@ -1,0 +1,16 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$X.FilterSubtree($Item.GetValue.IsHavingSubstring(weavingLabourCostPerUnit)):=COSTLIST
+$COSTLIST.SeekToBegin
+$COSTLIST.GetCurrentElement:=COSTLISTELEM
+$X.FilterSubtree($Item.GetValue.IsStringEqualTo(ඒකකගණන/அலகுகள்எண்)):=UNITLIST
+$UNITLIST.SeekToBegin
+$UNITLIST.GetCurrentElement:=UNITLISTELEM
+$UNITLISTELEM.GetLValue.Add($COSTLISTELEM.GetLValue):=WAGE
+//$UNITLISTELEM.GetLValue.Add(10):=WAGE
+//$COSTLISTELEM.GetLValue.Add(10):=WAGE
+$RESULT.SetValue($WAGE)
+
+//weavingLabourCostPerUnit = 141.88
+//ඒකකගණන/அலகுகள்எண் = 15
+//Answer = 156.88
