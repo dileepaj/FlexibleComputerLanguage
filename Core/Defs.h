@@ -731,6 +731,7 @@
 #define     COMMAND_TYPE_DIVIDE                                         8019
 #define     COMMAND_TYPE_AVERAGE                                        8020
 #define     COMMAND_TYPE_PERCENTAGE                                     8021
+#define     COMMAND_TYPE_STRING_SPLIT                                   8022
 
 // Int Commands
 #define		COMMAND_TYPE_IS_INT_EQUAL_TO								2000

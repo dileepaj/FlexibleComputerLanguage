@@ -111,7 +111,7 @@ Node *OTPParser::OTPJSONToNodeTree(std::string otpsString)
     Node *root = MemoryManager::Inst.CreateNode(++id);
     int i = 0, j = 0, k = 0;
     int otpCount = 0;
-    std::cout << "Run 1\n";
+
 //    for (rapidjson::Value::ConstMemberIterator tp = otps[0].MemberBegin(); tp != otps[0].MemberEnd(); ++tp)
     for(rapidjson::Value::ConstValueIterator itr = otps.Begin(); itr != otps.End(); ++itr)
     {
@@ -121,16 +121,12 @@ Node *OTPParser::OTPJSONToNodeTree(std::string otpsString)
         otpNode->SetLValue("otp");
         otpNode->SetRValue("otp");
         root->AppendNode(otpNode);
-        std::cout << "Run 1.1\n";
+
         for(rapidjson::Value::ConstMemberIterator tps = itr->MemberBegin(); tps != itr->MemberEnd(); ++tps)
         {
-            std::cout << "Run 2\n";
             rapidjson::Value &tpsArray = (rapidjson::Value&)(itr->GetObjectA()[tps->name.GetString()]);
-            std::cout << "Run 2.2\n";
-
             for(rapidjson::Value::ConstValueIterator tp = tpsArray.Begin(); tp != tpsArray.End(); ++tp)
             {
-                std::cout << "Run 3\n";
                 rapidjson::Value &tpjson = (rapidjson::Value&)(*tp);
                 Node *tpnode = MemoryManager::Inst.CreateNode(++id);
                 Node *itemnode = MemoryManager::Inst.CreateNode(++id);
