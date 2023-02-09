@@ -36,6 +36,7 @@
 #include "TestCaseAddition.h"
 #include "TestCaseMultiply.h"
 #include "TestCasePercentage.h"
+#include "TestImportKeyword.h"
 
 
 TestCaseExecuter::TestCaseExecuter() {
@@ -76,6 +77,8 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestCaseMultiply), new TestCaseMultiply);
     RegisterTestCase(_MSTR(TestCaseAverage), new TestCaseAverage);
     RegisterTestCase(_MSTR(TestCasePercentage), new TestCasePercentage);
+    RegisterTestCase(_MSTR(TestImportKeyword), new TestImportKeyword);
+
 
 
 

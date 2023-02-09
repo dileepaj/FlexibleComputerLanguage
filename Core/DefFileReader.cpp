@@ -247,6 +247,8 @@ void DefFileReader::AddKeyAndValue(MetaData* pMD, MSTRING sKey, MSTRING sVal)
     }
     else if(_MSTR(NEW_KEYWORD) == sKey){
         pMD->s_NewKeyword = sVal;
+    }else if(_MSTR(IMPORT_LIBRARY) == sKey){
+        pMD->s_LDALImport = sVal;
     }
     
     // LDEL

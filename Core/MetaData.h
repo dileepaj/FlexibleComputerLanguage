@@ -33,6 +33,7 @@ public:
 	MSTRING s_Break;
 	MSTRING s_Continue;
     MSTRING s_ListItemVar;
+    MSTRING s_LDALImport;
     
 	MAP_MULONG_STR	map_FuncNames;
 	MAP_STR_MULONG	map_FuncNamesReverse;
