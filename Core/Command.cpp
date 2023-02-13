@@ -441,6 +441,7 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
     PNull pNullRes = 0;
     PBool pBoolRes = 0;
     PString pStrRes = 0;
+    PENTITYLIST pListRes = 0;
 
     switch (ulCommand) {
         case COMMAND_TYPE_IS_STRING_EQUAL_TO: {
@@ -799,6 +800,35 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
             pStrRes->SetValue(floatString.substr(0, floatString.find(".") + 3) + "%");
             break;
         }
+        case COMMAND_TYPE_STRING_SPLIT: {
+            MemoryManager::Inst.CreateObject(&pListRes);
+            //Getting the delimeter
+            PString pStrArg = (PString) pArg;
+            MSTRING delimiter = pStrArg->GetValue();
+            char delim = delimiter[0];
+            //Getting the string
+            MSTRING sVal = pString->GetValue();
+
+            MSTRING splitted;
+            int count = 0;
+
+            for (int i = 0; i < sVal.length(); i++) {
+                char stringArr[sVal.length()];
+                stringArr[i] = sVal[i];
+                if (stringArr[i] == delim) {
+                    count++;
+                }
+            }
+            for (int i = 0; i <= count; i++) {
+                splitted = sVal.substr(0, sVal.find(delimiter));
+                sVal.erase(0, sVal.find(delimiter) + delimiter.length());
+                PString splitObject = 0;
+                MemoryManager::Inst.CreateObject(&splitObject);
+                splitObject->SetValue(splitted);
+                pListRes->push_back(splitObject);
+            }
+            break;
+        }
 
             break;
     }
@@ -817,6 +847,9 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
     }
     if (0 != pStrRes) {
         return pStrRes;
+    }
+    if (0 != pListRes) {
+        return pListRes;
     }
     return 0;
 }
