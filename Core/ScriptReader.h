@@ -89,6 +89,7 @@ private:
     EntityList* GetList(VEC_CE& vecCE, VEC_CE::size_type stStart, VEC_CE::size_type stEnd);
 	Command* GetFunction(VEC_CE& vecCE, VEC_CE::size_type stStart, VEC_CE::size_type stEnd);
 	void GetNextFirstLevelCommandElementPos(VEC_CE& vecCE, VEC_CE::size_type stStart, VEC_CE::size_type stEnd, CommandElementType cet, std::map<CommandElementType, CommandElementType>& mapContextChangeElements, VEC_CE::size_type& stElemPos);
+    std::list<MSTRING> PreProcess(LST_STR& lstLines);
 };
 
 #endif
