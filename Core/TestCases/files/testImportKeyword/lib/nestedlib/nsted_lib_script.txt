@@ -1,0 +1,6 @@
+Function:=SetNodeValues
+$ARG.SeekToBegin
+$ARG.GetCurrentElement:=NEW_NODE
+$NEW_NODE.SetValue(Test import function call worked)
+
+EndFunction

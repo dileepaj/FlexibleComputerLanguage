@@ -146,6 +146,8 @@ add_executable(FlexibleComputerLanguage1
         Core/TestCases/TestCasePercentage.h
         Core/TestCases/TestCasePercentage.cpp
         Core/TestCases/TestCaseStringSplit.cpp
-        Core/TestCases/TestCaseStringSplit.h)
+        Core/TestCases/TestCaseStringSplit.h
+        Core/TestCases/TestImportKeyword.h
+        Core/TestCases/TestImportKeyword.cpp)
 
 

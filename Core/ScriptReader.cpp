@@ -102,7 +102,9 @@ bool ScriptReader::ProcessScript(MetaData* pMD, ScriptReaderOutput& op, MSTRING 
 	{
 		return false;
 	}
-
+    if(pMD->s_LDALImport.length() != 0){
+        lstLines = PreProcess(lstLines);
+    }
 	MemoryManager::Inst.CreateObject(&op.p_ETL);
 	ExecutionTemplateList* pCurrFunction = 0;
 	bool bInsideFunction = false;
@@ -168,6 +170,51 @@ void ScriptReader::ReadStringToLines(MSTRING code, MSTRING sLineContinuation, MS
             sCurr = EMPTY_STRING;
         }
     }
+
+}
+std::list<MSTRING> ScriptReader::PreProcess(LST_STR& lstLines){
+    LST_STR::const_iterator ite1 = lstLines.begin();
+    LST_STR::const_iterator iteEnd1 = lstLines.end();
+    LST_STR newListLines;
+
+    while(ite1 != iteEnd1)
+    {
+        LST_STR::const_iterator tobeRemoved = ite1;
+        MSTRING currLine = *ite1;
+        ite1++;
+
+
+
+        if(currLine.find(p_MetaData->s_LDALImport) != std::string::npos){
+
+
+            MSTRING filePath = currLine.substr(p_MetaData->s_LDALImport.length(),currLine.length());
+
+            LST_INT lstLineNumbersDummy;
+
+            filePath.erase(std::remove( filePath.begin(),  filePath.end(), ' '),filePath.end());
+            std::replace(filePath.begin(), filePath.end(), '\\', '/');
+            ReadFileToLines(filePath, p_MetaData->s_LineContinuation, p_MetaData->s_CommentStart, newListLines,lstLineNumbersDummy);
+            lstLines.remove(*tobeRemoved);
+
+        }
+
+    }
+
+    newListLines.merge(lstLines);
+
+    //Check for nested imports
+    LST_STR::const_iterator newIte1 = newListLines.begin();
+    LST_STR::const_iterator newIteEnd1 = newListLines.end();
+    while (newIte1 != newIteEnd1){
+        MSTRING currLine = *newIte1;
+        newIte1++;
+        if(currLine.find(p_MetaData->s_LDALImport) != std::string::npos){
+            newListLines = PreProcess(newListLines);
+        }
+
+    }
+    return newListLines;
 
 }
 
