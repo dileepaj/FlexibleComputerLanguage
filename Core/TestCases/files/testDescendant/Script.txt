@@ -1,0 +1,4 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$X.Descendant(5):=NEWNODE
+$RESULT.SetValue($NEWNODE.GetValue)

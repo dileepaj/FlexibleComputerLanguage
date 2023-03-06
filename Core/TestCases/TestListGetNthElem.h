@@ -6,10 +6,12 @@
 #define FLEXIBLECOMPUTERLANGUAGE_TESTLISTGETNTHELEM_H
 
 
-class TestListGetNthElem {
+#include "TestCaseBase.h"
+
+class TestListGetNthElem : public TestCaseBase{
 
 public:
-    static void TestListGetNthElement();
+    virtual TestCaseExecutionResult Execute(TestCaseArgument* arg);
 
 };
 

@@ -148,6 +148,22 @@ add_executable(FlexibleComputerLanguage1
         Core/TestCases/TestCaseStringSplit.cpp
         Core/TestCases/TestCaseStringSplit.h
         Core/TestCases/TestImportKeyword.h
-        Core/TestCases/TestImportKeyword.cpp)
+        Core/TestCases/TestImportKeyword.cpp
+        Core/TestCases/TestAddNewNode.cpp
+        Core/TestCases/TestAddNewNode.h
+        Core/TestCases/TestGetSubTreeContainingString.cpp
+        Core/TestCases/TestGetSubTreeContainingString.h
+        Core/TestCases/TestAddPostFix.cpp
+        Core/TestCases/TestAddPostFix.h
+        Core/TestCases/TestIsEmpty.cpp
+        Core/TestCases/TestIsEmpty.h
+        Core/TestCases/TestCaseAncestor.cpp
+        Core/TestCases/TestCaseAncestor.h
+        Core/TestCases/TestCaseChild.cpp
+        Core/TestCases/TestCaseChild.h
+        Core/TestCases/TestGetSubTreeWithValue.cpp
+        Core/TestCases/TestGetSubTreeWithValue.h
+        Core/TestCases/TestCaseDescendant.cpp
+        Core/TestCases/TestCaseDescendant.h)
 
 

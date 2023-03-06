@@ -507,6 +507,10 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
             }
             break;
         }
+        /**
+         * AddPostFix() method will accept either a single string or a string list
+         * and concatenate the string values
+         */
         case COMMAND_TYPE_ADD_POSTFIX: {
             MemoryManager::Inst.CreateObject(&pNullRes);
             if (ENTITY_TYPE_STRING == pArg->ul_Type) {
@@ -514,6 +518,15 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
                 MSTRING sVal = pString->GetValue();
                 sVal += pStrArg->GetValue();
                 pString->SetValue(sVal);
+            }else if(ENTITY_TYPE_LIST == pArg->ul_Type) {
+                PENTITYLIST pArgList = (PENTITYLIST)pArg;
+
+                EntityList::const_iterator ite1 = pArgList->begin();
+                EntityList::const_iterator iteEnd = pArgList->end();
+
+                for(;ite1 != iteEnd;ite1++){
+                    ExecuteStringCommand(COMMAND_TYPE_ADD_POSTFIX,pString,*ite1);
+                }
             }
             break;
         }
@@ -829,6 +842,16 @@ PENTITY Command::ExecuteStringCommand(MULONG ulCommand, PENTITY pEntity, PENTITY
             }
             break;
         }
+        /**
+         * IsEmpty method will take the string entity and check whether it is empty or not
+         * returns a boolean value
+         */
+        case COMMAND_TYPE_IS_EMPTY: {
+            MemoryManager::Inst.CreateObject(&pBoolRes);
+            MSTRING sVal = pString->GetValue();
+            pBoolRes->SetValue(sVal.empty());
+            break;
+        }
 
             break;
     }
@@ -938,7 +961,6 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
     if (COMMAND_TYPE_FILTER_SUBTREE == ulCommand) {
         MemoryManager::Inst.CreateObject(&pNodeListRes);
         FilterSubTree(pNode, p_Arg, pContext, pNodeListRes);
-
     } else {
         // now handle commands that would not explicitly need the execution context
         // for these command, for the sake of simplicity, we first evaluate the command argument and use it subsequently
@@ -1251,6 +1273,56 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                 }
                 break;
             }
+            /**
+             * AddNodeNew method is a shorthand method for adding a new node
+             * and setting its RValue, LValue, custom String at once without going for multiple methods
+             */
+            case COMMAND_TYPE_ADD_NODE_NEW:{
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                PENTITYLIST pArgList = (PENTITYLIST)pArg;
+
+                MSTRING nodeRValue = "";
+                MSTRING nodeLValue = "";
+                MSTRING nodeCusValue = "";
+
+                EntityList::const_iterator ite1 = pArgList->begin();
+                EntityList::const_iterator iteEnd = pArgList->end();
+
+                int index = 0;
+                for(;ite1 != iteEnd;ite1++){
+
+                    switch (index) {
+                        case 0:{
+                            nodeLValue = ((PString)(*ite1))->GetValue();
+                            break;
+                        }
+                        case 1:{
+                            long RValue = ((PInt) (*ite1))->GetValue();
+                            std::stringstream ss;
+                            ss<<RValue;
+                            MSTRING strValue;
+                            ss >> strValue;
+                            nodeRValue = strValue;
+                            break;
+                        }
+                        case 2:{
+                            nodeCusValue = ((PString)(*ite1))->GetValue();
+                            break;
+                        }
+                    }
+                    index++;
+
+                }
+
+                PNODE newNode= pNode->AddNode();
+                newNode->SetCustomString(const_cast<PMCHAR>(nodeCusValue.c_str()));
+                newNode->SetLValue(const_cast<PMCHAR>(nodeLValue.c_str()));
+                newNode->SetRValue(const_cast<PMCHAR>(nodeRValue.c_str()));
+
+                pNodeRes = newNode;
+                break;
+
+            }
             case COMMAND_TYPE_ADD_NODE_WITH_WEIGHT: {
                 MemoryManager::Inst.CreateObject(&pNullRes);
                 if (ENTITY_TYPE_INT == pArg->ul_Type) {
@@ -1467,6 +1539,81 @@ PENTITY Command::ExecuteNodeCommand(MULONG ulCommand, PENTITY pEntity, Execution
                         }
                     }
                 }
+                break;
+            }
+            /**
+             * GetSubTreeContainingString is a shorthand method for filtersubtree + IsHavingSubstring
+             * This method will take a string argument and return a node list which contains that particular string anywhere in the node value
+             */
+            case COMMAND_TYPE_GET_SUB_TREE_CONTAINING_STRING: {
+                MemoryManager::Inst.CreateObject(&pNodeListRes);
+                FilterSubTreeWithString(COMMAND_TYPE_GET_SUB_TREE_CONTAINING_STRING,pNode, p_Arg, pContext, pNodeListRes,pArg);
+                break;
+            }
+            /**
+             * GetSubTreeWithValue is a shorthand method for filtersubtree + IsStringEqualTo
+             * This method will take a string argument and return a node list which has the same exact string as the node value
+             */
+            case COMMAND_TYPE_GET_SUB_TREE_WITH_VALUE: {
+                MemoryManager::Inst.CreateObject(&pNodeListRes);
+                FilterSubTreeWithString(COMMAND_TYPE_GET_SUB_TREE_WITH_VALUE,pNode, p_Arg, pContext, pNodeListRes,pArg);
+                break;
+            }
+            /**
+             * Child(n) method will take an Integer argument as the n value
+             * and return the nth child in the tree
+             */
+            case COMMAND_TYPE_CHILD:{
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                PInt nChild = (PInt) pArg;
+                PNODE pChild = pNode->GetFirstChild();
+
+                for(int i=0; i<nChild->GetValue()-1; i++){
+                    if(0 != pChild->GetFirstChild()) {
+                        pChild = pChild->GetRightSibling();
+                    }else{
+                        pChild = 0;
+                    }
+                }
+                pNodeRes = pChild;
+                break;
+            }
+            /**
+             * Ancestor(n) method will take an Integer argument as the n value
+             * and return the nth ancestor in the tree (parent in the nth level)
+             */
+            case COMMAND_TYPE_ANCESTOR:{
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                PInt nAncestor = (PInt) pArg;
+                PNODE pAncestor = pNode->GetParent();
+
+                for(int i=0; i<nAncestor->GetValue(); i++){
+                    if(0 != pAncestor->GetFirstChild()) {
+                        pAncestor = pAncestor->GetParent();
+                    }else{
+                        pAncestor = 0;
+                    }
+                }
+                pNodeRes = pAncestor;
+                break;
+            }
+            /**
+             * Descendant(n) method will take an Integer argument as the n value
+             * and return the nth descendant in the tree (child in the nth level)
+             */
+            case COMMAND_TYPE_DESCENDANT:{
+                MemoryManager::Inst.CreateObject(&pNullRes);
+                PInt nDescendants = (PInt) pArg;
+                PNODE pDescendant = pNode->GetFirstChild();
+
+                for(int i=0; i<nDescendants->GetValue(); i++){
+                    if(0 != pDescendant->GetFirstChild()) {
+                        pDescendant = pDescendant->GetFirstChild();
+                    }else{
+                        pDescendant = 0;
+                    }
+                }
+                pNodeRes = pDescendant;
                 break;
             }
         }
@@ -2240,6 +2387,47 @@ void Command::FilterSubTree(PNODE root, ExecutionTemplate *arg, ExecutionContext
     PNODE pChild = root->GetFirstChild();
     while (0 != pChild) {
         FilterSubTree(pChild, arg, context, resultList);
+        pChild = pChild->GetRightSibling();
+    }
+}
+
+/**
+ *
+ * @param ulCommand
+ * @param root
+ * @param arg
+ * @param context
+ * @param resultList
+ * @param pArg
+ * FilterSubTreeWithString method is specifically designed for COMMAND_TYPE_GET_SUB_TREE_CONTAINING_STRING & COMMAND_TYPE_GET_SUB_TREE_WITH_VALUE
+ * Based on the command type this method will filter the tree with a similar way to IsHavingSubstring or IsStringEqualTo methods
+ * and add the matching nodes found to the resultList
+ */
+void Command::FilterSubTreeWithString(MULONG ulCommand,PNODE root, ExecutionTemplate *arg, ExecutionContext *context, PENTITYLIST resultList, PENTITY pArg) {
+    context->map_Var[context->p_MD->s_ListItemVar] = root;
+
+    PBool res = (PBool) arg->Execute(context);
+
+    PString pStrArg = (PString) pArg;
+    PNODE pChild = root->GetFirstChild();
+
+    while (0 != pChild) {
+        FilterSubTreeWithString(ulCommand,pChild, arg, context, resultList,pStrArg);
+
+        MSTRING nodeValue = pChild->GetValue();
+
+        bool  isStringFound;
+        if(ulCommand == COMMAND_TYPE_GET_SUB_TREE_CONTAINING_STRING){
+            isStringFound = nodeValue.find(pStrArg->GetValue()) != MSTRING::npos;
+        }else if (ulCommand == COMMAND_TYPE_GET_SUB_TREE_WITH_VALUE){
+            isStringFound = (nodeValue.c_str() == pStrArg->GetValue());
+        }else{
+            isStringFound = false;
+        }
+
+        if (isStringFound) {
+            resultList->push_back(pChild);
+        }
         pChild = pChild->GetRightSibling();
     }
 }

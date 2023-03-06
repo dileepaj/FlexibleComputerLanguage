@@ -1,0 +1,9 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$RESULT.GetStringVar:=RESULTSTRING
+$RESULT.GetIntegerVar:=SUM
+$SUM.Add(200)
+$RESULTSTRING.AddPostFix(Rs )
+$RESULTSTRING.AddPostFix($SUM.ToString)
+$RESULTSTRING.AddPostFix( /=)
+$RESULT.SetValue($RESULTSTRING)

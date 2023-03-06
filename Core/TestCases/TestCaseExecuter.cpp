@@ -38,6 +38,15 @@
 #include "TestCasePercentage.h"
 #include "TestCaseStringSplit.h"
 #include "TestImportKeyword.h"
+#include "TestListGetNthElem.h"
+#include "TestAddNewNode.h"
+#include "TestGetSubTreeContainingString.h"
+#include "TestAddPostFix.h"
+#include "TestIsEmpty.h"
+#include "TestCaseChild.h"
+#include "TestCaseAncestor.h"
+#include "TestGetSubTreeWithValue.h"
+#include "TestCaseDescendant.h"
 
 
 TestCaseExecuter::TestCaseExecuter() {
@@ -80,6 +89,15 @@ void TestCaseExecuter::RegisterAllTestCases() {
     RegisterTestCase(_MSTR(TestCasePercentage), new TestCasePercentage);
     RegisterTestCase(_MSTR(TestCaseStringSplit), new TestCaseStringSplit);
     RegisterTestCase(_MSTR(TestImportKeyword), new TestImportKeyword);
+    RegisterTestCase(_MSTR(TestListGetNthElem), new TestListGetNthElem);
+    RegisterTestCase(_MSTR(TestAddNewNode), new TestAddNewNode);
+    RegisterTestCase(_MSTR(TestGetSubTreeContainingString), new TestGetSubTreeContainingString);
+    RegisterTestCase(_MSTR(TestAddPostFix), new TestAddPostFix);
+    RegisterTestCase(_MSTR(TestIsEmpty), new TestIsEmpty);
+    RegisterTestCase(_MSTR(TestCaseChild), new TestCaseChild);
+    RegisterTestCase(_MSTR(TestCaseAncestor), new TestCaseAncestor);
+    RegisterTestCase(_MSTR(TestGetSubTreeWithValue), new TestGetSubTreeWithValue);
+    RegisterTestCase(_MSTR(TestCaseDescendant), new TestCaseDescendant);
 
 }
 

@@ -695,6 +695,12 @@
 #define     COMMAND_TYPE_ADD_INNER_OBJ                                  69
 #define     COMMAND_TYPE_SET_NORMAL_STRING                              70
 #define     COMMAND_TYPE_SET_INNER_ARRAY                                71
+#define     COMMAND_TYPE_ADD_NODE_NEW                                   72
+#define     COMMAND_TYPE_GET_SUB_TREE_CONTAINING_STRING                 73
+#define     COMMAND_TYPE_CHILD                                          74
+#define     COMMAND_TYPE_ANCESTOR                                       75
+#define     COMMAND_TYPE_GET_SUB_TREE_WITH_VALUE                        76
+#define     COMMAND_TYPE_DESCENDANT                                     77
 
 // String commands
 #define		COMMAND_TYPE_IS_STRING_EQUAL_TO								1000
@@ -732,6 +738,7 @@
 #define     COMMAND_TYPE_AVERAGE                                        8020
 #define     COMMAND_TYPE_PERCENTAGE                                     8021
 #define     COMMAND_TYPE_STRING_SPLIT                                   8022
+#define     COMMAND_TYPE_IS_EMPTY                                       8023
 
 // Int Commands
 #define		COMMAND_TYPE_IS_INT_EQUAL_TO								2000

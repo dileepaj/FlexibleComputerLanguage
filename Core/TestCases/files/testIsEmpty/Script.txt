@@ -1,0 +1,6 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+$RESULT.GetStringVar:=RESULTSTRING
+If($RESULTSTRING.IsEmpty)
+$RESULT.SetValue(Empty !!!!)
+EndIf
