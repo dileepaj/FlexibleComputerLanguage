@@ -10,8 +10,7 @@
 #include "Node.h"
 #include "EntityList.h"
 #include "Int.h"
-
-void TestListGetNthElem::TestListGetNthElement() {
+TestCaseExecutionResult TestListGetNthElem::Execute(TestCaseArgument *arg) {
     int id = 0;
     DefFileReader dfr;
     // CAUTION: This file path is hardcoded and can cause crashes. You have been warned!

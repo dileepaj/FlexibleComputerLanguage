@@ -1,0 +1,11 @@
+$RESULT.SetCustomString(normal)
+$RESULT.SetRValue(4)
+
+//$X.FilterSubtree($Item.GetValue.IsStringEqualTo(weavingLabourCostPerUnit)):=COSTLIST
+$X.GetSubTreeWithValue(weavingLabourCostPerUnit):=COSTLIST
+$COSTLIST.SeekToBegin
+$COSTLIST.GetCurrentElement:=COSTLISTELEM
+
+If($COSTLISTELEM.CheckNotNull)
+$RESULT.SetValue($COSTLISTELEM.GetLValue)
+EndIf

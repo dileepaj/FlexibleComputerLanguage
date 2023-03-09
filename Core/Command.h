@@ -37,4 +37,5 @@ private:
     PENTITY ExecuteDateTimeCommand(MULONG ulCommand, PENTITY pEntity, PENTITY pArg);
 	void	AddSubtreeToNodeList(PENTITYLIST pList, PNODE pRoot);
     void    FilterSubTree(PNODE root, ExecutionTemplate* arg, ExecutionContext* context, PENTITYLIST resultList);
+    void    FilterSubTreeWithString(MULONG ulCommand, PNODE root, ExecutionTemplate* arg, ExecutionContext* context, PENTITYLIST resultList,PENTITY pArg);
 };

@@ -1,0 +1,4 @@
+$RESULT.SetCustomString(object)
+$RESULT.SetRValue(4)
+$RESULT.AddNodeNew({New Node,4,normal}):=NEWNODE
+$NEWNODE.SetValue(abc)
